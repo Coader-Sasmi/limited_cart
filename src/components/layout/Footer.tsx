@@ -1,6 +1,11 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { BiLogoFacebookCircle } from "react-icons/bi";
+import { LuInstagram } from "react-icons/lu";
+import { RiTwitterFill } from "react-icons/ri";
+import { RxLinkedinLogo } from "react-icons/rx";
+import { SiYoutube } from "react-icons/si";
 
 const menuArr = [
   { title: "About Us", path: "/about" },
@@ -11,19 +16,49 @@ const menuArr = [
 ];
 
 export default function Footer() {
+  const socialMediaArr = [
+    {
+      icon: <BiLogoFacebookCircle />,
+    },
+    {
+      icon: <RiTwitterFill />,
+    },
+    {
+      icon: <LuInstagram />,
+    },
+    {
+      icon: <RxLinkedinLogo />,
+    },
+    {
+      icon: <SiYoutube />,
+    },
+  ];
   return (
     <>
-      <section className="p-5">
+      <section className="main-container">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 place-content-center md:place-items-center">
           <div className="flex flex-col gap-5">
             <Link href="/">
               <img
                 src="main_logo.png"
                 alt="main_logo"
-                className="w-60 bg-white p-2 rounded-md h-auto cursor-pointer"
+                className="w-40 bg-white p-2 rounded-md h-auto cursor-pointer"
               />
             </Link>
-            <p>Book your trip in minute, get full Control for much longer.</p>
+            <p>
+              Limitedcart LCC 16833 Grand Circle, Omaha, NE 68116 Mob: +1 (248)
+              766-8292
+            </p>
+            <div className="flex gap-2 items-center">
+              {socialMediaArr?.map((curElm, i) => (
+                <p
+                  key={i}
+                  className="rounded-full border border-tertiary padding-5 cursor-pointer"
+                >
+                  {curElm?.icon}
+                </p>
+              ))}
+            </div>
           </div>
 
           <div className="flex gap-4 flex-col">
