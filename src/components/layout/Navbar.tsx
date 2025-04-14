@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { HiOutlineInformationCircle, HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoCartOutline } from "react-icons/io5";
 import { ResponsiveNav } from "..";
 
@@ -31,7 +31,10 @@ export default function Navbar() {
       <ResponsiveNav openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
       <section className="bg-tertiary">
         <div className="main-container py-2">
-          <h2 className="text-white">Need Help</h2>
+          <div className="flex items-center justify-end gap-2">
+            <HiOutlineInformationCircle className="text-white" />
+            <small className="text-white">Need Help</small>
+          </div>
         </div>
       </section>
       <aside className="bg-secondary">
