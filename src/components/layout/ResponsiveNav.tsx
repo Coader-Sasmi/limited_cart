@@ -5,8 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction } from "react";
 import { RxCross2 } from "react-icons/rx";
+import { CustomDrawer } from "../core";
 import { NavArr } from "./Navbar";
-import { CustomDrawer } from "./core";
 
 type CaseFixedProps = {
   openDrawer: boolean;

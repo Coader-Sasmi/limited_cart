@@ -8,7 +8,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoCartOutline } from "react-icons/io5";
-import { ResponsiveNav } from ".";
+import { ResponsiveNav } from "..";
 
 export const NavArr = [
   { title: "Home", path: "/" },

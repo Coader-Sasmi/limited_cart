@@ -1,3 +1,3 @@
-export { default as Footer } from "./Footer";
-export { default as Navbar } from "./Navbar";
-export { default as ResponsiveNav } from "./ResponsiveNav";
+export * from "./core";
+export * from "./forms";
+export * from "./layout";
