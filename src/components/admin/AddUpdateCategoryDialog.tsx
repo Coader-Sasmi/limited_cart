@@ -8,27 +8,23 @@ import { Dispatch, SetStateAction } from "react";
 import * as Yup from "yup";
 import { CustomLoadingButton, InputField } from "../core";
 import useMutation from "../hooks/useMutation";
-import {
-  departmentMutation,
-  departmentValueType,
-  formikProps,
-} from "../schemas";
+import { categoryMutation, departmentValueType, formikProps } from "../schemas";
 import errorHelper from "../utils/error";
 
 const AddUpdateCategoryDialog = ({
-  curDepartment,
+  curCategory,
   mutate,
-  setDepartMentModel,
+  setCategoryModel,
 }: {
-  setDepartMentModel: Dispatch<SetStateAction<boolean>>;
-  curDepartment?: any;
+  setCategoryModel: Dispatch<SetStateAction<boolean>>;
+  curCategory?: any;
   mutate?: () => void;
 }) => {
   const {
-    departmentSchema,
-    departmentSchemaInitialValues,
-    departmentSchemaValidation,
-  } = departmentMutation(curDepartment);
+    categorySchema,
+    categorySchemaInitialValues,
+    categorySchemaValidation,
+  } = categoryMutation(curCategory);
   const { mutation, isLoading } = useMutation();
 
   const handleDepartmentOperation = async (
@@ -37,8 +33,8 @@ const AddUpdateCategoryDialog = ({
   ) => {
     try {
       let res: any;
-      if (curDepartment?.CategoryID) {
-        res = await mutation(`update-category/${curDepartment?.CategoryID}`, {
+      if (curCategory?.CategoryID) {
+        res = await mutation(`update-category/${curCategory?.CategoryID}`, {
           method: "PUT",
           isAlert: true,
           body: {
@@ -56,7 +52,7 @@ const AddUpdateCategoryDialog = ({
       }
       // console.log(res?.status === 201);
       if (res?.status === 201) {
-        setDepartMentModel(false);
+        setCategoryModel(false);
         mutate && mutate();
         props.resetForm();
       }
@@ -68,17 +64,17 @@ const AddUpdateCategoryDialog = ({
   return (
     <section className="p-5 w-full bg-white flex flex-col gap-5">
       <h1 className="graph-title w-full text-center">
-        {curDepartment?.title ? "Update" : "Create"} Department
+        {curCategory?.CategoryID ? "Update" : "Create"} Category
       </h1>
       <Formik
-        initialValues={departmentSchemaInitialValues}
-        validationSchema={Yup.object(departmentSchemaValidation)}
+        initialValues={categorySchemaInitialValues}
+        validationSchema={Yup.object(categorySchemaValidation)}
         onSubmit={handleDepartmentOperation}
-        enableReinitialize={curDepartment?.title ? true : false}
+        enableReinitialize={curCategory?.title ? true : false}
       >
         {(formik) => (
           <Form className="w-full grid grid-cols-12 gap-2 md:gap-4">
-            {departmentSchema.map((inputItem) => (
+            {categorySchema.map((inputItem) => (
               <Field name={inputItem.name} key={inputItem.key}>
                 {(props: FieldProps<string>) => (
                   <div
@@ -115,7 +111,7 @@ const AddUpdateCategoryDialog = ({
             <div className="flex items-center col-span-12 justify-center flex-col gap-2 pt-2">
               <CustomLoadingButton
                 title={
-                  curDepartment?.CategoryID ? "Update Category" : "Add Category"
+                  curCategory?.CategoryID ? "Update Category" : "Add Category"
                 }
                 loading={isLoading}
                 type="submit"

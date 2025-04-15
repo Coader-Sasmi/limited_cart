@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as Yup from "yup";
 
-const departmentMutation = (curDepartment?: any) => {
-  const departmentSchema = [
+const categoryMutation = (curCategory?: any) => {
+  const categorySchema = [
     {
       key: "1",
       label: "Category Name",
@@ -12,9 +12,7 @@ const departmentMutation = (curDepartment?: any) => {
         .required("Department CategoryName Is Required")
         .trim(),
       required: true,
-      initialValue: curDepartment?.CategoryName
-        ? curDepartment?.CategoryName
-        : "",
+      initialValue: curCategory?.CategoryName ? curCategory?.CategoryName : "",
       className: "col-span-12",
     },
     {
@@ -26,13 +24,13 @@ const departmentMutation = (curDepartment?: any) => {
         .required("Department CategoryDescription Is Required")
         .trim(),
       required: true,
-      initialValue: curDepartment?.CategoryDescription
-        ? curDepartment?.CategoryDescription
+      initialValue: curCategory?.CategoryDescription
+        ? curCategory?.CategoryDescription
         : "",
       className: "col-span-12",
     },
   ];
-  const departmentSchemaInitialValues = departmentSchema.reduce(
+  const categorySchemaInitialValues = categorySchema.reduce(
     (accumulator, currentValue) => {
       accumulator[currentValue?.name] = currentValue.initialValue;
       return accumulator;
@@ -40,7 +38,7 @@ const departmentMutation = (curDepartment?: any) => {
     {} as { [key: string]: string }
   );
 
-  const departmentSchemaValidation = departmentSchema.reduce(
+  const categorySchemaValidation = categorySchema.reduce(
     (accumulator, currentValue) => {
       accumulator[currentValue.name] = currentValue.validationSchema;
       return accumulator;
@@ -49,9 +47,9 @@ const departmentMutation = (curDepartment?: any) => {
   );
 
   return {
-    departmentSchema,
-    departmentSchemaInitialValues,
-    departmentSchemaValidation,
+    categorySchema,
+    categorySchemaInitialValues,
+    categorySchemaValidation,
   };
 };
 
@@ -61,5 +59,5 @@ type departmentValueType =
       [key: string]: string;
     };
 
-export { departmentMutation };
+export { categoryMutation };
 export type { departmentValueType };

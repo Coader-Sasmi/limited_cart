@@ -17,12 +17,11 @@ export default function AllDepartment() {
   const [searchAttribute, setSearchAttribute] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
   const [limitPerPage, setLimitPerPage] = useState(20);
-  const [openDepartmentModel, setDepartMentModel] = useState(false);
+  const [openCategoryModel, setCategoryModel] = useState(false);
 
   const { data, isValidating, mutate } = useSwr<{
     data: any[];
   }>(`category`);
-  console.log(data);
 
   const handleResetAll = () => {
     setSortingValue("");
@@ -44,11 +43,11 @@ export default function AllDepartment() {
             borderRadius: 18,
           },
         }}
-        open={openDepartmentModel}
-        onClose={() => setDepartMentModel(false)}
+        open={openCategoryModel}
+        onClose={() => setCategoryModel(false)}
       >
         <AddUpdateCategoryDialog
-          setDepartMentModel={setDepartMentModel}
+          setCategoryModel={setCategoryModel}
           mutate={mutate}
         />
       </CustomDialog>
@@ -103,7 +102,7 @@ export default function AllDepartment() {
             /> */}
           <Tooltip title="Add Category">
             <div className="flex justify-center items-center text-xl common-transition text-primary w-10 h-10 rounded-md border bg-primary/5">
-              <BiAddToQueue onClick={() => setDepartMentModel(true)} />
+              <BiAddToQueue onClick={() => setCategoryModel(true)} />
             </div>
           </Tooltip>
         </div>
@@ -112,7 +111,7 @@ export default function AllDepartment() {
       {isValidating ? (
         <div className="w-full grid md:grid-cols-2 lg:grid-cols-4 admin-gap">
           {[...Array(18)].map((item, i) => (
-            <DepartmentSkeleton key={i} />
+            <CategorySkeleton key={i} />
           ))}
         </div>
       ) : (
@@ -120,7 +119,7 @@ export default function AllDepartment() {
           {data?.data && data?.data?.length > 0 ? (
             <div className="w-full grid md:grid-cols-2 lg:grid-cols-4 admin-gap">
               {data?.data?.map((data: any, i: number) => (
-                <CategoryCard curDepartment={data} key={i} mutate={mutate} />
+                <CategoryCard curCategory={data} key={i} mutate={mutate} />
               ))}
             </div>
           ) : (
@@ -135,7 +134,7 @@ export default function AllDepartment() {
   );
 }
 
-const DepartmentSkeleton = () => {
+const CategorySkeleton = () => {
   return (
     <div className="w-full admin-card p-3 min-h-[7rem]">
       <div className="w-full flex justify-between flex-col h-full">

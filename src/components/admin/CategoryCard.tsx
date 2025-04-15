@@ -10,16 +10,16 @@ import { AiFillEdit } from "react-icons/ai";
 import { AddUpdateCategoryDialog } from ".";
 
 export default function CategoryCard({
-  curDepartment,
+  curCategory,
   mutate,
 }: {
-  curDepartment: any;
+  curCategory: any;
   mutate?: () => void;
 }) {
-  const [openDepartmentModel, setDepartMentModel] = useState(false);
+  const [openCategoryModel, setCategoryModel] = useState(false);
   const [removeLoading, setRemoveLoading] = useState(false);
   // const { push } = useRouter();
-  // console.log(curDepartment);
+  // console.log(curCategory);
 
   return (
     <div className="admin-bg relative overflow-hidden p-5 flex flex-col gap-5 admin-card">
@@ -40,26 +40,26 @@ export default function CategoryCard({
             borderRadius: 18,
           },
         }}
-        open={openDepartmentModel}
-        onClose={() => setDepartMentModel(false)}
+        open={openCategoryModel}
+        onClose={() => setCategoryModel(false)}
       >
         <AddUpdateCategoryDialog
-          setDepartMentModel={setDepartMentModel}
-          curDepartment={curDepartment}
+          setCategoryModel={setCategoryModel}
+          curCategory={curCategory}
           mutate={mutate}
         />
       </CustomDialog>
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col gap-1">
           <h1 className="text-primary-text font-medium">
-            {curDepartment?.CategoryName}
+            {curCategory?.CategoryName}
           </h1>
           <h1 className="text-primary-text font-medium">
-            {curDepartment?.CategoryID}
+            {curCategory?.CategoryID}
           </h1>
           <div className="text-xs opacity-70">
             Created At :{" "}
-            {dayjs(curDepartment?.createdAt?.["$date"]).format(
+            {dayjs(curCategory?.createdAt?.["$date"]).format(
               "DD MMM YYYY, hh:mm A"
             )}
           </div>
@@ -68,14 +68,14 @@ export default function CategoryCard({
         <div className="flex items-center justify-end gap-2 pt-3">
           {/* <div
             onClick={() =>
-              push(`${asPath}/designation/${curDepartment?._id?.["$oid"]}`)
+              push(`${asPath}/designation/${curCategory?._id?.["$oid"]}`)
             }
             className="bg-twitter cursor-pointer z-20 text-white h-8 w-8 flex items-center justify-center rounded-full"
           >
             <AiOutlineInfo className="text-xl" />
           </div> */}
           <div
-            onClick={() => setDepartMentModel(true)}
+            onClick={() => setCategoryModel(true)}
             className="bg-primary cursor-pointer z-20 text-white h-8 w-8 flex items-center justify-center rounded-full"
           >
             <AiFillEdit className="text-xl" />
