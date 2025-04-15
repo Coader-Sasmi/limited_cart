@@ -37,12 +37,12 @@ export default function AdminLayout({
           </Link>
 
           {/* Back to Website Button */}
-          <Link
+          {/* <Link
             href="/"
             className="px-3 py-1 border rounded-md text-sm hover:bg-gray-100"
           >
             Back to Website
-          </Link>
+          </Link> */}
         </div>
       </header>
 

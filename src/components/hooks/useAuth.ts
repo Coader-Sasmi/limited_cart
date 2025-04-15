@@ -60,28 +60,26 @@ const useAuth = create<AuthState>((set) => ({
     if (typeof accessToken !== "string") {
       return set({ user: {}, isUserLoading: false });
     }
-    try {
-      const res = await fetch(`${serverUrl}/auth/self`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
-      // console.log(res?.status, "response");
-
-      if (res?.status !== 200) {
-        window?.localStorage?.removeItem("ACCESS_TOKEN");
-        set({ user: {}, isUserLoading: false });
-      } else {
-        const data = await res.json();
-        // console.log(data, "response");
-        const userData = data?.data;
-        set({ user: { ...userData }, isUserLoading: false });
-      }
-    } catch (error) {
-      set({ user: {} });
-    }
+    // try {
+    //   const res = await fetch(`${serverUrl}/auth/self`, {
+    //     method: "GET",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       Authorization: `Bearer ${accessToken}`,
+    //     },
+    //   });
+    //   if (res?.status !== 200) {
+    //     window?.localStorage?.removeItem("ACCESS_TOKEN");
+    //     set({ user: {}, isUserLoading: false });
+    //   } else {
+    //     const data = await res.json();
+    //     // console.log(data, "response");
+    //     const userData = data?.data;
+    //     set({ user: { ...userData }, isUserLoading: false });
+    //   }
+    // } catch (error) {
+    //   set({ user: {} });
+    // }
   },
 }));
 

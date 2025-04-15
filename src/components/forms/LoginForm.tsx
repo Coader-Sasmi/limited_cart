@@ -1,60 +1,62 @@
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-// import {
-//   loginSchema,
-//   loginSchemaInitialValue,
-//   loginSchemaValidation,
-// } from "@/schemas";
+
 import { IconButton, InputAdornment } from "@mui/material";
 import { Field, FieldProps, Form, Formik } from "formik";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 import * as Yup from "yup";
 import { CustomLoadingButton, InputField } from "../core";
+import useAuth from "../hooks/useAuth";
+import useMutation from "../hooks/useMutation";
 import {
+  formikProps,
   loginSchema,
   loginSchemaInitialValue,
   loginSchemaValidation,
+  loginValueType,
 } from "../schemas";
+import { saveToLocalStorage } from "../utils";
+import errorHelper from "../utils/error";
 
 export default function LoginForm() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  // const { setUser, getUser } = useAuth();
-  // const { isLoading, mutation } = useMutation();
-  // const { push } = useRouter();
+  const { setUser, getUser } = useAuth();
+  const { isLoading, mutation } = useMutation();
+  const { push } = useRouter();
 
-  // const handleSubmit = async (values: loginValueType, props: formikProps) => {
-  //   try {
-  //     let res: loginMutationType = await mutation(`auth/signin`, {
-  //       method: "POST",
-  //       isAlert: true,
-  //       body: {
-  //         ...values,
-  //         timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-  //       },
-  //     });
-  //     let resData = res?.results?.data;
-  //     if (resData) {
-  //       setUser({ ...resData?.user });
-  //       saveToLocalStorage("ACCESS_TOKEN", resData?.token);
-  //       getUser();
-  //       props.resetForm();
-  //       if (resData?.user?.department?.id)
-  //         push(`/panel/${resData?.user?.department?.id}`);
-  //     }
-  //   } catch (error: unknown) {
-  //     errorHelper(error);
-  //   }
-  // };
+  const handleSubmit = async (values: loginValueType, props: formikProps) => {
+    try {
+      let res = await mutation(`login`, {
+        method: "POST",
+        isAlert: true,
+        body: {
+          ...values,
+          timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        },
+      });
+      // console.log(res);
+      let resData = res?.results;
+      if (resData) {
+        setUser({ ...resData?.user });
+        saveToLocalStorage("ACCESS_TOKEN", resData?.access_token);
+        getUser();
+        props.resetForm();
+        if (resData?.user?.id) push(`/product`);
+      }
+    } catch (error: unknown) {
+      errorHelper(error);
+    }
+  };
 
   return (
     <Formik
       initialValues={loginSchemaInitialValue}
       validationSchema={Yup.object(loginSchemaValidation)}
-      onSubmit={() => {
-        console.log("submit");
-      }}
+      onSubmit={handleSubmit}
     >
       {(formik) => (
         <Form className="w-full space-y-4 justify-center items-center flex flex-col">
