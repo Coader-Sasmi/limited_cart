@@ -72,12 +72,14 @@ export default function Navbar() {
               </div>
             </div>
             <div className="bg-white p-2 rounded-md flex items-center gap-2">
-              <img src="./Profile.png" alt="profile" className="w-5 h-auto" />
+              <Link href="/login">
+                <img src="./Profile.png" alt="profile" className="w-5 h-auto" />
+              </Link>
             </div>
           </div>
         </section>
       </aside>
-      <section className="main-container flex gap-8 py-3 items-center justify-between w-full">
+      <section className="main-container bg-white flex gap-8 py-3 items-center justify-between w-full">
         <div className="flex gap-8">
           <div className="flex items-center gap-2 py-1 px-4 border rounded-md">
             <AiOutlineMenu />
