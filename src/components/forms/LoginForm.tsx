@@ -45,7 +45,7 @@ export default function LoginForm() {
         saveToLocalStorage("ACCESS_TOKEN", resData?.access_token);
         getUser();
         props.resetForm();
-        if (resData?.user?.id) push(`/product`);
+        if (resData?.user?.id) push(`/admin`);
       }
     } catch (error: unknown) {
       errorHelper(error);

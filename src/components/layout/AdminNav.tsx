@@ -6,10 +6,11 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { CgProfile } from "react-icons/cg";
+import { BiObjectsHorizontalRight } from "react-icons/bi";
 import { HiOutlineLogout } from "react-icons/hi";
-import { LuLayoutDashboard } from "react-icons/lu";
+import { LuGitCompareArrows, LuLayoutDashboard } from "react-icons/lu";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { TbArrowBigRightLine } from "react-icons/tb";
 import useAuth from "../hooks/useAuth";
 
 interface AdminNavProps {
@@ -30,23 +31,29 @@ export function AdminNav({ setIsSidebarOpen }: AdminNavProps) {
       active: pathname === "/admin",
     },
     {
+      href: "/category",
+      label: "Category",
+      icon: <BiObjectsHorizontalRight />,
+      active: pathname === "/category",
+    },
+    {
+      href: "/subcategory",
+      label: "Sub Category",
+      icon: <TbArrowBigRightLine />,
+      active: pathname === "/subcategory",
+    },
+    {
+      href: "/supplier",
+      label: "Supplier",
+      icon: <LuGitCompareArrows />,
+      active: pathname === "/supplier",
+    },
+    {
       href: "/product",
       label: "Products",
       icon: <MdOutlineShoppingCart />,
       active: pathname === "/product",
     },
-    {
-      href: "/my-profile",
-      label: "My profile",
-      icon: <CgProfile />,
-      active: pathname === "/my-profile",
-    },
-    // {
-    //   href: "",
-    //   label: "Logout",
-    //   icon: <HiOutlineLogout />,
-    //   active: pathname === "",
-    // },
   ];
 
   return (
