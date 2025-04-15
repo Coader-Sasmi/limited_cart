@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-// import { configs } from "@/config";
-// import { getFromLocalStorage } from "@/utils";
+
+"use client";
 
 import useSWR, { SWRConfiguration } from "swr";
 import { getFromLocalStorage } from "../utils";

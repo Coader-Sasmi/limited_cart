@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
-// import useAuth from "@/hooks/useAuth";
-// import { Button } from "@/components/ui/button";
-
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { BiObjectsHorizontalRight } from "react-icons/bi";
@@ -60,7 +57,7 @@ export function AdminNav({ setIsSidebarOpen }: AdminNavProps) {
       <div className="flex flex-col gap-5">
         <Link href="/admin" className="font-bold text-lg lg:hidden">
           <img
-            src="main_logo.png"
+            src="/main_logo.png"
             alt="main_logo"
             className=" w-32 h-auto cursor-pointer rounded-sm "
           />

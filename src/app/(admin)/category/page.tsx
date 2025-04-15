@@ -12,7 +12,7 @@ import { BiAddToQueue } from "react-icons/bi";
 import { IoMdRefresh } from "react-icons/io";
 // import { Category } from "@mui/icons-material";
 
-export default function AllDepartment() {
+export default function AllCategory() {
   const [sortingValue, setSortingValue] = useState("");
   const [searchAttribute, setSearchAttribute] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
@@ -124,8 +124,8 @@ export default function AllDepartment() {
             </div>
           ) : (
             <>
-              <p>No Department Found</p>
-              {/* <NoDataFound title="No Department Found" /> */}
+              <p>No Category Found</p>
+              {/* <NoDataFound title="No Category Found" /> */}
             </>
           )}
         </>

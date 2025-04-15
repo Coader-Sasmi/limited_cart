@@ -42,7 +42,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between w-full ">
             <Link href="/">
               <img
-                src="main_logo.png"
+                src="/main_logo.png"
                 alt="main_logo"
                 className="lg:h-[2.8rem] h-10 w-auto cursor-pointer"
               />

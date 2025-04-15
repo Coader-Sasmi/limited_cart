@@ -30,7 +30,7 @@ export default function AdminLayout({
           {/* Title */}
           <Link href="/admin" className="font-bold text-lg">
             <img
-              src="main_logo.png"
+              src="/main_logo.png"
               alt="main_logo"
               className=" w-32 h-auto cursor-pointer rounded-sm hidden lg:block"
             />

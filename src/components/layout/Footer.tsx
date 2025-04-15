@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="flex flex-col gap-5">
             <Link href="/">
               <img
-                src="main_logo.png"
+                src="/main_logo.png"
                 alt="main_logo"
                 className="w-40 bg-white p-2 rounded-md h-auto cursor-pointer"
               />
