@@ -37,4 +37,16 @@
   .delay-animation {
     @apply !transition-all !ease-in-out !duration-500;
   }
+  .admin-card {
+    @apply shadow-[0_0.25rem_1.125rem_rgba(75,70,92,0.1)] bg-white rounded-[10px] p-3 md:p-5;
+  }
+  .admin-bg {
+    @apply !bg-white lg:p-5 md:p-4 !p-3 min-[1700px]:p-7 shadow-[0_0.25rem_1.125rem_rgba(75,70,92,0.1)];
+  }
+  .admin-g-padding {
+    @apply lg:p-5 md:p-4 !p-3 min-[1700px]:p-7;
+  }
+  .admin-gap {
+    @apply gap-4 md:gap-5 lg:gap-6;
+  }
 }
