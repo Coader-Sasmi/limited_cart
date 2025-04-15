@@ -5,8 +5,10 @@
 import { CustomDialog } from "@/components/core";
 import { CircularProgress } from "@mui/material";
 import dayjs from "dayjs";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { AiFillEdit } from "react-icons/ai";
+import { MdOutlinePlaylistAdd } from "react-icons/md";
 import { AddUpdateCategoryDialog } from ".";
 
 export default function CategoryCard({
@@ -20,6 +22,7 @@ export default function CategoryCard({
   const [removeLoading, setRemoveLoading] = useState(false);
   // const { push } = useRouter();
   // console.log(curCategory);
+  const router = useRouter();
 
   return (
     <div className="admin-bg relative overflow-hidden p-5 flex flex-col gap-5 admin-card">
@@ -66,14 +69,12 @@ export default function CategoryCard({
           <p></p>
         </div>
         <div className="flex items-center justify-end gap-2 pt-3">
-          {/* <div
-            onClick={() =>
-              push(`${asPath}/designation/${curCategory?._id?.["$oid"]}`)
-            }
-            className="bg-twitter cursor-pointer z-20 text-white h-8 w-8 flex items-center justify-center rounded-full"
+          <div
+            onClick={() => router.push(`/category/${curCategory?.CategoryID}`)}
+            className="bg-tertiary cursor-pointer z-20 text-white h-8 w-8 flex items-center justify-center rounded-full"
           >
-            <AiOutlineInfo className="text-xl" />
-          </div> */}
+            <MdOutlinePlaylistAdd className="text-xl" />
+          </div>
           <div
             onClick={() => setCategoryModel(true)}
             className="bg-primary cursor-pointer z-20 text-white h-8 w-8 flex items-center justify-center rounded-full"

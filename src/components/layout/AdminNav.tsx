@@ -10,7 +10,6 @@ import { BiObjectsHorizontalRight } from "react-icons/bi";
 import { HiOutlineLogout } from "react-icons/hi";
 import { LuGitCompareArrows, LuLayoutDashboard } from "react-icons/lu";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import { TbArrowBigRightLine } from "react-icons/tb";
 import useAuth from "../hooks/useAuth";
 
 interface AdminNavProps {
@@ -36,12 +35,12 @@ export function AdminNav({ setIsSidebarOpen }: AdminNavProps) {
       icon: <BiObjectsHorizontalRight />,
       active: pathname === "/category",
     },
-    {
-      href: "/subcategory",
-      label: "Sub Category",
-      icon: <TbArrowBigRightLine />,
-      active: pathname === "/subcategory",
-    },
+    // {
+    //   href: "/subcategory",
+    //   label: "Sub Category",
+    //   icon: <TbArrowBigRightLine />,
+    //   active: pathname === "/subcategory",
+    // },
     {
       href: "/supplier",
       label: "Supplier",
