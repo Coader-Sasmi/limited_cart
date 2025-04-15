@@ -10,6 +10,7 @@ import { CgProfile } from "react-icons/cg";
 import { HiOutlineLogout } from "react-icons/hi";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import useAuth from "../hooks/useAuth";
 
 interface AdminNavProps {
   setIsSidebarOpen?: (open: boolean) => void;
@@ -18,7 +19,7 @@ interface AdminNavProps {
 export function AdminNav({ setIsSidebarOpen }: AdminNavProps) {
   const pathname = usePathname();
   const router = useRouter();
-  //   const { user, logout } = useAuth();
+  const { user, logout } = useAuth();
   //   console.log(user);
 
   const routes = [
@@ -86,7 +87,7 @@ export function AdminNav({ setIsSidebarOpen }: AdminNavProps) {
             </div>
             <button
               onClick={async () => {
-                // await logout();
+                await logout();
                 router.push("/");
                 // alert("hello world");
               }}
