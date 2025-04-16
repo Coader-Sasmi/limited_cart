@@ -1,9 +1,10 @@
-import { Hero } from "@/components";
+import { Hero, LogoSec } from "@/components";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <LogoSec />
     </>
   );
 }
