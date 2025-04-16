@@ -5,7 +5,7 @@ export default function DealsSec() {
         <div className="relative lg:w-1/3 w-full flex flex-col gap-5 text-textColor">
           <h4 className="font-semibold ">Hurry, Before It’s Too Late!</h4>
           <h1 className="text-2xl font-semibold">Deals Of The Month</h1>
-          <p>
+          <p className="text-textColor">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque
             duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices
             sollicitudin
