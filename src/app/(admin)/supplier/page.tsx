@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductList } from "@/components";
+import { SupplierList } from "@/components";
 import { IconButton } from "@mui/material";
 import { useState } from "react";
 import { IoMdRefresh } from "react-icons/io";
@@ -150,7 +150,7 @@ export default function SupplierPage() {
           {supplierArr?.length ? (
             <div className="w-full flex flex-col shadow-shadow-primary rounded-b-md ">
               {supplierArr?.map((_, i) => (
-                <ProductList key={i} i={i} data={_} />
+                <SupplierList key={i} i={i} data={_} />
               ))}
             </div>
           ) : (

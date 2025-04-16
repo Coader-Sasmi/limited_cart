@@ -19,20 +19,24 @@ export default function Page() {
       initialValue: "",
       options: [
         {
-          label: "Electronics",
-          value: "Electronics",
+          label: "Furniture",
+          value: "Furniture",
         },
         {
-          label: "Computers",
-          value: "Computers",
+          label: "Bags",
+          value: "Bags",
+        },
+        {
+          label: "Jacket",
+          value: "Jacket",
+        },
+        {
+          label: "Footwear",
+          value: "Footwear",
         },
         {
           label: "Accessories",
           value: "Accessories",
-        },
-        {
-          label: "Wearables",
-          value: "Wearables",
         },
       ],
     },
@@ -46,62 +50,54 @@ export default function Page() {
 
   const productArr = [
     {
-      id: 1,
-      name: "Wireless Bluetooth Headphones",
-      price: 49.99,
-      category: "Electronics",
-      image: "https://via.placeholder.com/150",
-      description: "High-quality wireless headphones with noise cancellation.",
+      name: "Modern Sofa",
+      price: "$799",
+      category: "Furniture",
+      image: "sofa.jpg",
+      description:
+        "A comfortable and stylish modern sofa perfect for any living room.",
     },
     {
-      id: 2,
-      name: "Smartphone 5G",
-      price: 699.99,
-      category: "Electronics",
-      image: "https://via.placeholder.com/150",
-      description: "Latest 5G smartphone with advanced camera features.",
+      name: "Leather Messenger Bag",
+      price: "$199",
+      category: "Bags",
+      image: "leather_messenger_bag.jpg",
+      description:
+        "A handcrafted leather bag ideal for work or casual outings.",
     },
     {
-      id: 3,
-      name: "Gaming Laptop",
-      price: 1199.99,
-      category: "Computers",
-      image: "https://via.placeholder.com/150",
-      description: "High-performance gaming laptop with RTX graphics.",
+      name: "Winter Down Jacket",
+      price: "$299",
+      category: "Jacket",
+      image: "winter_jacket.jpg",
+      description:
+        "A warm and durable jacket designed to withstand cold winters.",
     },
     {
-      id: 4,
-      name: "Mechanical Keyboard",
-      price: 79.99,
+      name: "Running Sneakers",
+      price: "$129",
+      category: "Footwear",
+      image: "running_sneakers.jpg",
+      description:
+        "Lightweight and breathable sneakers for everyday running and training.",
+    },
+    {
+      name: "Trendy Sunglasses",
+      price: "$89",
       category: "Accessories",
-      image: "https://via.placeholder.com/150",
-      description: "RGB backlit mechanical keyboard with fast switches.",
+      image: "sunglasses.jpg",
+      description: "Modern and chic sunglasses to complete any outfit.",
     },
     {
-      id: 5,
-      name: "Wireless Mouse",
-      price: 29.99,
-      category: "Accessories",
-      image: "https://via.placeholder.com/150",
-      description: "Ergonomic wireless mouse with long battery life.",
-    },
-    {
-      id: 6,
-      name: "4K LED Monitor",
-      price: 299.99,
-      category: "Electronics",
-      image: "https://via.placeholder.com/150",
-      description: "27-inch 4K UHD LED monitor for crisp visuals.",
-    },
-    {
-      id: 7,
-      name: "Smart Watch",
-      price: 199.99,
-      category: "Wearables",
-      image: "https://via.placeholder.com/150",
-      description: "Feature-packed smartwatch with health tracking.",
+      name: "Office Desk Chair",
+      price: "$399",
+      category: "Furniture",
+      image: "office_chair.jpg",
+      description:
+        "An ergonomic desk chair providing comfort and support during long work hours.",
     },
   ];
+
   return (
     <section className="admin-container flex flex-col admin-gap">
       <div className="admin-bg rounded-lg w-full grid grid-cols-12 items-center gap-4">

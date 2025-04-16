@@ -5,3 +5,4 @@ export { default as CustomSort } from "./CustomSort";
 export { default as Pagination } from "./Pagination";
 export { default as ProductList } from "./ProductList";
 export { default as SubCategoryCard } from "./SubCategoryCard";
+export { default as SupplierList } from "./SupplierList";

@@ -15,21 +15,15 @@ export default function ProductList({ data, i }: LeaveListProps) {
         }`}
       >
         <div className={`col-span-1 text-center`}>{i + 1}</div>
-        <div className="col-span-2 text-center">{data?.SupplierName}</div>
+        <div className="col-span-2 ">{data?.name}</div>
 
-        <p className="text-sm  text-center col-span-2">
-          {data?.SupplierDescription}{" "}
-        </p>
+        <p className="text-sm  text-center col-span-1">{data?.price} </p>
 
         <div className={`col-span-2 flex justify-center items-center`}>
-          {data?.SupplierEmailId}
+          {data?.category}
         </div>
-        <div className="col-span-2 line-clamp-1 text-center">
-          {data?.SupplierPhone}
-        </div>
-        <div className={`col-span-3 text-xs text-center`}>
-          {data?.SupplierAddress}
-        </div>
+        <div className="col-span-3 line-clamp-1 text-center">{data?.image}</div>
+        <div className={`col-span-3 text-xs`}>{data?.description}</div>
       </div>
     </>
   );
