@@ -102,7 +102,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="flex gap-8">
+        <div className="hidden md:flex gap-8">
           <div className="flex">
             <p className="text-gray-500">
               Contact: <span className="text-black">{`(808) 555-0222`}</span>{" "}
