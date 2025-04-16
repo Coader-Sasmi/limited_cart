@@ -52,15 +52,20 @@ export default function AllCategory() {
         />
       </CustomDialog>
       {/* <BreadCrumb pathArr={[]} heading="Departments" /> */}
+
       <div className="admin-bg rounded-lg w-full grid grid-cols-12 gap-4">
         {/* <div className="lg:col-span-4 md:col-span-5 col-span-12">
-            <CustomSearch
+      
+          <CustomSearch
               placeholder="Search Department..."
               setSearchAttribute={setSearchAttribute}
               searchAttribute={searchAttribute}
             />
-          </div> */}
+        </div> */}
         <div className="lg:col-span-4 md:col-span-3 col-span-12 flex justify-end md:justify-start items-center gap-2">
+          <h1 className="text-2xl font-semibold tracking-tight uppercase ">
+            category
+          </h1>
           <IconButton
             className={`!text-instagram !rounded-md border bg-primary/5`}
             onClick={handleRefresh}
