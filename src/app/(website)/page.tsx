@@ -1,4 +1,10 @@
-import { DealsSec, Hero, LogoSec, NewArrivalSec } from "@/components";
+import {
+  DealsSec,
+  Hero,
+  LogoSec,
+  NewArrivalSec,
+  SupportSec,
+} from "@/components";
 
 export default function Home() {
   return (
@@ -7,6 +13,7 @@ export default function Home() {
       <LogoSec />
       <DealsSec />
       <NewArrivalSec />
+      <SupportSec />
     </>
   );
 }
