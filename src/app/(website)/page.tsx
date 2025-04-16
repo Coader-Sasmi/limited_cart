@@ -1,4 +1,5 @@
 import {
+  CustomerSay,
   DealsSec,
   Hero,
   LogoSec,
@@ -14,6 +15,7 @@ export default function Home() {
       <DealsSec />
       <NewArrivalSec />
       <SupportSec />
+      <CustomerSay />
     </>
   );
 }
