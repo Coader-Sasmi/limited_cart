@@ -34,7 +34,7 @@ const useSwr = <T>(url: string | null, options?: SWRConfiguration) => {
   };
 
   const { data, error, mutate, isValidating } = useSWR<T & responseType>(
-    url ? [`${serverUrl}/${url}`] : null,
+    url ? [`${serverUrl}/api/${url}`] : null,
     fetcher,
     {
       ...options,

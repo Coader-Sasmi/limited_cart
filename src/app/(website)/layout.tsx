@@ -20,7 +20,7 @@ export default function RootLayout({
   ogImage,
 }: Props) {
   return (
-    <html>
+    <>
       <Head>
         <meta property="og:url" content="" />
         <meta property="og:type" content="website" />
@@ -33,6 +33,6 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
-    </html>
+    </>
   );
 }
