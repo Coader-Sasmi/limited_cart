@@ -8,11 +8,20 @@ import { RxLinkedinLogo } from "react-icons/rx";
 import { SiYoutube } from "react-icons/si";
 
 const menuArr = [
-  { title: "About Us", path: "/about" },
-  { title: "Contact Us", path: "/contact" },
-  { title: "Privacy & Cookies", path: "/privacy" },
-  { title: "Term & Condition", path: "/term" },
-  { title: "Cancellation Policy", path: "/cancellation" },
+  { title: "Furniture", path: "/" },
+  { title: "Bags", path: "/" },
+  { title: "Jacket", path: "/" },
+  { title: "Footwear", path: "/" },
+  { title: "Accessories", path: "/" },
+];
+const supportArr = [
+  { title: "About Us", path: "/" },
+  { title: "Contact Us", path: "/" },
+  { title: "Privacy & Cookies", path: "/" },
+  { title: "Term & Condition", path: "/" },
+  { title: "Careers", path: "/" },
+  { title: "Content guideline & Reporting", path: "/" },
+  { title: "Legal", path: "/" },
 ];
 
 export default function Footer() {
@@ -35,8 +44,8 @@ export default function Footer() {
   ];
   return (
     <>
-      <section className="main-container">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 place-content-center md:place-items-center">
+      <section className="main-container py-5">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 ">
           <div className="flex flex-col gap-5">
             <Link href="/">
               <img
@@ -51,53 +60,66 @@ export default function Footer() {
             </p>
             <div className="flex gap-2 items-center">
               {socialMediaArr?.map((curElm, i) => (
-                <p
+                <div
                   key={i}
-                  className="rounded-full border border-tertiary padding-5 cursor-pointer"
+                  className="border border-gray-50 rounded-full p-2 hover:border-tertiary hover:text-tertiary cursor-pointer"
                 >
                   {curElm?.icon}
-                </p>
+                </div>
               ))}
             </div>
           </div>
 
           <div className="flex gap-4 flex-col">
-            <h1 className="font-semibold tracking-wide text-xl">Company</h1>
+            <h1 className="font-semibold tracking-wide text-xl uppercase">
+              category
+            </h1>
             <div className="flex flex-col gap-2">
               {menuArr?.map((curElm, i) => (
-                <p key={i} className=" hover:underline">
+                <p
+                  key={i}
+                  className=" hover:underline-primary hover:text-primary "
+                >
                   <Link href={curElm?.path}>{curElm?.title}</Link>
                 </p>
               ))}
             </div>
           </div>
-          <div className="flex gap-2 flex-col">
-            <p>Careers</p>
-            <p>Content guideline & Reporting</p>
-            <p>Legal</p>
+          <div className="flex gap-4 flex-col">
+            <h1 className="font-semibold tracking-wide text-xl uppercase">
+              support
+            </h1>
+            <div className="flex flex-col gap-2">
+              {supportArr?.map((curElm, i) => (
+                <p
+                  key={i}
+                  className=" hover:underline-primary hover:text-primary "
+                >
+                  <Link href={curElm?.path}>{curElm?.title}</Link>
+                </p>
+              ))}
+            </div>
           </div>
 
           <div className="flex gap-4 flex-col">
-            <h1 className="font-semibold tracking-wide text-xl">Contact</h1>
-            <p>
-              PriceTonight Booking Private Limited
-              <br /> VIIM-29, SailashreeVihar
-              <br /> Chandrashkerpur
-              <br /> Bhubaneswar – 751021
-              <br /> Mob: +91-72056 92170
-            </p>
-            {/* <div className="flex items-center gap-2">
-              <img src="./facebook.png" alt="image" className="w-6 h-auto" />
-              <img src="./instagram.png" alt="image" className="w-6 h-auto" />
-              <img src="./twitter.png" alt="image" className="w-6 h-auto" />
-              <img src="./youtube.png" alt="image" className="w-6 h-auto" />
-              <img src="./linkedin.png" alt="image" className="w-6 h-auto" />
-            </div> */}
+            <h1 className="font-semibold tracking-wide text-xl uppercase">
+              Newsletter
+            </h1>
+            <div className="flex gap-2 items-center">
+              {socialMediaArr?.map((curElm, i) => (
+                <div
+                  key={i}
+                  className="border border-gray-50 rounded-full p-2 hover:border-primary hover:text-primary cursor-pointer"
+                >
+                  {curElm?.icon}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
-      <div className="w-9 bg-primary h-[0.05rem]"></div>
-      <div className=" p-4 flex lg:flex-row flex-col justify-between items-center">
+      {/* <div className="w-9 bg-primary h-[0.05rem]"></div> */}
+      <div className=" p-4 flex lg:flex-row flex-col justify-between items-center bg-tertiary text-white">
         <p>
           All rights reserved &copy; {new Date().getFullYear()} limitedcart.com
         </p>
@@ -106,7 +128,7 @@ export default function Footer() {
           <Link
             href="https://www.adnibog.com/"
             target="_"
-            className="hover:text-secondary font-semibold hover:border-b"
+            className="hover:text-primary font-semibold hover:border-b"
           >
             Adnibog Systems
           </Link>
