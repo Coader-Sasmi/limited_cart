@@ -10,8 +10,9 @@ export default {
     extend: {
       colors: {
         primary: "#e1272e", //red
-        secondary: "#F0F2F3", //gray
+        secondary: "#F0F2F3", //light gray
         tertiary: "#020080", //blue
+        textColor: "#484848", //dark gray
       },
     },
   },
