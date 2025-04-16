@@ -5,7 +5,6 @@
 import { CustomDialog } from "@/components/core";
 import { CircularProgress, Tooltip } from "@mui/material";
 import { useState } from "react";
-import { MdAssignmentAdd } from "react-icons/md";
 import { TbEdit } from "react-icons/tb";
 import { AddUpdateSubCategory } from ".";
 
@@ -55,27 +54,25 @@ const DesignationCard = ({
           curSubCategory={curSubCategory}
         />
       </CustomDialog>
-      <Tooltip title="Assign Module">
+      {/* <Tooltip title="Assign Module">
         <div
-          // onClick={() => {
-          //   setOpenModule(true);
-          // }}
+        
           className="absolute right-0 top-0 p-2 border rounded-bl-lg cursor-pointer"
         >
           <MdAssignmentAdd className="text-secondary text-xl" />
         </div>
-      </Tooltip>
+      </Tooltip> */}
       <p className="text-primary-text font-medium text-lg">
         {curSubCategory?.title}
       </p>
       <div className="flex text-sm items-center gap-2">
-        Dept :{" "}
+        Category ID :{" "}
         <span className="px-2 py-1 text-[10px] leading-3 bg-secondary text-white rounded-xl">
           {curSubCategory?.departmentId?.title}
         </span>
       </div>
       <div className="flex text-sm items-center gap-2">
-        Designation Level :{" "}
+        Sub Category Name :{" "}
         <span className="font-medium text-secondary">
           {curSubCategory?.level}
         </span>

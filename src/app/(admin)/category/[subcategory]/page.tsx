@@ -28,6 +28,14 @@ export default function SubCategory() {
     data: any[];
   }>(`products/subcategory`);
 
+  const subCatArr = [
+    { name: "Sectional Sofa" },
+    { name: "Sleeper Sofa" },
+    { name: "Loveseat" },
+    { name: "Recliner Sofa" },
+    { name: "Chesterfield Sofa" },
+  ];
+
   const handleResetAll = () => {
     setSortingValue("");
     setSearchAttribute("");
@@ -126,8 +134,13 @@ export default function SubCategory() {
             </Tooltip>
           </div>
         </div>
+        <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 admin-gap">
+          {subCatArr?.map((data: any, i: number) => (
+            <SubCategoryCard key={i} curSubCategory={data} mutate={mutate} />
+          ))}
+        </div>
 
-        {isValidating ? (
+        {/* {isValidating ? (
           <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 admin-gap">
             {[...Array(18)].map((item, i) => (
               <SubCategorySkeleton key={i} />
@@ -137,7 +150,7 @@ export default function SubCategory() {
           <>
             {data?.data && data?.data?.length > 0 ? (
               <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 admin-gap">
-                {data?.data?.map((data: any, i: number) => (
+                {subCatArr?.map((data: any, i: number) => (
                   <SubCategoryCard
                     key={i}
                     curSubCategory={data}
@@ -149,10 +162,10 @@ export default function SubCategory() {
               <>
                 <p>No Sub Category Found</p>
                 {/* <NoDataFound title="No Sub Category Found" /> */}
-              </>
-            )}
-          </>
-        )}
+        {/* </> */}
+        {/* )} */}
+        {/* </> */}
+        {/* // )} */}
       </section>
     </>
   );
