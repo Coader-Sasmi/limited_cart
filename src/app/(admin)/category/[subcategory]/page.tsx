@@ -27,6 +27,7 @@ export default function SubCategory() {
   const { data, isValidating, mutate } = useSwr<{
     data: any[];
   }>(`products/subcategory`);
+  console.log(data);
 
   const subCatArr = [
     { name: "Sectional Sofa" },
@@ -171,25 +172,25 @@ export default function SubCategory() {
   );
 }
 
-const SubCategorySkeleton = () => {
-  return (
-    <div className="w-full admin-card p-3 md:p-5 min-h-[8rem]">
-      <div className="w-full flex justify-between flex-col h-full">
-        <div className="flex flex-col gap-2">
-          <div className="flex justify-between">
-            <div className="w-20 h-4 rounded-md skeleton"></div>
-            <div className="w-6 h-6 rounded-md skeleton"></div>
-          </div>
-          <div className="flex flex-col gap-2">
-            <div className="w-full h-3 rounded-md skeleton"></div>
-            <div className="w-4/5 h-3 rounded-md skeleton"></div>
-          </div>
-        </div>
-        <div className="w-full justify-end gap-4 flex pt-3">
-          <div className="w-10 h-10 rounded-full skeleton items-end"></div>
-          <div className="w-10 h-10 rounded-full skeleton items-end"></div>
-        </div>
-      </div>
-    </div>
-  );
-};
+// const SubCategorySkeleton = () => {
+//   return (
+//     <div className="w-full admin-card p-3 md:p-5 min-h-[8rem]">
+//       <div className="w-full flex justify-between flex-col h-full">
+//         <div className="flex flex-col gap-2">
+//           <div className="flex justify-between">
+//             <div className="w-20 h-4 rounded-md skeleton"></div>
+//             <div className="w-6 h-6 rounded-md skeleton"></div>
+//           </div>
+//           <div className="flex flex-col gap-2">
+//             <div className="w-full h-3 rounded-md skeleton"></div>
+//             <div className="w-4/5 h-3 rounded-md skeleton"></div>
+//           </div>
+//         </div>
+//         <div className="w-full justify-end gap-4 flex pt-3">
+//           <div className="w-10 h-10 rounded-full skeleton items-end"></div>
+//           <div className="w-10 h-10 rounded-full skeleton items-end"></div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
