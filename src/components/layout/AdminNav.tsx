@@ -27,10 +27,10 @@ export function AdminNav({ setIsSidebarOpen }: AdminNavProps) {
       active: pathname === "/admin",
     },
     {
-      href: "/category",
+      href: "/admin/category",
       label: "Category",
       icon: <BiObjectsHorizontalRight />,
-      active: pathname === "/category",
+      active: pathname === "/admin/category",
     },
     // {
     //   href: "/subcategory",
@@ -39,16 +39,16 @@ export function AdminNav({ setIsSidebarOpen }: AdminNavProps) {
     //   active: pathname === "/subcategory",
     // },
     {
-      href: "/supplier",
+      href: "/admin/supplier",
       label: "Supplier",
       icon: <LuGitCompareArrows />,
-      active: pathname === "/supplier",
+      active: pathname === "/admin/supplier",
     },
     {
-      href: "/product",
+      href: "/admin/product",
       label: "Products",
       icon: <MdOutlineShoppingCart />,
-      active: pathname === "/product",
+      active: pathname === "/admin/product",
     },
   ];
 

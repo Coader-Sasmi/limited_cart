@@ -71,7 +71,9 @@ export default function CategoryCard({
         <div className="flex items-center justify-end gap-2 pt-3">
           <div
             onClick={() =>
-              router.push(`/category/subcategory?${curCategory?.CategoryID}`)
+              router.push(
+                `/admin/category/subcategory?${curCategory?.CategoryID}`
+              )
             }
             className="bg-tertiary cursor-pointer z-20 text-white h-8 w-8 flex items-center justify-center rounded-full"
           >

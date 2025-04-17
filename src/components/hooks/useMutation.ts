@@ -19,7 +19,7 @@ const useMutation = () => {
   const mutation = async (path: string, options?: MutationOptions) => {
     try {
       const token = getFromLocalStorage("ACCESS_TOKEN");
-      const url = `${serverUrl}/api`;
+      const url = `${serverUrl}/api/api`;
       setIsLoading(true);
       const method = options?.method || "POST";
       const body = options?.body
