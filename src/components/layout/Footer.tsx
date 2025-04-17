@@ -17,7 +17,7 @@ const menuArr = [
 const supportArr = [
   { title: "About Us", path: "/" },
   { title: "Contact Us", path: "/" },
-  { title: "Privacy & Cookies", path: "/" },
+  { title: "Privacy & Cookies", path: "/privacy" },
   { title: "Term & Condition", path: "/" },
   { title: "Careers", path: "/" },
   { title: "Content guideline & Reporting", path: "/" },
@@ -44,7 +44,7 @@ export default function Footer() {
   ];
   return (
     <>
-      <section className="main-container py-5">
+      <section className="main-container py-5 border-t">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 ">
           <div className="flex flex-col gap-5">
             <Link href="/">

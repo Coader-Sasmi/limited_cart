@@ -12,11 +12,11 @@ import { ResponsiveNav } from "..";
 
 export const NavArr = [
   { title: "Home", path: "/" },
-  { title: "Furniture", path: "/flights" },
-  { title: "Bags", path: "/train" },
-  { title: "Jacket", path: "/bus" },
-  { title: "Footwear", path: "/cruse" },
-  { title: "Accessories", path: "/enterntainment" },
+  { title: "Furniture", path: "/" },
+  { title: "Bags", path: "/" },
+  { title: "Jacket", path: "/" },
+  { title: "Footwear", path: "/" },
+  { title: "Accessories", path: "/" },
 ];
 
 export default function Navbar() {
