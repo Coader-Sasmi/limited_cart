@@ -26,7 +26,7 @@ export default function SubCategory() {
 
   const { data, isValidating, mutate } = useSwr<{
     data: any[];
-  }>(`products/subcategory`);
+  }>(`subcategories`);
   console.log(data);
 
   const subCatArr = [

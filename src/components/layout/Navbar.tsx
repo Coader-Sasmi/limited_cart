@@ -72,9 +72,9 @@ export default function Navbar() {
               </div>
             </div>
             <div className="bg-white p-2 rounded-md flex items-center gap-2">
-              <Link href="/login">
-                <img src="./Profile.png" alt="profile" className="w-5 h-auto" />
-              </Link>
+              {/* <Link href="/login"> */}
+              <img src="./Profile.png" alt="profile" className="w-5 h-auto" />
+              {/* </Link> */}
             </div>
           </div>
         </section>

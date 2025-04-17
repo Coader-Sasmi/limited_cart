@@ -29,7 +29,7 @@ const useAuth = create<AuthState>((set) => ({
       return;
     }
     try {
-      const res = await fetch(`${serverUrl}/api/logout`, {
+      const res = await fetch(`${serverUrl}/api/api/logout`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
