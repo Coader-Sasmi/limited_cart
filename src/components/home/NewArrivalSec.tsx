@@ -32,16 +32,16 @@ export default function NewArrivalSec() {
       name: "Full Sweater",
     },
     {
-      img: "./product_4.png",
-      name: "White Dress",
+      img: "./Picture2.png",
+      name: "White SOfa",
     },
     {
-      img: "./product_5.png",
-      name: "Colorful Dress",
+      img: "./Picture1.png",
+      name: "Chair",
     },
     {
-      img: "./product_6.png",
-      name: "White Shirt",
+      img: "./Picture3.png",
+      name: "Shoes",
     },
   ];
   return (

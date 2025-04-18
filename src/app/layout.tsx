@@ -3,7 +3,7 @@ import type React from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "My Application",
+  title: "Limited Cart",
   description: "Website with separate admin panel",
 };
 

@@ -1,7 +1,23 @@
+import {
+  ClientBillsOverview,
+  ClientExpensesCard,
+  ClientMeetingCards,
+  ClientStatisticsCard,
+} from "@/components";
+
 export default function AdminDashboard() {
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
-    </div>
+    <section className="admin-container ">
+      <div className="flex flex-col admin-gap">
+        <ClientStatisticsCard />
+        <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-5 ">
+          <ClientExpensesCard />
+          <div className="">
+            <ClientBillsOverview />
+          </div>
+        </div>
+        <ClientMeetingCards />
+      </div>
+    </section>
   );
 }

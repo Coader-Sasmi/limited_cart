@@ -18,9 +18,16 @@ export default function CustomerSay() {
           alt="image"
           className="h-auto w-auto absolute -left-20 hidden lg:block"
         />
+        <img
+          src="./product_1.png"
+          alt="image"
+          className="h-24 w-auto absolute left-0 top-28 hidden lg:block"
+        />
+
         <div className="flex justify-center items-center w-full z-10">
           <div className=" flex md:flex-row flex-col gap-8 shadow-xl p-10 rounded-lg bg-white md:w-2/3">
-            <img src="./card3.png" alt="image" className="lg:h-72 w-auto" />
+            {/* <img src="./card3.png" alt="image" className="lg:h-72 w-auto" /> */}
+            <img src="./Picture2.png" alt="image" className="lg:h-60 w-auto" />
             <div className="flex flex-col gap-4">
               <p className="text-textColor">
                 You {`won't`} regret it. I would like to personally thank you

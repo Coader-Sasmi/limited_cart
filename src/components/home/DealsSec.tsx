@@ -22,21 +22,42 @@ export default function DealsSec() {
           <img src="./deal_chair.png" alt="image" className="lg:h-96 w-auto" />
           <div className="flex flex-col gap-8 w-full items-end justify-end">
             <div className="md:flex-row flex-col flex gap-8 justify-end md:items-end w-full">
-              <img
-                src="./deal_girl1.png"
-                alt="image"
-                className="md:h-80 w-auto"
-              />
-              <img
-                src="./deal_girl1.png"
-                alt="image"
-                className="md:h-80 w-auto hidden md:block"
-              />
-              <img
-                src="./deal_girl2.png"
-                alt="image"
-                className="md:h-80 w-auto"
-              />
+              <div className="relative">
+                <img
+                  src="./deal_girl1.png"
+                  alt="image"
+                  className="md:h-80 w-auto"
+                />
+                <img
+                  src="./Picture2.png"
+                  alt="image"
+                  className="md:h-80 w-auto absolute top-0"
+                />
+              </div>
+              <div className="relative">
+                <img
+                  src="./deal_girl1.png"
+                  alt="image"
+                  className="md:h-80 w-auto hidden md:block"
+                />
+                <img
+                  src="./Picture2.png"
+                  alt="image"
+                  className="md:h-80 w-auto absolute top-0"
+                />
+              </div>
+              <div className="relative">
+                <img
+                  src="./deal_girl2.png"
+                  alt="image"
+                  className="md:h-80 w-auto"
+                />
+                <img
+                  src="./Picture6.png"
+                  alt="image"
+                  className="h-60 w-auto absolute -top-3 -right-3"
+                />
+              </div>
             </div>
             <div className=" w-full">
               <img src="./slider.png" alt="image" className="h-auto w-auto" />
