@@ -14,20 +14,20 @@ export default function CustomerSay() {
       </div>
       <div className="relative flex ">
         <img
-          src="./card1.png"
+          src="/card1.png"
           alt="image"
           className="h-auto w-auto absolute -left-20 hidden lg:block"
         />
         <img
-          src="./product_1.png"
+          src="/product_1.png"
           alt="image"
           className="h-24 w-auto absolute left-0 top-28 hidden lg:block"
         />
 
         <div className="flex justify-center items-center w-full z-10">
           <div className=" flex md:flex-row flex-col gap-8 shadow-xl p-10 rounded-lg bg-white md:w-2/3">
-            {/* <img src="./card3.png" alt="image" className="lg:h-72 w-auto" /> */}
-            <img src="./Picture2.png" alt="image" className="lg:h-60 w-auto" />
+            {/* <img src="/card3.png" alt="image" className="lg:h-72 w-auto" /> */}
+            <img src="/Picture2.png" alt="image" className="lg:h-60 w-auto" />
             <div className="flex flex-col gap-4">
               <p className="text-textColor">
                 You {`won't`} regret it. I would like to personally thank you
@@ -47,14 +47,14 @@ export default function CustomerSay() {
           </div>
         </div>
         <img
-          src="./card2.png"
+          src="/card2.png"
           alt="image"
           className="h-auto w-auto absolute -right-20 hidden lg:block"
         />
       </div>
       <div className=" flex">
-        <img src="./left_arrow.png" alt="image" className="h-20 w-20" />
-        <img src="./right_arrow.png" alt="image" className="h-20 w-20" />
+        <img src="/left_arrow.png" alt="image" className="h-20 w-20" />
+        <img src="/right_arrow.png" alt="image" className="h-20 w-20" />
       </div>
     </section>
   );

@@ -3,22 +3,22 @@
 export default function SupportSec() {
   const supportArr = [
     {
-      img: "./support1.png",
+      img: "/support1.png",
       title: "High Quality",
       des: "crafted from top materials",
     },
     {
-      img: "./support2.png",
+      img: "/support2.png",
       title: "Warrany Protection",
       des: "Over 2 years",
     },
     {
-      img: "./support3.png",
+      img: "/support3.png",
       title: "Free Shipping",
       des: "Order over 150 $",
     },
     {
-      img: "./support4.png",
+      img: "/support4.png",
       title: "24 / 7 Support",
       des: "Dedicated support",
     },

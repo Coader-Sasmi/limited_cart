@@ -4,19 +4,19 @@ import { Fragment } from "react";
 export default function LogoSec() {
   const logoArr = [
     {
-      img: "./logo_1.png",
+      img: "/logo_1.png",
     },
     {
-      img: "./logo_2.png",
+      img: "/logo_2.png",
     },
     {
-      img: "./logo_3.png",
+      img: "/logo_3.png",
     },
     {
-      img: "./logo_4.png",
+      img: "/logo_4.png",
     },
     {
-      img: "./logo_5.png",
+      img: "/logo_5.png",
     },
   ];
   return (

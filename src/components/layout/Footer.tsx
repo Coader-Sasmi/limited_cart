@@ -17,7 +17,7 @@ const menuArr = [
 const supportArr = [
   { title: "About Us", path: "/" },
   { title: "Contact Us", path: "/" },
-  { title: "Privacy & Cookies", path: "/privacy" },
+  { title: "Privacy & Cookies", path: "/website/privacy" },
   { title: "Term & Condition", path: "/" },
   { title: "Careers", path: "/" },
   { title: "Content guideline & Reporting", path: "/" },

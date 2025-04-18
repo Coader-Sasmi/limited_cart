@@ -12,11 +12,11 @@ import { ResponsiveNav } from "..";
 
 export const NavArr = [
   { title: "Home", path: "/" },
-  { title: "Furniture", path: "/" },
-  { title: "Bags", path: "/" },
-  { title: "Jacket", path: "/" },
-  { title: "Footwear", path: "/" },
-  { title: "Accessories", path: "/" },
+  { title: "Furniture", path: "/website/furniture" },
+  { title: "Footwear", path: "/website/footwear" },
+  { title: "Bags", path: "/website/bag" },
+  { title: "Jacket", path: "/website/jacket" },
+  { title: "Accessories", path: "/website/accessories" },
 ];
 
 export default function Navbar() {
@@ -73,7 +73,7 @@ export default function Navbar() {
             </div>
             <div className="bg-white p-2 rounded-md flex items-center gap-2">
               {/* <Link href="/login"> */}
-              <img src="./Profile.png" alt="profile" className="w-5 h-auto" />
+              <img src="/Profile.png" alt="profile" className="w-5 h-auto" />
               {/* </Link> */}
             </div>
           </div>

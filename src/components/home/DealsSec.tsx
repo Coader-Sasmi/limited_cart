@@ -14,53 +14,53 @@ export default function DealsSec() {
             Sign Up
           </button>
           <div className="absolute -bottom-10 right-0 flex">
-            <img src="./left_arrow.png" alt="image" className="h-20 w-20" />
-            <img src="./right_arrow.png" alt="image" className="h-20 w-20" />
+            <img src="/left_arrow.png" alt="image" className="h-20 w-20" />
+            <img src="/right_arrow.png" alt="image" className="h-20 w-20" />
           </div>
         </div>
         <div className="lg:w-2/3 w-full flex md:flex-row flex-col gap-8">
-          <img src="./deal_chair.png" alt="image" className="lg:h-96 w-auto" />
+          <img src="/deal_chair.png" alt="image" className="lg:h-96 w-auto" />
           <div className="flex flex-col gap-8 w-full items-end justify-end">
             <div className="md:flex-row flex-col flex gap-8 justify-end md:items-end w-full">
               <div className="relative">
                 <img
-                  src="./deal_girl1.png"
+                  src="/deal_girl1.png"
                   alt="image"
                   className="md:h-80 w-auto"
                 />
                 <img
-                  src="./Picture2.png"
+                  src="/Picture2.png"
                   alt="image"
                   className="md:h-80 w-auto absolute top-0"
                 />
               </div>
               <div className="relative">
                 <img
-                  src="./deal_girl1.png"
+                  src="/deal_girl1.png"
                   alt="image"
                   className="md:h-80 w-auto hidden md:block"
                 />
                 <img
-                  src="./Picture2.png"
+                  src="/Picture2.png"
                   alt="image"
                   className="md:h-80 w-auto absolute top-0"
                 />
               </div>
               <div className="relative">
                 <img
-                  src="./deal_girl2.png"
+                  src="/deal_girl2.png"
                   alt="image"
                   className="md:h-80 w-auto"
                 />
                 <img
-                  src="./Picture6.png"
+                  src="/Picture6.png"
                   alt="image"
                   className="h-60 w-auto absolute -top-3 -right-3"
                 />
               </div>
             </div>
             <div className=" w-full">
-              <img src="./slider.png" alt="image" className="h-auto w-auto" />
+              <img src="/slider.png" alt="image" className="h-auto w-auto" />
             </div>
           </div>
         </div>
