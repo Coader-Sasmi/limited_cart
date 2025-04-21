@@ -5,12 +5,19 @@ import { AddUpdateSubCategory, SubCategoryCard } from "@/components";
 import { CustomDialog } from "@/components/core";
 import useSwr from "@/components/hooks/useSwr";
 import { IconButton, Tooltip } from "@mui/material";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useState } from "react";
 import { BiAddToQueue } from "react-icons/bi";
 import { IoMdRefresh } from "react-icons/io";
 
-export default function SubCategory() {
+function SubCategory() {
+  const searchParams = useSearchParams();
+  const ID = searchParams.get("ID");
+  console.log(ID);
   // const { query } = useRouter();
+  // const searchParams = useSearchParams();
+  // const ID = searchParams.get("id");
+  // console.log(ID);
   // const { role } = useRouter().query;
   const [sortingValue, setSortingValue] = useState("");
   const [searchAttribute, setSearchAttribute] = useState("");
@@ -26,7 +33,7 @@ export default function SubCategory() {
 
   const { data, isValidating, mutate } = useSwr<{
     data: any[];
-  }>(`subcategories`);
+  }>(`search/categorysub/${ID}`);
   console.log(data);
 
   const subCatArr = [
@@ -90,6 +97,7 @@ export default function SubCategory() {
             <h1 className="text-2xl font-semibold tracking-tight uppercase ">
               sub category
             </h1>
+
             <IconButton
               className={`!text-instagram !rounded-md border bg-primary/5`}
               onClick={handleRefresh}
@@ -138,13 +146,13 @@ export default function SubCategory() {
             </Tooltip>
           </div>
         </div>
-        <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 admin-gap">
-          {subCatArr?.map((data: any, i: number) => (
+        {/* <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 admin-gap">
+          {data?.map((data: any, i: number) => (
             <SubCategoryCard key={i} curSubCategory={data} mutate={mutate} />
           ))}
-        </div>
+        </div> */}
 
-        {/* {isValidating ? (
+        {isValidating ? (
           <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 admin-gap">
             {[...Array(18)].map((item, i) => (
               <SubCategorySkeleton key={i} />
@@ -166,34 +174,46 @@ export default function SubCategory() {
               <>
                 <p>No Sub Category Found</p>
                 {/* <NoDataFound title="No Sub Category Found" /> */}
-        {/* </> */}
-        {/* )} */}
-        {/* </> */}
-        {/* // )} */}
+              </>
+            )}
+          </>
+        )}
       </section>
     </>
   );
 }
 
-// const SubCategorySkeleton = () => {
-//   return (
-//     <div className="w-full admin-card p-3 md:p-5 min-h-[8rem]">
-//       <div className="w-full flex justify-between flex-col h-full">
-//         <div className="flex flex-col gap-2">
-//           <div className="flex justify-between">
-//             <div className="w-20 h-4 rounded-md skeleton"></div>
-//             <div className="w-6 h-6 rounded-md skeleton"></div>
-//           </div>
-//           <div className="flex flex-col gap-2">
-//             <div className="w-full h-3 rounded-md skeleton"></div>
-//             <div className="w-4/5 h-3 rounded-md skeleton"></div>
-//           </div>
-//         </div>
-//         <div className="w-full justify-end gap-4 flex pt-3">
-//           <div className="w-10 h-10 rounded-full skeleton items-end"></div>
-//           <div className="w-10 h-10 rounded-full skeleton items-end"></div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+export default function Page() {
+  return (
+    <>
+      <Suspense fallback={<div>Loading...</div>}>
+        <section className="main-container py-10">
+          <SubCategory />
+        </section>
+      </Suspense>
+    </>
+  );
+}
+
+const SubCategorySkeleton = () => {
+  return (
+    <div className="w-full admin-card p-3 md:p-5 min-h-[8rem]">
+      <div className="w-full flex justify-between flex-col h-full">
+        <div className="flex flex-col gap-2">
+          <div className="flex justify-between">
+            <div className="w-20 h-4 rounded-md skeleton"></div>
+            <div className="w-6 h-6 rounded-md skeleton"></div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <div className="w-full h-3 rounded-md skeleton"></div>
+            <div className="w-4/5 h-3 rounded-md skeleton"></div>
+          </div>
+        </div>
+        <div className="w-full justify-end gap-4 flex pt-3">
+          <div className="w-10 h-10 rounded-full skeleton items-end"></div>
+          <div className="w-10 h-10 rounded-full skeleton items-end"></div>
+        </div>
+      </div>
+    </div>
+  );
+};

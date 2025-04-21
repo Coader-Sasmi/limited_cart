@@ -72,7 +72,7 @@ export default function CategoryCard({
           <div
             onClick={() =>
               router.push(
-                `/admin/category/subcategory?${curCategory?.CategoryID}`
+                `/admin/category/subcategory?ID=${curCategory?.CategoryID}`
               )
             }
             className="bg-tertiary cursor-pointer z-20 text-white h-8 w-8 flex items-center justify-center rounded-full"

@@ -17,7 +17,7 @@ export const NavArr = [
   { title: "Bags", path: "/website/bag" },
   { title: "Jacket", path: "/website/jacket" },
   { title: "Belt", path: "/website/belt" },
-  { title: "Pourse ", path: "/website/pourse" },
+  { title: "Wallet ", path: "/website/wallet" },
   // { title: "Accessories", path: "/website/accessories" },
 ];
 
