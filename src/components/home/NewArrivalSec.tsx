@@ -21,16 +21,13 @@ export default function NewArrivalSec() {
   const productArrival = [
     {
       img: "/product_1.png",
-      name: "Shiny Dress",
+      name: "Brown Shoes",
     },
     {
       img: "/product_2.png",
-      name: "Long Dress",
+      name: "Black Shoes",
     },
-    {
-      img: "/product_3.png",
-      name: "Full Sweater",
-    },
+
     {
       img: "/Picture2.png",
       name: "White SOfa",
@@ -42,6 +39,41 @@ export default function NewArrivalSec() {
     {
       img: "/Picture3.png",
       name: "Shoes",
+    },
+    {
+      img: "/pourse/Picture11.png",
+      name: "pourse",
+    },
+    {
+      img: "/bag/Picture10.png",
+      name: "bag",
+    },
+
+    {
+      img: "/bag/Picture65.png",
+      name: "bag",
+    },
+    {
+      img: "/jacket/Picture62.png",
+      name: "jacket",
+    },
+
+    {
+      img: "/jacket/Picture63.png",
+      name: "jacket",
+    },
+    {
+      img: "/jacket/Picture64.png",
+      name: "jacket",
+    },
+    {
+      img: "/belt/Picture7.png",
+      name: "Belt",
+    },
+
+    {
+      img: "/belt/Picture8.png",
+      name: "Belt",
     },
   ];
   return (
