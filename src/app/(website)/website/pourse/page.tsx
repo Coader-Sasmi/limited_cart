@@ -1,19 +1,10 @@
 import { ProductCard } from "@/components";
 
-export default function JacketPage() {
+export default function PoursePage() {
   const productArrival = [
     {
-      img: "/jacket/Picture62.png",
-      name: "jacket",
-    },
-
-    {
-      img: "/jacket/Picture63.png",
-      name: "jacket",
-    },
-    {
-      img: "/jacket/Picture64.png",
-      name: "jacket",
+      img: "/pourse/Picture11.png",
+      name: "pourse",
     },
   ];
   return (

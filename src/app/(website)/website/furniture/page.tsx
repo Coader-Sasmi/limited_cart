@@ -11,11 +11,7 @@ export default function FurniturePage() {
       name: "Chair",
     },
     {
-      img: "/furniture/Picture9.jpg",
-      name: "Chair",
-    },
-    {
-      img: "/furniture/Picture10.jpg",
+      img: "/furniture/Picture10.png",
       name: "Chair",
     },
     {
@@ -23,19 +19,19 @@ export default function FurniturePage() {
       name: "Chair",
     },
     {
-      img: "/furniture/Picture12.jpg",
+      img: "/furniture/Picture12.png",
       name: "Chair",
     },
     {
-      img: "/furniture/Picture13.jpg",
+      img: "/furniture/Picture13.png",
       name: "Chair",
     },
     {
-      img: "/furniture/Picture14.jpg",
+      img: "/furniture/Picture14.png",
       name: "Chair",
     },
     {
-      img: "/furniture/Picture15.jpg",
+      img: "/furniture/Picture15.png",
       name: "Chair",
     },
     {

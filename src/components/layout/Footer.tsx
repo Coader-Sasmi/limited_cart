@@ -8,11 +8,14 @@ import { RxLinkedinLogo } from "react-icons/rx";
 import { SiYoutube } from "react-icons/si";
 
 const menuArr = [
+  { title: "Home", path: "/" },
   { title: "Furniture", path: "/website/furniture" },
   { title: "Footwear", path: "/website/footwear" },
   { title: "Bags", path: "/website/bag" },
   { title: "Jacket", path: "/website/jacket" },
-  { title: "Accessories", path: "/website/accessories" },
+  { title: "Belt", path: "/website/belt" },
+  { title: "Pourse ", path: "/website/pourse" },
+  // { title: "Accessories", path: "/website/accessories" },
 ];
 const supportArr = [
   { title: "About Us", path: "/" },

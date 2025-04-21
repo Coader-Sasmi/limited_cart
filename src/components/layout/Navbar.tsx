@@ -16,7 +16,9 @@ export const NavArr = [
   { title: "Footwear", path: "/website/footwear" },
   { title: "Bags", path: "/website/bag" },
   { title: "Jacket", path: "/website/jacket" },
-  { title: "Accessories", path: "/website/accessories" },
+  { title: "Belt", path: "/website/belt" },
+  { title: "Pourse ", path: "/website/pourse" },
+  // { title: "Accessories", path: "/website/accessories" },
 ];
 
 export default function Navbar() {
