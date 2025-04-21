@@ -1,33 +1,46 @@
+import Link from "next/link";
 import { BiCloudUpload, BiPieChartAlt } from "react-icons/bi";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import { MdWorkOutline } from "react-icons/md";
 
 export const clientStatistics = [
   {
-    label: "Child Company",
+    label: "Bags",
     value: "20",
     icon: <BiPieChartAlt />,
     iconClass: "bg-primary/10 text-primary",
   },
   {
-    label: "Total Documents",
+    label: "Jackets",
     value: "100",
     icon: <HiOutlineDocumentText />,
-    iconClass: "bg-pink-blue/10 text-pink-blue",
+    iconClass: "bg-tertiary/10 text-tertiary",
   },
   {
-    label: "Documents Uploaded",
+    label: "Sofa",
     value: "30",
     icon: <BiCloudUpload />,
-    iconClass: "bg-secondary/10 text-secondary",
+    iconClass: "bg-textColor/10 text-textColor",
   },
 
   {
-    label: "Pending Documents",
+    label: "Belt",
     value: "70",
     icon: <MdWorkOutline />,
-    iconClass: "bg-youtube/10 text-youtube",
+    iconClass: "bg-primary/10 text-primary",
   },
+  {
+    label: "Footwear",
+    value: "70",
+    icon: <MdWorkOutline />,
+    iconClass: "bg-tertiary/10 text-tertiary",
+  },
+  // {
+  //   label: "Pourse",
+  //   value: "70",
+  //   icon: <MdWorkOutline />,
+  //   iconClass: "bg-textColor/10 text-textColor",
+  // },
 ];
 
 export default function ClientStatisticsCard() {
@@ -40,29 +53,34 @@ export default function ClientStatisticsCard() {
               <span className="text-primary-text text-lg font-medium">
                 Welcome Back !
               </span>
-              <span className="text-sm">Your Expenses</span>
+              <span className="text-sm">Total Product</span>
             </p>
 
             <p className="flex flex-col gap-1">
-              <span className="text-secondary text-lg font-bold">
-                INR 49.8k
-              </span>
+              <span className="text-quaternary text-lg font-bold">1000</span>
               <span>
-                <button className="p-2 text-white bg-primary rounded-md text-sm cursor-pointer">
-                  View Details
-                </button>
+                <Link href="/admin/product">
+                  <button className="p-2 text-white bg-primary rounded-md text-sm cursor-pointer">
+                    View Details
+                  </button>
+                </Link>
               </span>
             </p>
           </div>
           <div>
-            <img className="w-fit h-40" src="/admin/client/boy.png"></img>
+            <img
+              className="w-auto h-40 rounded-3xl"
+              src="/admin_profile.jpg "
+            ></img>
           </div>
         </div>
       </div>
       <div className="lg:col-span-8 col-span-full admin-card">
         <div className="flex flex-col gap-10">
           <div className="flex justify-between">
-            <p className="text-primary-text text-lg font-medium">Documents</p>
+            <p className="text-primary-text text-lg font-medium">
+              Top 5 Category
+            </p>
             <p className="text-sm text-primary-text opacity-60">
               Updated 1 month ago
             </p>
