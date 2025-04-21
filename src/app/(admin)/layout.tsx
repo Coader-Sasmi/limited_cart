@@ -17,7 +17,7 @@ export default function AdminLayout({
   return (
     <div className="flex min-h-screen flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-40 border-b bg-white shadow-sm">
+      <header className="sticky top-0 z-[999] border-b bg-white shadow-sm">
         <div className="flex h-16 items-center px-4 md:px-6 justify-between">
           {/* Mobile Sidebar Toggle */}
           <button
@@ -35,24 +35,20 @@ export default function AdminLayout({
               className=" w-32 h-auto cursor-pointer rounded-sm hidden lg:block"
             />
           </Link>
-
-          {/* Back to Website Button */}
-          {/* <Link
-            href="/"
-            className="px-3 py-1 border rounded-md text-sm hover:bg-gray-100"
-          >
-            Back to Website
-          </Link> */}
         </div>
       </header>
 
       {/* Main Layout */}
-      <div className="flex flex-1">
-        {/* Sidebar (Mobile & Desktop) */}
+      <div className="flex h-screen">
+        {/* Sidebar */}
         <aside
-          className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r shadow-md transform ${
-            isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-          } lg:translate-x-0 lg:relative lg:flex lg:w-64 transition-transform duration-300`}
+          className={`
+      w-64 bg-white border-r shadow-md
+      sticky top-0 h-[calc(100vh-64px)] overflow-y-auto
+      transform ${
+        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+      } lg:translate-x-0 lg:relative lg:flex transition-transform duration-300
+    `}
         >
           <div className="p-4">
             <AdminNav setIsSidebarOpen={setIsSidebarOpen} />
@@ -60,7 +56,7 @@ export default function AdminLayout({
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-4 md:p-6">{children}</main>
+        <main className="flex-1 overflow-auto p-4 md:p-6">{children}</main>
       </div>
 
       {/* Overlay for Mobile Sidebar */}

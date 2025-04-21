@@ -1,7 +1,6 @@
 import {
   ClientBillsOverview,
   ClientExpensesCard,
-  ClientMeetingCards,
   ClientStatisticsCard,
 } from "@/components";
 
@@ -16,7 +15,7 @@ export default function AdminDashboard() {
             <ClientBillsOverview />
           </div>
         </div>
-        <ClientMeetingCards />
+        {/* <ClientMeetingCards /> */}
       </div>
     </section>
   );
