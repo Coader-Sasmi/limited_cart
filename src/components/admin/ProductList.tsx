@@ -29,8 +29,8 @@ export default function ProductList({ data, i }: LeaveListProps) {
         <div className={`col-span-3 text-xs text-center`}>
           {data?.ProductDescription}
         </div>
-        <div className={`col-span-1 text-xl`}>
-          <Tooltip title="view details text-center">
+        <div className={`col-span-1 text-xl text-center`}>
+          <Tooltip title="view details ">
             {/* <Link href={`/admin/product/product-details?id=${data?.ProductId}`}> */}
             <AiOutlineEye />
             {/* </Link> */}
