@@ -58,8 +58,8 @@ export default function Footer() {
               />
             </Link>
             <p>
-              Limitedcart LCC 16833 Grand Circle, Omaha, NE 68116 Mob: +1 (248)
-              766-8292
+              Limitedcart LCC 16833 Grand Circle, Omaha, NE 68116 Mob:
+              +1-408-800-6217, email - customer.success@limitedcart.com
             </p>
             <div className="flex gap-2 items-center">
               {socialMediaArr?.map((curElm, i) => (

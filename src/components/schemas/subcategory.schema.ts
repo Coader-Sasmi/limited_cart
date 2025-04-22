@@ -1,43 +1,43 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as Yup from "yup";
 
-const subCategoryMutation = (curDesignation?: any) => {
+const subCategoryMutation = (curDesignation?: any, CategoryID?: any) => {
   const subCategorySchema = [
     {
       key: "1",
-      label: "Department",
-      name: "departmentId",
+      label: "CategoryID",
+      name: "CategoryID",
       type: "text",
-      validationSchema: Yup.string().required("Department Is Required").trim(),
+      validationSchema: Yup.string().required("CategoryID Is Required").trim(),
       required: true,
-      initialValue: curDesignation?.departmentId?.title
-        ? curDesignation?.departmentId?.title
-        : "",
-      className: `${
-        curDesignation?.departmentId?.title ? "col-span-12" : "hidden"
-      }`,
+      initialValue: curDesignation?.SubcategoryID ? CategoryID : CategoryID,
+      className: `${"hidden"}`,
       disabled: true,
     },
     {
       key: "2",
-      label: "Title",
-      name: "title",
+      label: "Subcategory Name",
+      name: "SubcategoryName",
       type: "text",
       validationSchema: Yup.string()
-        .required("Designation Tittle Is Required")
+        .required("Subcategory Name Tittle Is Required")
         .trim(),
       required: true,
-      initialValue: curDesignation?.title ? curDesignation?.title : "",
+      initialValue: curDesignation?.SubcategoryName
+        ? curDesignation?.SubcategoryName
+        : "",
       className: "col-span-12",
     },
     {
       key: "3",
-      label: "Level",
-      name: "level",
-      type: "number",
-      validationSchema: Yup.number().positive().required("Required!"),
+      label: "Subcategory Description",
+      name: "SubcategoryDescription",
+      type: "text",
+      validationSchema: Yup.string().required("Required!"),
       required: true,
-      initialValue: curDesignation?.level ? String(curDesignation?.level) : "",
+      initialValue: curDesignation?.SubcategoryDescription
+        ? curDesignation?.SubcategoryDescription
+        : "",
       className: "col-span-12",
     },
   ];

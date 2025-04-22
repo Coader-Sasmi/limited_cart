@@ -13,36 +13,18 @@ import { IoMdRefresh } from "react-icons/io";
 function SubCategory() {
   const searchParams = useSearchParams();
   const ID = searchParams.get("ID");
-  console.log(ID);
-  // const { query } = useRouter();
-  // const searchParams = useSearchParams();
-  // const ID = searchParams.get("id");
-  // console.log(ID);
-  // const { role } = useRouter().query;
+
   const [sortingValue, setSortingValue] = useState("");
   const [searchAttribute, setSearchAttribute] = useState("");
-  // const deferredValue = useDeferredValue(searchAttribute?.trim());
   const [openAddUpdateSubCategoryModel, setOpenAddUpdateSubCategoryModel] =
     useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [limitPerPage, setLimitPerPage] = useState(20);
 
-  // let url = `SubCategory?departmentId=${query?.SubCategory}&perPage=${limitPerPage}&pageNo=${currentPage}&isTotalData=true`;
-  // deferredValue?.length > 0 && (url += `&search=${deferredValue}`);
-  // sortingValue && (url += `&${sortingValue}=true`);
-
   const { data, isValidating, mutate } = useSwr<{
-    data: any[];
+    data: any;
   }>(`search/categorysub/${ID}`);
-  console.log(data);
-
-  const subCatArr = [
-    { name: "Sectional Sofa" },
-    { name: "Sleeper Sofa" },
-    { name: "Loveseat" },
-    { name: "Recliner Sofa" },
-    { name: "Chesterfield Sofa" },
-  ];
+  // console.log(data);
 
   const handleResetAll = () => {
     setSortingValue("");
@@ -51,17 +33,6 @@ function SubCategory() {
     setLimitPerPage(20);
   };
   const handleRefresh = () => mutate();
-
-  // const pageArray = [
-  //   {
-  //     pageName: "Department",
-  //     pagePath: `/panel/${role}/department`,
-  //   },
-  //   {
-  //     pageName: "SubCategory",
-  //     pagePath: "",
-  //   },
-  // ];
 
   return (
     <>
@@ -80,6 +51,7 @@ function SubCategory() {
       >
         <AddUpdateSubCategory
           mutate={mutate}
+          categoryID={ID}
           subCategoryModelClose={() => setOpenAddUpdateSubCategoryModel(false)}
         />
       </CustomDialog>
@@ -146,11 +118,6 @@ function SubCategory() {
             </Tooltip>
           </div>
         </div>
-        {/* <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 admin-gap">
-          {data?.map((data: any, i: number) => (
-            <SubCategoryCard key={i} curSubCategory={data} mutate={mutate} />
-          ))}
-        </div> */}
 
         {isValidating ? (
           <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 admin-gap">
@@ -160,9 +127,10 @@ function SubCategory() {
           </div>
         ) : (
           <>
-            {data?.data && data?.data?.length > 0 ? (
+            {data?.data?.Subcategories &&
+            data?.data?.Subcategories?.length > 0 ? (
               <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 admin-gap">
-                {subCatArr?.map((data: any, i: number) => (
+                {data?.data?.Subcategories?.map((data: any, i: number) => (
                   <SubCategoryCard
                     key={i}
                     curSubCategory={data}

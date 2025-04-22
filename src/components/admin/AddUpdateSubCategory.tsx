@@ -19,19 +19,22 @@ export default function AddUpdateDesignation({
   curSubCategory,
   mutate,
   subCategoryModelClose,
+  categoryID,
 }: {
   curSubCategory?: any;
+  categoryID?: any;
   mutate?: () => void;
   subCategoryModelClose?: () => void;
 }) {
-  // console.log(_id);
+  console.log(curSubCategory);
   const { mutation, isLoading } = useMutation();
+  const ID = curSubCategory?.SubcategoryID;
 
   const {
     subCategorySchema,
     subCategorySchemaInitialValues,
     subCategorySchemaValidation,
-  } = subCategoryMutation(curSubCategory);
+  } = subCategoryMutation(curSubCategory, categoryID);
 
   const handleDesignationOperation = async (
     values: designationValueType,
@@ -40,25 +43,25 @@ export default function AddUpdateDesignation({
     try {
       let res: any;
       const data: any = { ...values };
-      data.departmentId = undefined;
-      //   if (_id) {
-      //     res = await mutation(`designation/${_id}`, {
-      //       method: "PUT",
-      //       isAlert: true,
-      //       body: {
-      //         ...data,
-      //       },
-      //     });
-      //   } else {
-      //     res = await mutation(`add-subcategories`, {
-      //       method: "POST",
-      //       isAlert: true,
-      //       body: {
-      //         ...values,
-      //       },
-      //     });
-      //   }
-      if (res?.results?.success) {
+      if (ID) {
+        res = await mutation(`update-subcategories/${ID}`, {
+          method: "PUT",
+          isAlert: true,
+          body: {
+            ...data,
+          },
+        });
+      } else {
+        res = await mutation(`add-subcategories`, {
+          method: "POST",
+          isAlert: true,
+          body: {
+            ...values,
+          },
+        });
+      }
+      console.log(res);
+      if (res?.status === 201) {
         subCategoryModelClose && subCategoryModelClose();
         mutate && mutate();
         props.resetForm();
@@ -71,7 +74,7 @@ export default function AddUpdateDesignation({
   return (
     <section className="p-5 w-full bg-white flex flex-col gap-5">
       <h1 className="graph-title w-full text-center">
-        {curSubCategory?.title ? "Update" : "Create"} Designation
+        {curSubCategory?.title ? "Update" : "Create"} Sub Category
       </h1>
       <Formik
         initialValues={subCategorySchemaInitialValues}
@@ -119,8 +122,8 @@ export default function AddUpdateDesignation({
               <CustomLoadingButton
                 title={
                   curSubCategory?.title
-                    ? "Update Designation"
-                    : "Add New Designation"
+                    ? "Update Sub Category"
+                    : "Add Sub Category"
                 }
                 loading={isLoading}
                 type="submit"

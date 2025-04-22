@@ -3,9 +3,8 @@
 
 "use client";
 import { CustomDialog } from "@/components/core";
-import { CircularProgress, Tooltip } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { useState } from "react";
-import { TbEdit } from "react-icons/tb";
 import { AddUpdateSubCategory } from ".";
 
 const DesignationCard = ({
@@ -15,7 +14,7 @@ const DesignationCard = ({
   curSubCategory: any;
   mutate?: () => void;
 }) => {
-  //   const { query } = useRouter();
+  // console.log(curSubCategory);
 
   const [openAddUpdateSubCategoryModel, setOpenAddUpdateSubCategoryModel] =
     useState(false);
@@ -62,47 +61,33 @@ const DesignationCard = ({
           <MdAssignmentAdd className="text-secondary text-xl" />
         </div>
       </Tooltip> */}
-      <p className="text-primary-text font-medium text-lg">
-        {curSubCategory?.title}
-      </p>
+
       <div className="flex text-sm items-center gap-2">
-        Category ID :{" "}
-        <span className="px-2 py-1 text-[10px] leading-3 bg-secondary text-white rounded-xl">
-          {curSubCategory?.departmentId?.title}
+        Sub Category ID :{" "}
+        <span className="px-2 py-1 text-[10px] leading-3 rounded-xl">
+          {curSubCategory?.SubcategoryID}
         </span>
       </div>
       <div className="flex text-sm items-center gap-2">
         Sub Category Name :{" "}
-        <span className="font-medium text-secondary">
-          {curSubCategory?.level}
+        <span className="font-medium ">{curSubCategory?.SubcategoryName}</span>
+      </div>
+      <div className="flex text-sm items-center gap-2">
+        Des :{" "}
+        <span className="font-medium ">
+          {curSubCategory?.SubcategoryDescription}
         </span>
       </div>
-      {/* <div className="text-xs flex gap-1  items-center">
-        ID :
-        <CopyClipboard value={curSubCategory?._id?.$oid} />
-      </div> */}
 
       <div className="flex gap-2 pt-3 w-full justify-end">
-        <Tooltip title="Edit">
+        {/* <Tooltip title="Edit">
           <div
             onClick={() => setOpenAddUpdateSubCategoryModel(true)}
             className="h-10 w-10 cursor-pointer hover:scale-105 ease-in-out transition-all duration-200 hover:shadow-xl rounded-full bg-gradient-to-r from-blue-800 to-blue-600 flex justify-center items-center text-lg font-semibold hover:from-blue-600 hover:to-blue-800"
           >
             <TbEdit className="!text-white" />
           </div>
-        </Tooltip>
-        {/* 
-        {query?.designation ? (
-          <Tooltip title="Employee">
-            <Link
-              href={`/panel/${query?.role}/department/designation/${query?.designation}/employee/${curSubCategory?._id?.$oid}`}
-            >
-              <div className="h-10 w-10 cursor-pointer hover:scale-105 ease-in-out transition-all duration-200 hover:shadow-xl rounded-full bg-gradient-to-r from-green-800 to-green-600 flex justify-center items-center text-lg font-semibold hover:from-green-600 hover:to-green-800">
-                <BsPersonVcard className="!text-white" />
-              </div>
-            </Link>
-          </Tooltip>
-        ) : null} */}
+        </Tooltip> */}
       </div>
     </div>
   );
