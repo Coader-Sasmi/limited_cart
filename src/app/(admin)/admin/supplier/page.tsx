@@ -23,7 +23,7 @@ export default function SupplierPage() {
   const { data, isValidating, mutate } = useSwr<{
     data: Supplier[];
   }>(`supplier`);
-  console.log(data);
+  // console.log(data);
 
   const dataArray = data as unknown as Supplier[];
   const handleRefresh = () => mutate();

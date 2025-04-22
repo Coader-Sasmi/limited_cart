@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { CustomSort, Pagination, ProductList } from "@/components";
+import { CustomSort, ProductList } from "@/components";
+import useSwr from "@/components/hooks/useSwr";
 import { IconButton } from "@mui/material";
 import { useState } from "react";
 import { IoMdRefresh } from "react-icons/io";
@@ -42,61 +44,66 @@ export default function Page() {
     },
   ];
 
+  const { data } = useSwr<{
+    data: any[];
+  }>(`product`);
+  console.log(data);
+
   const handleResetAll = () => {
     setSortingValue("");
     setCurrentPage(0);
     setLimitPerPage(20);
   };
 
-  const productArr = [
-    {
-      name: "Modern Sofa",
-      price: "$799",
-      category: "Furniture",
-      image: "sofa.jpg",
-      description:
-        "A comfortable and stylish modern sofa perfect for any living room.",
-    },
-    {
-      name: "Leather Messenger Bag",
-      price: "$199",
-      category: "Bags",
-      image: "leather_messenger_bag.jpg",
-      description:
-        "A handcrafted leather bag ideal for work or casual outings.",
-    },
-    {
-      name: "Winter Down Jacket",
-      price: "$299",
-      category: "Jacket",
-      image: "winter_jacket.jpg",
-      description:
-        "A warm and durable jacket designed to withstand cold winters.",
-    },
-    {
-      name: "Running Sneakers",
-      price: "$129",
-      category: "Footwear",
-      image: "running_sneakers.jpg",
-      description:
-        "Lightweight and breathable sneakers for everyday running and training.",
-    },
-    {
-      name: "Trendy Sunglasses",
-      price: "$89",
-      category: "Accessories",
-      image: "sunglasses.jpg",
-      description: "Modern and chic sunglasses to complete any outfit.",
-    },
-    {
-      name: "Office Desk Chair",
-      price: "$399",
-      category: "Furniture",
-      image: "office_chair.jpg",
-      description:
-        "An ergonomic desk chair providing comfort and support during long work hours.",
-    },
-  ];
+  // const productArr = [
+  //   {
+  //     name: "Modern Sofa",
+  //     price: "$799",
+  //     category: "Furniture",
+  //     image: "sofa.jpg",
+  //     description:
+  //       "A comfortable and stylish modern sofa perfect for any living room.",
+  //   },
+  //   {
+  //     name: "Leather Messenger Bag",
+  //     price: "$199",
+  //     category: "Bags",
+  //     image: "leather_messenger_bag.jpg",
+  //     description:
+  //       "A handcrafted leather bag ideal for work or casual outings.",
+  //   },
+  //   {
+  //     name: "Winter Down Jacket",
+  //     price: "$299",
+  //     category: "Jacket",
+  //     image: "winter_jacket.jpg",
+  //     description:
+  //       "A warm and durable jacket designed to withstand cold winters.",
+  //   },
+  //   {
+  //     name: "Running Sneakers",
+  //     price: "$129",
+  //     category: "Footwear",
+  //     image: "running_sneakers.jpg",
+  //     description:
+  //       "Lightweight and breathable sneakers for everyday running and training.",
+  //   },
+  //   {
+  //     name: "Trendy Sunglasses",
+  //     price: "$89",
+  //     category: "Accessories",
+  //     image: "sunglasses.jpg",
+  //     description: "Modern and chic sunglasses to complete any outfit.",
+  //   },
+  //   {
+  //     name: "Office Desk Chair",
+  //     price: "$399",
+  //     category: "Furniture",
+  //     image: "office_chair.jpg",
+  //     description:
+  //       "An ergonomic desk chair providing comfort and support during long work hours.",
+  //   },
+  // ];
 
   return (
     <section className="admin-container flex flex-col admin-gap">
@@ -138,7 +145,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="lg:col-span-4 md:col-span-12 col-span-12 flex gap-2 justify-end items-center ">
+        {/* <div className="lg:col-span-4 md:col-span-12 col-span-12 flex gap-2 justify-end items-center ">
           <Pagination
             currentPage={currentPage}
             perPage={limitPerPage}
@@ -147,7 +154,7 @@ export default function Page() {
             setPerPage={setLimitPerPage}
             lastPage={false}
           />
-        </div>
+        </div> */}
       </div>
       <div className="max-w-full overflow-x-scroll scroll-bar-none">
         <div className="flex flex-col min-w-[55rem]">
@@ -156,12 +163,13 @@ export default function Page() {
             <div className="col-span-2 text-center">name</div>
             <div className="col-span-1 text-center">price</div>
             <div className="col-span-2 text-center">category</div>
-            <div className="col-span-3 text-center">image</div>
+            <div className="col-span-2 text-center">image</div>
             <div className="col-span-3 text-center">description</div>
+            <div className="col-span-1 text-center">more</div>
           </div>
-          {productArr?.length ? (
+          {data?.data && data?.data?.length > 0 ? (
             <div className="w-full flex flex-col shadow-shadow-primary rounded-b-md ">
-              {productArr?.map((_, i) => (
+              {data?.data?.map((_, i) => (
                 <ProductList key={i} i={i} data={_} />
               ))}
             </div>
