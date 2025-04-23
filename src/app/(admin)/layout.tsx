@@ -50,22 +50,15 @@ export default function AdminLayout({
       } lg:translate-x-0 lg:relative lg:flex transition-transform duration-300
     `}
         >
-          <div className="p-4">
-            <AdminNav setIsSidebarOpen={setIsSidebarOpen} />
-          </div>
+          <AdminNav
+            setIsSidebarOpen={setIsSidebarOpen}
+            isSidebarOpen={isSidebarOpen}
+          />
         </aside>
 
         {/* Main Content */}
         <main className="flex-1 overflow-auto p-4 md:p-6">{children}</main>
       </div>
-
-      {/* Overlay for Mobile Sidebar */}
-      {isSidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 lg:hidden"
-          onClick={() => setIsSidebarOpen(false)}
-        ></div>
-      )}
     </div>
   );
 }

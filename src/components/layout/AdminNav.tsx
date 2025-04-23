@@ -11,9 +11,10 @@ import useAuth from "../hooks/useAuth";
 
 interface AdminNavProps {
   setIsSidebarOpen?: (open: boolean) => void;
+  isSidebarOpen?: boolean;
 }
 
-export function AdminNav({ setIsSidebarOpen }: AdminNavProps) {
+export function AdminNav({ setIsSidebarOpen, isSidebarOpen }: AdminNavProps) {
   const pathname = usePathname();
   const router = useRouter();
   const { user, logout } = useAuth();
@@ -53,7 +54,11 @@ export function AdminNav({ setIsSidebarOpen }: AdminNavProps) {
   ];
 
   return (
-    <div className="flex flex-col h-full py-4">
+    <div
+      className={`flex flex-col h-full py-4 ${
+        isSidebarOpen ? "md:block" : "hidden"
+      }`}
+    >
       <div className="flex flex-col gap-5">
         <Link href="/admin" className="font-bold text-lg lg:hidden">
           <img
