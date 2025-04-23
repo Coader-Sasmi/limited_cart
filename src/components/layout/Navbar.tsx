@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
@@ -9,6 +10,7 @@ import { BiSearch } from "react-icons/bi";
 import { HiOutlineInformationCircle, HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoCartOutline } from "react-icons/io5";
 import { ResponsiveNav } from "..";
+import useSwr from "../hooks/useSwr";
 
 export const NavArr = [
   { title: "Home", path: "/" },
@@ -24,6 +26,11 @@ export const NavArr = [
 export default function Navbar() {
   const pathname = usePathname();
   const [openDrawer, setOpenDrawer] = useState(false);
+  const { data } = useSwr<{
+    data: any[];
+  }>(`category`);
+  console.log(data);
+
   const isActive = (menuPath: string) =>
     pathname === menuPath || pathname.startsWith(`${menuPath}/`);
   return (

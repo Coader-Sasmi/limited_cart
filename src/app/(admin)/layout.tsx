@@ -43,7 +43,7 @@ export default function AdminLayout({
         {/* Sidebar */}
         <aside
           className={`
-      w-64 bg-white border-r shadow-md
+      md:w-64 border-r shadow-md
       sticky top-0 h-[calc(100vh-64px)] overflow-y-auto
       transform ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
