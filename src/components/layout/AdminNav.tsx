@@ -55,8 +55,8 @@ export function AdminNav({ setIsSidebarOpen, isSidebarOpen }: AdminNavProps) {
 
   return (
     <div
-      className={`flex flex-col h-full py-4 ${
-        isSidebarOpen ? "md:block" : "hidden"
+      className={`flex flex-col h-full p-4 bg-white ${
+        isSidebarOpen ? "md:hidden block" : "md:block hidden"
       }`}
     >
       <div className="flex flex-col gap-5">
