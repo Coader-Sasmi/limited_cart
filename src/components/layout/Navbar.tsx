@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 /* eslint-disable @next/next/no-img-element */
@@ -10,18 +11,61 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { HiOutlineInformationCircle, HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoCartOutline } from "react-icons/io5";
-import { ResponsiveNav } from "..";
+import { ResponsiveNav } from ".";
 import useSwr from "../hooks/useSwr";
 
-export const NavArr = [
-  { title: "Home", path: "/" },
-  { title: "Furniture", path: "/website/furniture" },
-  { title: "Footwear", path: "/website/footwear" },
-  { title: "Bags", path: "/website/bag" },
-  { title: "Jacket", path: "/website/jacket" },
-  { title: "Belt", path: "/website/belt" },
+export interface NavItem {
+  title: string;
+  path?: string;
+  subcategories?: NavItem[];
+}
+
+export const NavArr: NavItem[] = [
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "Furniture",
+    path: "/website/furniture",
+    subcategories: [
+      { title: "Sofas", path: "/website/furniture/sofas" },
+      { title: "Chairs", path: "/website/furniture/chairs" },
+    ],
+  },
+  {
+    title: "Footwear",
+    path: "/website/footwear",
+    subcategories: [
+      { title: "Sneakers", path: "/website/footwear/sneakers" },
+      { title: "Boots", path: "/website/footwear/boots" },
+    ],
+  },
+  {
+    title: "Bags",
+    path: "/website/bag",
+    subcategories: [
+      { title: "Male", path: "/website/bags/male" },
+      { title: "Female", path: "/website/bags/female" },
+    ],
+  },
+  {
+    title: "Jacket",
+    path: "/website/jacket",
+    subcategories: [
+      { title: "Male", path: "/website/jacket/male" },
+      { title: "Female", path: "/website/jacket/female" },
+    ],
+  },
+  {
+    title: "Belt",
+    path: "/website/belt",
+    subcategories: [
+      { title: "Male", path: "/website/belt/male" },
+      { title: "Female", path: "/website/belt/female" },
+    ],
+  },
   { title: "Wallet ", path: "/website/wallet" },
-  // { title: "Accessories", path: "/website/accessories" },
 ];
 
 export default function Navbar() {
@@ -30,10 +74,8 @@ export default function Navbar() {
   const { data } = useSwr<{
     data: any[];
   }>(`category`);
-  console.log(data);
+  // console.log(data);
 
-  const isActive = (menuPath: string) =>
-    pathname === menuPath || pathname.startsWith(`${menuPath}/`);
   return (
     <nav
       className={`sticky top-0 z-[9999] transition-all duration-100 ease-in-out border-b `}
@@ -57,7 +99,7 @@ export default function Navbar() {
                 className="lg:h-[2.8rem] h-10 w-auto cursor-pointer"
               />
             </Link>
-            <div className="border-2 border-gray-700 px-1 rounded-md text-3xl lg:hidden block">
+            <div className="border-2 px-1 rounded-md text-3xl lg:hidden block text-tertiary">
               <HiOutlineMenuAlt3
                 onClick={() => setOpenDrawer(true)}
                 className="rotate-180"
@@ -82,38 +124,61 @@ export default function Navbar() {
               </div>
             </div>
             <div className="bg-white p-2 rounded-md flex items-center gap-2">
-              {/* <Link href="/login"> */}
               <img src="/Profile.png" alt="profile" className="w-5 h-auto" />
-              {/* </Link> */}
             </div>
           </div>
         </section>
       </aside>
       <section className="main-container bg-white flex gap-8 py-3 items-center justify-between w-full">
-        <div className="flex gap-8">
-          {/* <div className="flex items-center gap-2 py-1 px-4 border rounded-md">
-            <AiOutlineMenu />
-            <p className="whitespace-nowrap">All Categories</p>
-          </div> */}
+        <div className="hidden lg:flex gap-8">
           <AllCategoriesModal />
-          <div className="lg:flex gap-8 py-3 hidden">
-            {NavArr?.map((curElm, i) => (
-              <div key={i} className={isActive(curElm.path) ? "active" : ""}>
-                <Link href={curElm?.path}>
-                  <p
-                    className={`${
-                      curElm?.path === pathname ? "text-primary" : ""
-                    }`}
-                  >
-                    {curElm?.title}
-                  </p>
-                </Link>
-              </div>
-            ))}
+          <div className="flex gap-8 py-3">
+            {NavArr.map((item, i) => {
+              const active =
+                item.path === pathname || pathname.startsWith(item.path + "/");
+
+              return (
+                <div
+                  key={i}
+                  className={`relative group ${
+                    active ? "font-semibold text-primary" : ""
+                  }`}
+                >
+                  {/* Parent link */}
+                  <Link href={item.path ?? "#"}>
+                    <p className="px-2 py-1 hover:text-primary">{item.title}</p>
+                  </Link>
+
+                  {/* Sub‐menu (if any) */}
+                  {item.subcategories && (
+                    <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all">
+                      <ul className="flex flex-col">
+                        {item.subcategories.map((sub, j) => {
+                          const subActive = pathname === sub.path;
+                          return (
+                            <li key={j}>
+                              <Link href={sub.path ?? "#"}>
+                                <p
+                                  className={`block px-4 py-2 text-sm hover:bg-gray-100 ${
+                                    subActive ? "bg-gray-100 font-medium" : ""
+                                  }`}
+                                >
+                                  {sub.title}
+                                </p>
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        <div className="hidden md:flex gap-8">
+        <div className=" flex md:gap-8 gap-3 items-center justify-between">
           <div className="flex">
             <p className="text-gray-500">
               Contact: <span className="text-black">{`+1-408-800-6217`}</span>{" "}
@@ -134,23 +199,18 @@ export const AllCategoriesModal: React.FC = () => {
   const [pos, setPos] = useState({ top: 0, left: 0 });
   const pathname = usePathname();
 
-  const isActive = (menuPath: string) =>
-    pathname === menuPath || pathname.startsWith(`${menuPath}/`);
+  const isActive = (menuPath?: string) =>
+    !!menuPath &&
+    (pathname === menuPath || pathname.startsWith(`${menuPath}/`));
 
-  // Compute panel position based on button's viewport coords
   const updatePosition = () => {
     if (!buttonRef.current) return;
     const rect = buttonRef.current.getBoundingClientRect();
-    setPos({
-      top: rect.bottom, // no window.scrollY here, rect is already relative to viewport
-      left: rect.left,
-    });
+    setPos({ top: rect.bottom, left: rect.left });
   };
 
-  // When we open, calculate initial position and start listening to scroll/resize
   useEffect(() => {
     if (!open) return;
-
     updatePosition();
     window.addEventListener("scroll", updatePosition);
     window.addEventListener("resize", updatePosition);
@@ -160,20 +220,16 @@ export const AllCategoriesModal: React.FC = () => {
     };
   }, [open]);
 
-  // bail out server-side
-  // if (typeof document === "undefined") return null;
-
   return (
     <div>
       <button
         ref={buttonRef}
+        aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
         className="inline-flex items-center px-4 py-2 border rounded-md shadow-sm hover:bg-gray-100 focus:outline-none focus:ring"
       >
-        <span className="whitespace-nowrap flex items-center gap-2">
-          <AiOutlineMenu />
-          <span>All Categories</span>
-        </span>
+        <AiOutlineMenu className="mr-2" />
+        <span>All Categories</span>
       </button>
 
       {open &&
@@ -185,23 +241,56 @@ export const AllCategoriesModal: React.FC = () => {
               onClick={() => setOpen(false)}
             />
 
-            {/* panel */}
+            {/* dropdown panel */}
             <div
               style={{ top: pos.top, left: pos.left }}
-              className="fixed bg-white rounded-md shadow-lg mt-1 w-64 z-50"
+              className="fixed bg-white rounded-md shadow-lg mt-1 w-40 z-50"
             >
-              <div className="p-4 flex flex-col gap-2">
-                {NavArr.map((curElm, i) => (
-                  <Link key={i} href={curElm.path}>
-                    <p
-                      className={`block px-2 py-1 rounded hover:bg-gray-100 ${
-                        isActive(curElm.path) ? "bg-gray-200 font-semibold" : ""
-                      }`}
-                      onClick={() => setOpen(false)}
-                    >
-                      {curElm.title}
-                    </p>
-                  </Link>
+              <div className="p-4 space-y-2">
+                {NavArr.map((item) => (
+                  <div key={item.title} className="relative group">
+                    {/* Parent link/button */}
+                    {item.path ? (
+                      <Link href={item.path}>
+                        <p
+                          className={`block px-2 py-1 rounded ${
+                            isActive(item.path)
+                              ? "bg-gray-200 font-semibold"
+                              : "hover:bg-gray-100"
+                          }`}
+                          onClick={() => setOpen(false)}
+                        >
+                          {item.title}
+                        </p>
+                      </Link>
+                    ) : (
+                      <span className="block px-2 py-1 rounded hover:bg-gray-100">
+                        {item.title}
+                      </span>
+                    )}
+
+                    {/* Submenu on hover */}
+                    {item.subcategories && (
+                      <div className="absolute top-0 left-full ml-0 hidden w-32 rounded-md bg-white shadow-lg group-hover:block">
+                        <div className="p-2 space-y-1">
+                          {item.subcategories.map((sub) => (
+                            <Link key={sub.title} href={sub.path!}>
+                              <p
+                                className={`block px-2 py-1 text-sm rounded ${
+                                  isActive(sub.path)
+                                    ? "bg-gray-200 font-medium"
+                                    : "hover:bg-gray-50"
+                                }`}
+                                onClick={() => setOpen(false)}
+                              >
+                                {sub.title}
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>

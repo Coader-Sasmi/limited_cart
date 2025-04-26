@@ -2,11 +2,11 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
+import { HiChevronDown } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
 import { CustomDrawer } from "../core";
-import { NavArr } from "./Navbar";
+import { NavArr, NavItem } from "./Navbar";
 
 type CaseFixedProps = {
   openDrawer: boolean;
@@ -16,9 +16,14 @@ export default function ResponsiveDrawer({
   openDrawer,
   setOpenDrawer,
 }: CaseFixedProps) {
-  const pathname = usePathname();
-  const isActive = (menuPath: string) =>
-    pathname === menuPath || pathname.startsWith(`${menuPath}/`);
+  const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
+
+  const toggle = (title: string) =>
+    setOpenItems((prev) => ({
+      ...prev,
+      [title]: !prev[title],
+    }));
+
   return (
     <CustomDrawer
       open={openDrawer}
@@ -31,19 +36,41 @@ export default function ResponsiveDrawer({
           <RxCross2 onClick={() => setOpenDrawer(false)} />
         </div>
         <div className="flex flex-col gap-2">
-          {NavArr?.map((curElm, i) => (
-            <div key={i} className={isActive(curElm.path) ? "active" : ""}>
-              <Link href={curElm?.path}>
-                <p
-                  className={`${
-                    curElm?.path === pathname
-                      ? "border-b-2 border-secondary w-fit"
-                      : ""
-                  }`}
-                >
-                  {curElm?.title}
-                </p>
-              </Link>
+          {NavArr.map((item: NavItem) => (
+            <div key={item.title}>
+              {/* Parent row: title + optional toggle */}
+              <div className="flex justify-between items-center">
+                <Link href={item.path ?? "#"}>
+                  <p className="text-base font-medium">{item.title}</p>
+                </Link>
+
+                {item.subcategories && (
+                  <button
+                    onClick={() => toggle(item.title)}
+                    aria-expanded={!!openItems[item.title]}
+                    className="p-1 focus:outline-none"
+                  >
+                    <HiChevronDown
+                      className={`h-5 w-5 transition-transform ${
+                        openItems[item.title] ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                )}
+              </div>
+
+              {/* Submenu: show when toggled */}
+              {item.subcategories && openItems[item.title] && (
+                <div className="ml-4 mt-1 flex flex-col gap-1">
+                  {item.subcategories.map((sub) => (
+                    <Link key={sub.title} href={sub.path ?? "#"}>
+                      <p className="text-sm pl-2 py-1 hover:bg-gray-100 rounded">
+                        {sub.title}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
