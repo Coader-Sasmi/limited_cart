@@ -12,11 +12,11 @@ export default function CustomerSay() {
           duis
         </p>
       </div>
-      <div className="relative flex ">
+      <div className="relative flex">
         <img
           src="/card1.png"
           alt="image"
-          className="h-auto w-auto absolute -left-20 hidden lg:block"
+          className="h-auto w-auto absolute -left-20 hidden lg:block -z-10"
         />
         <img
           src="/product_1.png"
@@ -24,7 +24,7 @@ export default function CustomerSay() {
           className="h-24 w-auto absolute left-0 top-28 hidden lg:block"
         />
 
-        <div className="flex justify-center items-center w-full z-10">
+        <div className="flex justify-center items-center w-full ">
           <div className=" flex md:flex-row flex-col gap-8 shadow-xl p-10 rounded-lg bg-white md:w-2/3">
             {/* <img src="/card3.png" alt="image" className="lg:h-72 w-auto" /> */}
             <img src="/Picture2.png" alt="image" className="lg:h-60 w-auto" />
@@ -49,7 +49,7 @@ export default function CustomerSay() {
         <img
           src="/card2.png"
           alt="image"
-          className="h-auto w-auto absolute -right-20 hidden lg:block"
+          className="h-auto w-auto absolute -right-20 hidden lg:block -z-10"
         />
       </div>
       <div className=" flex">

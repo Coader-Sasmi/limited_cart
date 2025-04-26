@@ -4,7 +4,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { HiOutlineInformationCircle, HiOutlineMenuAlt3 } from "react-icons/hi";
@@ -35,7 +36,7 @@ export default function Navbar() {
     pathname === menuPath || pathname.startsWith(`${menuPath}/`);
   return (
     <nav
-      className={`sticky top-0 z-[999] transition-all duration-100 ease-in-out border-b `}
+      className={`sticky top-0 z-[9999] transition-all duration-100 ease-in-out border-b `}
     >
       <ResponsiveNav openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
       <section className="bg-tertiary">
@@ -90,10 +91,11 @@ export default function Navbar() {
       </aside>
       <section className="main-container bg-white flex gap-8 py-3 items-center justify-between w-full">
         <div className="flex gap-8">
-          <div className="flex items-center gap-2 py-1 px-4 border rounded-md">
+          {/* <div className="flex items-center gap-2 py-1 px-4 border rounded-md">
             <AiOutlineMenu />
             <p className="whitespace-nowrap">All Categories</p>
-          </div>
+          </div> */}
+          <AllCategoriesModal />
           <div className="lg:flex gap-8 py-3 hidden">
             {NavArr?.map((curElm, i) => (
               <div key={i} className={isActive(curElm.path) ? "active" : ""}>
@@ -125,3 +127,87 @@ export default function Navbar() {
     </nav>
   );
 }
+
+export const AllCategoriesModal: React.FC = () => {
+  const [open, setOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [pos, setPos] = useState({ top: 0, left: 0 });
+  const pathname = usePathname();
+
+  const isActive = (menuPath: string) =>
+    pathname === menuPath || pathname.startsWith(`${menuPath}/`);
+
+  // Compute panel position based on button's viewport coords
+  const updatePosition = () => {
+    if (!buttonRef.current) return;
+    const rect = buttonRef.current.getBoundingClientRect();
+    setPos({
+      top: rect.bottom, // no window.scrollY here, rect is already relative to viewport
+      left: rect.left,
+    });
+  };
+
+  // When we open, calculate initial position and start listening to scroll/resize
+  useEffect(() => {
+    if (!open) return;
+
+    updatePosition();
+    window.addEventListener("scroll", updatePosition);
+    window.addEventListener("resize", updatePosition);
+    return () => {
+      window.removeEventListener("scroll", updatePosition);
+      window.removeEventListener("resize", updatePosition);
+    };
+  }, [open]);
+
+  // bail out server-side
+  // if (typeof document === "undefined") return null;
+
+  return (
+    <div>
+      <button
+        ref={buttonRef}
+        onClick={() => setOpen((v) => !v)}
+        className="inline-flex items-center px-4 py-2 border rounded-md shadow-sm hover:bg-gray-100 focus:outline-none focus:ring"
+      >
+        <span className="whitespace-nowrap flex items-center gap-2">
+          <AiOutlineMenu />
+          <span>All Categories</span>
+        </span>
+      </button>
+
+      {open &&
+        createPortal(
+          <>
+            {/* backdrop */}
+            <div
+              className="fixed inset-0 bg-black bg-opacity-25 z-40"
+              onClick={() => setOpen(false)}
+            />
+
+            {/* panel */}
+            <div
+              style={{ top: pos.top, left: pos.left }}
+              className="fixed bg-white rounded-md shadow-lg mt-1 w-64 z-50"
+            >
+              <div className="p-4 flex flex-col gap-2">
+                {NavArr.map((curElm, i) => (
+                  <Link key={i} href={curElm.path}>
+                    <p
+                      className={`block px-2 py-1 rounded hover:bg-gray-100 ${
+                        isActive(curElm.path) ? "bg-gray-200 font-semibold" : ""
+                      }`}
+                      onClick={() => setOpen(false)}
+                    >
+                      {curElm.title}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </>,
+          document.body
+        )}
+    </div>
+  );
+};
