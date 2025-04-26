@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { SupplierList } from "@/components";
+import {
+  AddUpdateSupplierDrawer,
+  CustomDrawer,
+  SupplierList,
+} from "@/components";
 import useSwr from "@/components/hooks/useSwr";
 import { IconButton } from "@mui/material";
 import { useState } from "react";
@@ -20,6 +24,8 @@ export default function SupplierPage() {
   const [currentPage, setCurrentPage] = useState(0);
   const [limitPerPage, setLimitPerPage] = useState(20);
   const [sortingValue, setSortingValue] = useState("");
+  const [openAddUpdateSupplierDrawer, setOpenAddUpdateSupplierDrawer] =
+    useState(false);
   const { data, isValidating, mutate } = useSwr<{
     data: Supplier[];
   }>(`supplier`);
@@ -28,99 +34,27 @@ export default function SupplierPage() {
   const dataArray = data as unknown as Supplier[];
   const handleRefresh = () => mutate();
 
-  // const sortingSchema = [
-  //   {
-  //     key: "2",
-  //     placeHolder: "Select Category",
-  //     name: "sort",
-  //     type: "select",
-  //     value: sortingValue,
-  //     initialValue: "",
-  //     options: [
-  //       {
-  //         label: "Electronics",
-  //         value: "Electronics",
-  //       },
-  //       {
-  //         label: "Computers",
-  //         value: "Computers",
-  //       },
-  //       {
-  //         label: "Accessories",
-  //         value: "Accessories",
-  //       },
-  //       {
-  //         label: "Wearables",
-  //         value: "Wearables",
-  //       },
-  //     ],
-  //   },
-  // ];
-
   const handleResetAll = () => {
     setSortingValue("");
     setCurrentPage(0);
     setLimitPerPage(20);
   };
 
-  // const supplierArr = [
-  //   {
-  //     SupplierName: "Supplier 1",
-  //     SupplierDescription: "High-quality electronics supplier.",
-  //     SupplierEmailId: "supplier1@example.com",
-  //     SupplierPhone: "123-456-7890",
-  //     SupplierAddress: "123 Main St, Cityville, Country",
-  //   },
-  //   {
-  //     SupplierName: "Supplier 2",
-  //     SupplierDescription: "Reliable industrial parts supplier.",
-  //     SupplierEmailId: "supplier2@example.com",
-  //     SupplierPhone: "234-567-8901",
-  //     SupplierAddress: "456 Second St, Townsville, Country",
-  //   },
-  //   {
-  //     SupplierName: "Supplier 3",
-  //     SupplierDescription: "Organic produce supplier.",
-  //     SupplierEmailId: "supplier3@example.com",
-  //     SupplierPhone: "345-678-9012",
-  //     SupplierAddress: "789 Third St, Village, Country",
-  //   },
-  //   {
-  //     SupplierName: "Supplier 4",
-  //     SupplierDescription: "Top-tier fashion materials.",
-  //     SupplierEmailId: "supplier4@example.com",
-  //     SupplierPhone: "456-789-0123",
-  //     SupplierAddress: "101 Fourth Ave, Metropolis, Country",
-  //   },
-  //   {
-  //     SupplierName: "Supplier 5",
-  //     SupplierDescription: "Quality paper and printing supplies.",
-  //     SupplierEmailId: "supplier5@example.com",
-  //     SupplierPhone: "567-890-1234",
-  //     SupplierAddress: "202 Fifth Blvd, Capital City, Country",
-  //   },
-  // ];
-
   return (
     <>
-      {/* <CustomDialog
-            open={openAddUpdateSubCategoryModel}
-            onClose={() => setOpenAddUpdateSubCategoryModel(false)}
-            sx={{
-              borderRadius: 30,
-            }}
-            maxWidth="sm"
-            paperProps={{
-              style: {
-                borderRadius: 18,
-              },
-            }}
-          >
-            <AddUpdateSubCategory
-              mutate={mutate}
-              subCategoryModelClose={() => setOpenAddUpdateSubCategoryModel(false)}
-            />
-          </CustomDialog> */}
+      <CustomDrawer
+        open={openAddUpdateSupplierDrawer}
+        onClose={() => setOpenAddUpdateSupplierDrawer(false)}
+        anchor="right"
+        drawerStyle="w-[75vw] md:w-[30vw] h-screen "
+      >
+        <AddUpdateSupplierDrawer
+          mutate={mutate}
+          setOpenAddUpdateSupplierDrawer={() =>
+            setOpenAddUpdateSupplierDrawer(false)
+          }
+        />
+      </CustomDrawer>
       <section className="admin-container flex flex-col admin-gap">
         <div className="admin-bg rounded-lg w-full grid grid-cols-12 items-center gap-4">
           {/* <div className="lg:col-span-4 md:col-span-6 col-span-12">
@@ -168,16 +102,23 @@ export default function SupplierPage() {
               </div>
             </div>
           </div>
-          {/* <div className="lg:col-span-4 md:col-span-12 col-span-12 flex gap-2 justify-end items-center ">
-          <Pagination
+          <div className="lg:col-span-4 md:col-span-12 col-span-12 flex gap-2 justify-end items-center ">
+            {/* <Pagination
             currentPage={currentPage}
             perPage={limitPerPage}
             setCurrentPage={setCurrentPage}
             totalCount={productArr?.length}
             setPerPage={setLimitPerPage}
             lastPage={false}
-          />
-        </div> */}
+          /> */}
+            {/* <Tooltip title="Add Supplier">
+              <div className="flex cursor-pointer justify-center items-center text-xl common-transition text-primary w-10 h-10 rounded-md border bg-primary/5">
+                <BiAddToQueue
+                  onClick={() => setOpenAddUpdateSupplierDrawer(true)}
+                />
+              </div>
+            </Tooltip> */}
+          </div>
         </div>
         <div className="max-w-full overflow-x-scroll scroll-bar-none">
           <div className="flex flex-col min-w-[55rem]">

@@ -1,5 +1,6 @@
 export { default as AddUpdateCategoryDialog } from "./AddUpdateCategoryDialog";
 export { default as AddUpdateSubCategory } from "./AddUpdateSubCategory";
+export { default as AddUpdateSupplierDrawer } from "./AddUpdateSupplierDrawer";
 export { default as AnalyticsSemiCircle } from "./AnalyticsSemiCircle";
 export { default as CategoryCard } from "./CategoryCard";
 export { default as ClientBillsOverview } from "./ClientBillsOverview";
