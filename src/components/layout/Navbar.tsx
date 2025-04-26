@@ -130,7 +130,7 @@ export default function Navbar() {
         </section>
       </aside>
       <section className="main-container bg-white flex gap-8 py-3 items-center justify-between w-full">
-        <div className="hidden lg:flex gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           <AllCategoriesModal />
           <div className="flex gap-8 py-3">
             {NavArr.map((item, i) => {

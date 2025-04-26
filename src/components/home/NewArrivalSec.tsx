@@ -1,129 +1,192 @@
+"use client";
+
+import { useMemo, useState } from "react";
 import ProductCard from "./ProductCard";
 
+type Product = {
+  id: number;
+  categories: string[];
+  img: string;
+  name: string;
+  price: string;
+  reviews: string;
+  soldOutText?: string;
+};
+
+const productArrival: Product[] = [
+  {
+    id: 1,
+    categories: ["ALL", "FOOTWEAR"],
+    img: "/product_1.png",
+    name: "Brown Shoes",
+    price: "$95.50",
+    reviews: "(4.1k) Customer Reviews",
+    soldOutText: "Almost Sold Out",
+  },
+  {
+    id: 2,
+    categories: ["ALL", "FOOTWEAR"],
+    img: "/product_2.png",
+    name: "Black Shoes",
+    price: "$95.50",
+    reviews: "(4.1k) Customer Reviews",
+    soldOutText: "Almost Sold Out",
+  },
+  {
+    id: 3,
+    categories: ["ALL", "FURNITURE"],
+    img: "/Picture2.png",
+    name: "White Sofa",
+    price: "$95.50",
+    reviews: "(4.1k) Customer Reviews",
+    soldOutText: "Almost Sold Out",
+  },
+  {
+    id: 4,
+    categories: ["ALL", "FURNITURE"],
+    img: "/Picture1.png",
+    name: "Chair",
+    price: "$95.50",
+    reviews: "(4.1k) Customer Reviews",
+    soldOutText: "Almost Sold Out",
+  },
+  {
+    id: 5,
+    categories: ["FOOTWEAR"],
+    img: "/Picture3.png",
+    name: "Shoes",
+    price: "$95.50",
+    reviews: "(4.1k) Customer Reviews",
+    soldOutText: "Almost Sold Out",
+  },
+  {
+    id: 6,
+    categories: ["ALL", "WALLET"],
+    img: "/pourse/Picture11.png",
+    name: "Purse",
+    price: "$95.50",
+    reviews: "(4.1k) Customer Reviews",
+    soldOutText: "Almost Sold Out",
+  },
+  {
+    id: 7,
+    categories: ["ALL", "BAG"],
+    img: "/bag/Picture10.png",
+    name: "Bag",
+    price: "$95.50",
+    reviews: "(4.1k) Customer Reviews",
+    soldOutText: "Almost Sold Out",
+  },
+  {
+    id: 8,
+    categories: ["ALL", "BAG"],
+    img: "/bag/Picture65.png",
+    name: "Bag",
+    price: "$95.50",
+    reviews: "(4.1k) Customer Reviews",
+    soldOutText: "Almost Sold Out",
+  },
+  {
+    id: 9,
+    categories: ["ALL", "JACKET"],
+    img: "/jacket/Picture62.png",
+    name: "Jacket",
+    price: "$95.50",
+    reviews: "(4.1k) Customer Reviews",
+    soldOutText: "Almost Sold Out",
+  },
+  {
+    id: 10,
+    categories: ["ALL", "JACKET"],
+    img: "/jacket/Picture63.png",
+    name: "Jacket",
+    price: "$95.50",
+    reviews: "(4.1k) Customer Reviews",
+    soldOutText: "Almost Sold Out",
+  },
+  {
+    id: 11,
+    categories: ["ALL", "BELT"],
+    img: "/belt/Picture7.png",
+    name: "Belt",
+    price: "$95.50",
+    reviews: "(4.1k) Customer Reviews",
+    soldOutText: "Almost Sold Out",
+  },
+  {
+    id: 12,
+    categories: ["ALL", "BELT"],
+    img: "/belt/Picture8.png",
+    name: "Belt",
+    price: "$95.50",
+    reviews: "(4.1k) Customer Reviews",
+    soldOutText: "Almost Sold Out",
+  },
+];
+
 export default function NewArrivalSec() {
-  const categoryName = [
-    {
-      name: "Men’s Fashion",
-    },
-    {
-      name: "Women’s Fashion",
-    },
-    {
-      name: "Women Accessories",
-    },
-    {
-      name: "Men Accessories",
-    },
-    {
-      name: "Discount Deals",
-    },
-  ];
-  const productArrival = [
-    {
-      img: "/product_1.png",
-      name: "Brown Shoes",
-    },
-    {
-      img: "/product_2.png",
-      name: "Black Shoes",
-    },
+  const [activeCategory, setActiveCategory] = useState<string>("ALL");
 
-    {
-      img: "/Picture2.png",
-      name: "White SOfa",
-    },
-    {
-      img: "/Picture1.png",
-      name: "Chair",
-    },
-    {
-      img: "/Picture3.png",
-      name: "Shoes",
-    },
-    {
-      img: "/pourse/Picture11.png",
-      name: "pourse",
-    },
-    {
-      img: "/bag/Picture10.png",
-      name: "bag",
-    },
+  // build unique category tabs
+  const categories = useMemo<string[]>(() => {
+    const catSet = new Set<string>(productArrival.flatMap((p) => p.categories));
+    const list = Array.from(catSet);
+    // ensure ALL is first
+    const idx = list.indexOf("ALL");
+    if (idx > -1) {
+      list.splice(idx, 1);
+      list.unshift("ALL");
+    }
+    return list;
+  }, []);
 
-    {
-      img: "/bag/Picture65.png",
-      name: "bag",
-    },
-    {
-      img: "/jacket/Picture62.png",
-      name: "jacket",
-    },
+  // filter products by selected category
+  const filteredProducts = useMemo<Product[]>(
+    () =>
+      productArrival.filter(
+        (p) => activeCategory === "ALL" || p.categories.includes(activeCategory)
+      ),
+    [activeCategory]
+  );
 
-    {
-      img: "/jacket/Picture63.png",
-      name: "jacket",
-    },
-    {
-      img: "/jacket/Picture64.png",
-      name: "jacket",
-    },
-    {
-      img: "/belt/Picture7.png",
-      name: "Belt",
-    },
-
-    {
-      img: "/belt/Picture8.png",
-      name: "Belt",
-    },
-  ];
   return (
-    <section className="main-container py-10 flex flex-col justify-center items-center gap-8 ">
-      <div className="flex flex-col justify-center items-center gap-8">
+    <section className="main-container py-10 flex flex-col items-center gap-8">
+      <div className="text-center space-y-2">
         <h1 className="text-3xl font-semibold">New Arrivals</h1>
-        <p className="text-textColor text-center">
+        <p className="text-textColor">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque
-          duis
-          <br /> ultrices sollicitudin aliquam sem. Scelerisque duis ultrices
-          sollicitudin
+          duis ultrices sollicitudin aliquam sem.
         </p>
       </div>
-      <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-5 w-full lg:w-2/3">
-        {categoryName.map((item, i) => (
-          <div key={i}>
-            <p className="cursor-pointer bg-gray-100 rounded-lg text-center py-2 hover:shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)] hover:bg-primary hover:text-white">
-              {item.name}
-            </p>
-          </div>
-        ))}
+
+      {/* Category Tabs */}
+      <div className="flex flex-wrap gap-4 justify-center mb-8">
+        {categories.map((cat) => {
+          const isActive = cat === activeCategory;
+          return (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-2 rounded-lg font-medium transition 
+                ${
+                  isActive
+                    ? "bg-red-500 text-white shadow-md"
+                    : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                }
+              `}
+            >
+              {cat}
+            </button>
+          );
+        })}
       </div>
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 md:gap-10 gap-5 w-full ">
-        {productArrival?.map((item, i) => (
-          <ProductCard key={i} item={item} />
+
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {filteredProducts.map((product) => (
+          <ProductCard key={product.id} item={product} />
         ))}
       </div>
     </section>
   );
 }
-// <div key={i} className="flex flex-col gap-2 shadow-xl rounded-lg p-4">
-//   <img src={item.img} alt="image" className="w-auto h-60" />
-//   <div className="flex flex-col gap-6">
-//     <div className="flex justify-between">
-//       <div className="flex flex-col">
-//         <h2>{item.name}</h2>
-//         <small>Al Karam</small>
-//       </div>
-//       <div className="flex gap-2">
-//         <IoStar className="text-yellow-400" />
-//         <IoStar className="text-yellow-400" />
-//         <IoStar className="text-yellow-400" />
-//         <IoStar className="text-yellow-400" />
-//         <IoStar className="text-yellow-400" />
-//       </div>
-//     </div>
-//     <small>(4.1k) Customer Reviews</small>
-//     <div className="flex justify-between">
-//       <h1>$95.50</h1>
-//       <small className="text-primary">Almost Sold Out</small>
-//     </div>
-//   </div>
-// </div>

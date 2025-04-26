@@ -13,11 +13,9 @@ export default function ProductCard({ item }: any) {
               <small>Al Karam</small>
             </div>
             <div className="flex gap-2">
-              <IoStar className="text-yellow-400" />
-              <IoStar className="text-yellow-400" />
-              <IoStar className="text-yellow-400" />
-              <IoStar className="text-yellow-400" />
-              <IoStar className="text-yellow-400" />
+              {[...Array(5)].map((_, i) => (
+                <IoStar key={i} className="h-5 w-5 text-yellow-400" />
+              ))}
             </div>
           </div>
           <small>(4.1k) Customer Reviews</small>
