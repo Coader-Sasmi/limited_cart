@@ -16,8 +16,9 @@ import useSwr from "../hooks/useSwr";
 
 export interface NavItem {
   title: string;
-  path?: string;
+  path: string;
   subcategories?: NavItem[];
+  innerSubcategories?: NavItem[];
 }
 
 export const NavArr: NavItem[] = [
@@ -29,52 +30,145 @@ export const NavArr: NavItem[] = [
     title: "Furniture",
     path: "/website/furniture",
     subcategories: [
-      { title: "Sofas", path: "/website/furniture/sofas" },
-      { title: "Chairs", path: "/website/furniture/chairs" },
-    ],
-  },
-  {
-    title: "Footwear",
-    path: "/website/footwear",
-    subcategories: [
-      { title: "Sneakers", path: "/website/footwear/sneakers" },
-      { title: "Boots", path: "/website/footwear/boots" },
+      { title: "100% Leather Sofa", path: "/website/furniture/sofas" },
+      { title: "Leatherette Sofa", path: "/website/furniture/chairs" },
+      { title: "Touch Leather Sofa", path: "/website/furniture/chairs" },
+      { title: "Fabric Sofa", path: "/website/furniture/chairs" },
     ],
   },
   {
     title: "Bags",
     path: "/website/bag",
     subcategories: [
-      { title: "Male", path: "/website/bags/male" },
-      { title: "Female", path: "/website/bags/female" },
+      {
+        title: "For Men",
+        path: "/website/bags/male",
+        innerSubcategories: [
+          { title: "100% Leather Laptop Bag", path: "/website/bags/male" },
+          { title: "100% Leather Trolley Bag", path: "/website/bags/female" },
+          { title: "100% Leather Backpack", path: "/website/bags/female" },
+          { title: "100% Leather Bag", path: "/website/bags/female" },
+        ],
+      },
+      {
+        title: "For Women",
+        path: "/website/bags/female",
+        innerSubcategories: [
+          { title: "100% Leather Bag", path: "/website/bags/male" },
+          { title: "100% Leather Backpack", path: "/website/bags/female" },
+          { title: "100% Leather Hand Bag", path: "/website/bags/female" },
+          { title: "100% Leather ", path: "/website/bags/female" },
+        ],
+      },
     ],
   },
   {
     title: "Jacket",
     path: "/website/jacket",
     subcategories: [
-      { title: "Male", path: "/website/jacket/male" },
-      { title: "Female", path: "/website/jacket/female" },
+      {
+        title: "For Men",
+        path: "/website/jacket/male",
+        innerSubcategories: [
+          { title: "Over Coat Jacket", path: "/website/bags/male" },
+          { title: "Regular Jacket", path: "/website/bags/female" },
+        ],
+      },
+      {
+        title: "For Women",
+        path: "/website/jacket/female",
+        innerSubcategories: [
+          { title: "Over Coat Jacket", path: "/website/bags/male" },
+          { title: "Regular Jacket", path: "/website/bags/female" },
+        ],
+      },
     ],
   },
   {
-    title: "Belt",
-    path: "/website/belt",
+    title: "Footwear",
+    path: "/website/footwear",
     subcategories: [
-      { title: "Male", path: "/website/belt/male" },
-      { title: "Female", path: "/website/belt/female" },
+      {
+        title: "For Men",
+        path: "/website/footwear/sneakers",
+        innerSubcategories: [
+          { title: "Leather Shoes", path: "/website/bags/male" },
+          { title: "Leather Sandal", path: "/website/bags/female" },
+          { title: "Casual Shoes", path: "/website/bags/female" },
+        ],
+      },
+      {
+        title: "For Women",
+        path: "/website/footwear/boots",
+        innerSubcategories: [
+          { title: "Leather Shoes", path: "/website/bags/male" },
+          { title: "Leather Sandal", path: "/website/bags/female" },
+          { title: "Casual Shoes", path: "/website/bags/female" },
+        ],
+      },
     ],
   },
-  { title: "Wallet ", path: "/website/wallet" },
+  {
+    title: "Accessories",
+    path: "/website/accessories",
+    subcategories: [
+      {
+        title: "For Men",
+        path: "/website/accessories/male",
+        innerSubcategories: [
+          { title: "Leather Belt ", path: "/website/bags/male" },
+          { title: "Leather Wallet", path: "/website/bags/female" },
+          { title: "Leather Key Chain", path: "/website/bags/female" },
+          { title: "Leather Passport Cover", path: "/website/bags/female" },
+          { title: "Leather Chest Bag", path: "/website/bags/female" },
+        ],
+      },
+      {
+        title: "For Women",
+        path: "/website/accessories/female",
+        innerSubcategories: [
+          { title: "Leather Belt ", path: "/website/bags/male" },
+          { title: "Leather Wallet", path: "/website/bags/female" },
+          { title: "Leather Hand Bag", path: "/website/bags/female" },
+          { title: "Leather Passport Cover", path: "/website/bags/female" },
+          { title: "Leather Chest Bag", path: "/website/bags/female" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Trade Assurance",
+    path: "/website/trade-assurance",
+    subcategories: [
+      {
+        title: "Shipping & logistics services",
+        path: "/website/trade-assurance",
+      },
+      {
+        title: "Safe & easy payments",
+        path: "/website/trade-assurance",
+      },
+      {
+        title: "Money-back policy",
+        path: "/website/trade-assurance",
+      },
+      {
+        title: "After-sales protections",
+        path: "/website/trade-assurance",
+      },
+    ],
+  },
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [openDrawer, setOpenDrawer] = useState(false);
   const { data } = useSwr<{
     data: any[];
   }>(`category`);
   // console.log(data);
+
+  const pathname = usePathname();
+  const [hoveredSub, setHoveredSub] = useState<string | null>(null);
 
   return (
     <nav
@@ -132,7 +226,7 @@ export default function Navbar() {
       <section className="main-container bg-white flex gap-8 py-3 items-center justify-between w-full">
         <div className="hidden lg:flex items-center gap-8">
           <AllCategoriesModal />
-          <div className="flex gap-8 py-3">
+          {/* <div className="flex gap-8 py-3">
             {NavArr.map((item, i) => {
               const active =
                 item.path === pathname || pathname.startsWith(item.path + "/");
@@ -144,12 +238,12 @@ export default function Navbar() {
                     active ? "font-semibold text-primary" : ""
                   }`}
                 >
-                  {/* Parent link */}
+                  
                   <Link href={item.path ?? "#"}>
                     <p className="px-2 py-1 hover:text-primary">{item.title}</p>
                   </Link>
 
-                  {/* Sub‐menu (if any) */}
+                  
                   {item.subcategories && (
                     <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all">
                       <ul className="flex flex-col">
@@ -166,6 +260,99 @@ export default function Navbar() {
                                   {sub.title}
                                 </p>
                               </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div> */}
+          <div className="flex gap-8 py-3">
+            {NavArr.map((item) => {
+              const active =
+                item.path === pathname || pathname.startsWith(item.path + "/");
+
+              return (
+                <div key={item.title} className="relative group">
+                  {/* Parent link */}
+                  <Link href={item.path ?? "#"}>
+                    <p
+                      className={`px-2 py-1 hover:text-primary ${
+                        active ? "font-semibold text-primary" : ""
+                      }`}
+                    >
+                      {item.title}
+                    </p>
+                  </Link>
+
+                  {/* Submenu */}
+                  {item.subcategories && (
+                    <div
+                      className="
+                absolute top-full left-0 mt-1
+                w-48 bg-white border border-gray-200 rounded-md shadow-lg
+                opacity-0 invisible
+                group-hover:opacity-100 group-hover:visible
+                transition-all
+              "
+                    >
+                      <ul className="flex flex-col">
+                        {item.subcategories.map((sub) => {
+                          const subActive = pathname === sub.path;
+                          return (
+                            <li
+                              key={sub.title}
+                              className="relative group"
+                              onMouseEnter={() => setHoveredSub(sub.title)}
+                              onMouseLeave={() => setHoveredSub(null)}
+                            >
+                              <Link href={sub.path ?? "#"}>
+                                <p
+                                  className={`block px-4 py-2 text-sm hover:bg-gray-100 whitespace-nowrap ${
+                                    subActive ? "bg-gray-100 font-medium" : ""
+                                  }`}
+                                >
+                                  {sub.title}
+                                </p>
+                              </Link>
+
+                              {/* Inner Submenu */}
+                              {sub.innerSubcategories &&
+                                hoveredSub === sub.title && (
+                                  <div
+                                    className="
+                              absolute top-0 left-full ml-1
+                              w-48 bg-white border border-gray-200 rounded-md shadow-lg
+                              opacity-100 visible
+                              transition-all
+                            "
+                                  >
+                                    <ul className="flex flex-col">
+                                      {sub.innerSubcategories.map((inner) => {
+                                        const innerActive =
+                                          pathname === inner.path;
+                                        return (
+                                          <li key={inner.title}>
+                                            <Link href={inner.path ?? "#"}>
+                                              <p
+                                                className={`block px-4 py-2 text-sm hover:bg-gray-100 whitespace-nowrap ${
+                                                  innerActive
+                                                    ? "bg-gray-100 font-medium"
+                                                    : ""
+                                                }`}
+                                              >
+                                                {inner.title}
+                                              </p>
+                                            </Link>
+                                          </li>
+                                        );
+                                      })}
+                                    </ul>
+                                  </div>
+                                )}
                             </li>
                           );
                         })}
@@ -195,6 +382,8 @@ export default function Navbar() {
 
 export const AllCategoriesModal: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const [hoveredParent, setHoveredParent] = useState<NavItem | null>(null);
+  const [hoveredSub, setHoveredSub] = useState<NavItem | null>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [pos, setPos] = useState({ top: 0, left: 0 });
   const pathname = usePathname();
@@ -235,63 +424,95 @@ export const AllCategoriesModal: React.FC = () => {
       {open &&
         createPortal(
           <>
-            {/* backdrop */}
+            {/* Backdrop */}
             <div
               className="fixed inset-0 bg-black bg-opacity-25 z-40"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setOpen(false);
+                setHoveredParent(null);
+                setHoveredSub(null);
+              }}
             />
 
-            {/* dropdown panel */}
+            {/* Dropdown panel */}
             <div
               style={{ top: pos.top, left: pos.left }}
-              className="fixed bg-white rounded-md shadow-lg mt-1 w-40 z-50"
+              className="fixed bg-white rounded-md shadow-lg mt-1 z-50"
+              onMouseLeave={() => {
+                setHoveredParent(null);
+                setHoveredSub(null);
+                setOpen(false);
+              }}
             >
-              <div className="p-4 space-y-2">
-                {NavArr.map((item) => (
-                  <div key={item.title} className="relative group">
-                    {/* Parent link/button */}
-                    {item.path ? (
-                      <Link href={item.path}>
+              <div className="flex">
+                {/* Column 1: Parent categories */}
+                <ul className="py-4 px-2 space-y-1">
+                  {NavArr.map((parent) => (
+                    <li
+                      key={parent.title}
+                      className="cursor-pointer px-4 py-2 hover:bg-gray-100 rounded whitespace-nowrap"
+                      onMouseEnter={() => {
+                        setHoveredParent(parent);
+                        setHoveredSub(null);
+                      }}
+                    >
+                      <Link href={parent.path}>
                         <p
-                          className={`block px-2 py-1 rounded ${
-                            isActive(item.path)
-                              ? "bg-gray-200 font-semibold"
-                              : "hover:bg-gray-100"
+                          className={`${
+                            isActive(parent.path) ? "font-semibold" : ""
                           }`}
-                          onClick={() => setOpen(false)}
                         >
-                          {item.title}
+                          {parent.title}
                         </p>
                       </Link>
-                    ) : (
-                      <span className="block px-2 py-1 rounded hover:bg-gray-100">
-                        {item.title}
-                      </span>
-                    )}
+                    </li>
+                  ))}
+                </ul>
 
-                    {/* Submenu on hover */}
-                    {item.subcategories && (
-                      <div className="absolute top-0 left-full ml-0 hidden w-32 rounded-md bg-white shadow-lg group-hover:block">
-                        <div className="p-2 space-y-1">
-                          {item.subcategories.map((sub) => (
-                            <Link key={sub.title} href={sub.path!}>
-                              <p
-                                className={`block px-2 py-1 text-sm rounded ${
-                                  isActive(sub.path)
-                                    ? "bg-gray-200 font-medium"
-                                    : "hover:bg-gray-50"
-                                }`}
-                                onClick={() => setOpen(false)}
-                              >
-                                {sub.title}
-                              </p>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
+                {/* Column 2: Subcategories */}
+                <div className="border-l border-gray-200">
+                  <ul className="py-4 px-2 space-y-1">
+                    {hoveredParent?.subcategories?.map((sub) => (
+                      <li
+                        key={sub.title}
+                        className="cursor-pointer px-4 py-2 hover:bg-gray-100 rounded whitespace-nowrap"
+                        onMouseEnter={() => setHoveredSub(sub)}
+                      >
+                        <Link href={sub.path!}>
+                          <p
+                            className={`${
+                              isActive(sub.path) ? "font-medium" : ""
+                            }`}
+                          >
+                            {sub.title}
+                          </p>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 3: Inner subcategories */}
+                <div className="border-l border-gray-200">
+                  <ul className="py-4 px-2 space-y-1">
+                    {hoveredSub?.innerSubcategories?.map((inner) => (
+                      <li
+                        key={inner.title}
+                        className="cursor-pointer px-4 py-2 hover:bg-gray-100 rounded whitespace-nowrap"
+                      >
+                        <Link href={inner.path!}>
+                          <p
+                            className={`${
+                              isActive(inner.path) ? "font-medium" : ""
+                            }`}
+                          >
+                            {inner.title}
+                          </p>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </>,
