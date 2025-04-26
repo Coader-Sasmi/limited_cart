@@ -53,14 +53,6 @@ const DesignationCard = ({
           curSubCategory={curSubCategory}
         />
       </CustomDialog>
-      {/* <Tooltip title="Assign Module">
-        <div
-        
-          className="absolute right-0 top-0 p-2 border rounded-bl-lg cursor-pointer"
-        >
-          <MdAssignmentAdd className="text-secondary text-xl" />
-        </div>
-      </Tooltip> */}
 
       <div className="flex text-sm items-center gap-2">
         Sub Category ID :{" "}
@@ -79,16 +71,16 @@ const DesignationCard = ({
         </span>
       </div>
 
-      <div className="flex gap-2 pt-3 w-full justify-end">
-        {/* <Tooltip title="Edit">
+      {/* <div className="flex gap-2 pt-3 w-full justify-end">
+        <Tooltip title="Edit">
           <div
             onClick={() => setOpenAddUpdateSubCategoryModel(true)}
             className="h-10 w-10 cursor-pointer hover:scale-105 ease-in-out transition-all duration-200 hover:shadow-xl rounded-full bg-gradient-to-r from-blue-800 to-blue-600 flex justify-center items-center text-lg font-semibold hover:from-blue-600 hover:to-blue-800"
           >
             <TbEdit className="!text-white" />
           </div>
-        </Tooltip> */}
-      </div>
+        </Tooltip>
+      </div> */}
     </div>
   );
 };

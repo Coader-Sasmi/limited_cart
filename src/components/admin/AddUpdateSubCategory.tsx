@@ -43,6 +43,7 @@ export default function AddUpdateDesignation({
     try {
       let res: any;
       const data: any = { ...values };
+      console.log(data);
       if (ID) {
         res = await mutation(`update-subcategories/${ID}`, {
           method: "PUT",
@@ -51,6 +52,7 @@ export default function AddUpdateDesignation({
             ...data,
           },
         });
+        console.log(res);
       } else {
         res = await mutation(`add-subcategories`, {
           method: "POST",
@@ -74,13 +76,13 @@ export default function AddUpdateDesignation({
   return (
     <section className="p-5 w-full bg-white flex flex-col gap-5">
       <h1 className="graph-title w-full text-center">
-        {curSubCategory?.title ? "Update" : "Create"} Sub Category
+        {curSubCategory?.SubcategoryID ? "Update" : "Create"} Sub Category
       </h1>
       <Formik
         initialValues={subCategorySchemaInitialValues}
         validationSchema={Yup.object(subCategorySchemaValidation)}
         onSubmit={handleDesignationOperation}
-        enableReinitialize={curSubCategory?.title ? true : false}
+        enableReinitialize={curSubCategory?.SubcategoryID ? true : false}
       >
         {(formik) => (
           <Form className="w-full grid grid-cols-12 gap-2 md:gap-4">
@@ -121,7 +123,7 @@ export default function AddUpdateDesignation({
             <div className="flex items-center col-span-12 justify-center flex-col gap-2 pt-2">
               <CustomLoadingButton
                 title={
-                  curSubCategory?.title
+                  curSubCategory?.SubcategoryID
                     ? "Update Sub Category"
                     : "Add Sub Category"
                 }

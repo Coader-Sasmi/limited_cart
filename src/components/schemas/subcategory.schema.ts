@@ -2,6 +2,7 @@
 import * as Yup from "yup";
 
 const subCategoryMutation = (curDesignation?: any, CategoryID?: any) => {
+  console.log(CategoryID);
   const subCategorySchema = [
     {
       key: "1",
@@ -10,7 +11,7 @@ const subCategoryMutation = (curDesignation?: any, CategoryID?: any) => {
       type: "text",
       validationSchema: Yup.string().required("CategoryID Is Required").trim(),
       required: true,
-      initialValue: curDesignation?.SubcategoryID ? CategoryID : CategoryID,
+      initialValue: CategoryID,
       className: `${"hidden"}`,
       disabled: true,
     },
