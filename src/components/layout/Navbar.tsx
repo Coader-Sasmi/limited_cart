@@ -139,24 +139,24 @@ export const NavArr: NavItem[] = [
   {
     title: "Trade Assurance",
     path: "/website/trade-assurance",
-    subcategories: [
-      {
-        title: "Shipping & logistics services",
-        path: "/website/trade-assurance",
-      },
-      {
-        title: "Safe & easy payments",
-        path: "/website/trade-assurance",
-      },
-      {
-        title: "Money-back policy",
-        path: "/website/trade-assurance",
-      },
-      {
-        title: "After-sales protections",
-        path: "/website/trade-assurance",
-      },
-    ],
+    // subcategories: [
+    //   {
+    //     title: "Shipping & logistics services",
+    //     path: "/website/trade-assurance",
+    //   },
+    //   {
+    //     title: "Safe & easy payments",
+    //     path: "/website/trade-assurance",
+    //   },
+    //   {
+    //     title: "Money-back policy",
+    //     path: "/website/trade-assurance",
+    //   },
+    //   {
+    //     title: "After-sales protections",
+    //     path: "/website/trade-assurance",
+    //   },
+    // ],
   },
 ];
 
@@ -371,9 +371,9 @@ export default function Navbar() {
               Contact: <span className="text-black">{`+1-408-800-6217`}</span>{" "}
             </p>
           </div>
-          <button className="whitespace-nowrap bg-primary rounded-lg text-white py-1 px-6 shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]">
+          {/* <button className="whitespace-nowrap bg-primary rounded-lg text-white py-1 px-6 shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]">
             Sign Up
-          </button>
+          </button> */}
         </div>
       </section>
     </nav>
