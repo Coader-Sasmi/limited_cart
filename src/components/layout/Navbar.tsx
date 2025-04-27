@@ -123,20 +123,35 @@ export const NavArr: NavItem[] = [
     subcategories: [
       {
         title: "For Men",
-        path: "/website/footwear",
+        path: "/website/footwear/men",
         innerSubcategories: [
-          { title: "Leather Shoes", path: "/website/footwear" },
-          { title: "Leather Sandal", path: "/website/footwear" },
-          { title: "Casual Shoes", path: "/website/footwear" },
+          {
+            title: "Leather Shoes",
+            path: "/website/footwear/men/leather-shoes",
+          },
+          {
+            title: "Leather Sandal",
+            path: "/website/footwear/men/leather-sandal",
+          },
+          { title: "Casual Shoes", path: "/website/footwear/men/casual-shoes" },
         ],
       },
       {
         title: "For Women",
-        path: "/website/footwear/boots",
+        path: "/website/footwear/women",
         innerSubcategories: [
-          { title: "Leather Shoes", path: "/website/footwear" },
-          { title: "Leather Sandal", path: "/website/footwear" },
-          { title: "Casual Shoes", path: "/website/footwear" },
+          {
+            title: "Leather Shoes",
+            path: "/website/footwear/women/leather-shoes",
+          },
+          {
+            title: "Leather Sandal",
+            path: "/website/footwear/women/leather-sandal",
+          },
+          {
+            title: "Casual Shoes",
+            path: "/website/footwear/women/casual-shoes",
+          },
         ],
       },
     ],
