@@ -89,18 +89,30 @@ export const NavArr: NavItem[] = [
     subcategories: [
       {
         title: "For Men",
-        path: "/website/jacket/male",
+        path: "/website/jacket/men",
         innerSubcategories: [
-          { title: "Over Coat Jacket", path: "/website/jacket/male" },
-          { title: "Regular Jacket", path: "/website/jacket/male" },
+          {
+            title: "Over Coat Jacket",
+            path: "/website/jacket/men/over-coat-jacket",
+          },
+          {
+            title: "Regular Jacket",
+            path: "/website/jacket/men/regular-jacket",
+          },
         ],
       },
       {
         title: "For Women",
-        path: "/website/jacket/female",
+        path: "/website/jacket/women",
         innerSubcategories: [
-          { title: "Over Coat Jacket", path: "/website/jacket/female" },
-          { title: "Regular Jacket", path: "/website/jacket/female" },
+          {
+            title: "Over Coat Jacket",
+            path: "/website/jacket/women/over-coat-jacket",
+          },
+          {
+            title: "Regular Jacket",
+            path: "/website/jacket/women/regular-jacket",
+          },
         ],
       },
     ],
