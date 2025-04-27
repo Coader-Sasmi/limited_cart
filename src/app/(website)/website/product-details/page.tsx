@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // pages/website/product-details.tsx
 "use client";
+import { jacketProducts } from "@/components/utils/productCollections";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
-// import { productArrival } from "../jacket/page";
-import { jacketProducts } from "@/components/utils/productCollections";
 
 function ProductDetailsPage() {
   const searchParams = useSearchParams();
