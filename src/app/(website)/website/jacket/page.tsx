@@ -1,25 +1,13 @@
+"use client";
+
 import { ProductCard } from "@/components";
+import { jacketProducts } from "@/components/utils/productCollections";
 
 export default function JacketPage() {
-  const productArrival = [
-    {
-      img: "/jacket/Picture62.png",
-      name: "jacket",
-    },
-
-    {
-      img: "/jacket/Picture63.png",
-      name: "jacket",
-    },
-    {
-      img: "/jacket/Picture64.png",
-      name: "jacket",
-    },
-  ];
   return (
     <section className="main-container py-10 flex flex-col justify-center items-center gap-8 ">
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 md:gap-10 gap-5 w-full ">
-        {productArrival?.map((item, i) => (
+        {jacketProducts?.map((item, i) => (
           <ProductCard key={i} item={item} />
         ))}
       </div>
