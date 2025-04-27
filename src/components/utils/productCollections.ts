@@ -582,22 +582,6 @@ export const productArrival: NewProduct[] = [
     reviews: "(4.1k) Customer Reviews",
     soldOutText: "Almost Sold Out",
     brand: "Al Karam",
-    images: [
-      "/footwear/Picture8.png",
-      "/footwear/Picture7.png",
-      "/footwear/Picture3.png",
-    ],
-    sales: 10402,
-    reviewsCount: 1243,
-    rating: 4.1,
-    description:
-      "Embrace your love for cats and sweet treats with the Cat Taiyaki Tee! This fun and quirky T-shirt features an adorable design of a playful cat enjoying a taiyaki, the iconic fish-shaped Japanese dessert. Made from premium-quality cotton, it offers a soft, breathable, and comfortable fit perfect for everyday wear.",
-    features: [
-      "Material: 100% high-quality cotton",
-      "Fit: Relaxed and unisex sizing",
-      "Design: Durable, fade-resistant cat and taiyaki graphic",
-      "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
-    ],
   },
   {
     id: 2,
@@ -609,22 +593,6 @@ export const productArrival: NewProduct[] = [
     reviews: "(4.1k) Customer Reviews",
     soldOutText: "Almost Sold Out",
     brand: "Al Karam",
-    images: [
-      "/footwear/Picture8.png",
-      "/footwear/Picture7.png",
-      "/footwear/Picture3.png",
-    ],
-    sales: 10402,
-    reviewsCount: 1243,
-    rating: 4.1,
-    description:
-      "Embrace your love for cats and sweet treats with the Cat Taiyaki Tee! This fun and quirky T-shirt features an adorable design of a playful cat enjoying a taiyaki, the iconic fish-shaped Japanese dessert. Made from premium-quality cotton, it offers a soft, breathable, and comfortable fit perfect for everyday wear.",
-    features: [
-      "Material: 100% high-quality cotton",
-      "Fit: Relaxed and unisex sizing",
-      "Design: Durable, fade-resistant cat and taiyaki graphic",
-      "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
-    ],
   },
   {
     id: 3,
@@ -636,22 +604,6 @@ export const productArrival: NewProduct[] = [
     reviews: "(4.1k) Customer Reviews",
     soldOutText: "Almost Sold Out",
     brand: "Al Karam",
-    images: [
-      "/furniture/Picture10.png",
-      "/furniture/Picture11.png",
-      "/furniture/Picture12.png",
-    ],
-    sales: 10402,
-    reviewsCount: 1243,
-    rating: 4.1,
-    description:
-      "Embrace your love for cats and sweet treats with the Cat Taiyaki Tee! This fun and quirky T-shirt features an adorable design of a playful cat enjoying a taiyaki, the iconic fish-shaped Japanese dessert. Made from premium-quality cotton, it offers a soft, breathable, and comfortable fit perfect for everyday wear.",
-    features: [
-      "Material: 100% high-quality cotton",
-      "Fit: Relaxed and unisex sizing",
-      "Design: Durable, fade-resistant cat and taiyaki graphic",
-      "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
-    ],
   },
   {
     id: 4,
@@ -663,22 +615,6 @@ export const productArrival: NewProduct[] = [
     reviews: "(4.1k) Customer Reviews",
     soldOutText: "Almost Sold Out",
     brand: "Al Karam",
-    images: [
-      "/furniture/Picture10.png",
-      "/furniture/Picture11.png",
-      "/furniture/Picture12.png",
-    ],
-    sales: 10402,
-    reviewsCount: 1243,
-    rating: 4.1,
-    description:
-      "Embrace your love for cats and sweet treats with the Cat Taiyaki Tee! This fun and quirky T-shirt features an adorable design of a playful cat enjoying a taiyaki, the iconic fish-shaped Japanese dessert. Made from premium-quality cotton, it offers a soft, breathable, and comfortable fit perfect for everyday wear.",
-    features: [
-      "Material: 100% high-quality cotton",
-      "Fit: Relaxed and unisex sizing",
-      "Design: Durable, fade-resistant cat and taiyaki graphic",
-      "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
-    ],
   },
   {
     id: 5,
@@ -690,22 +626,6 @@ export const productArrival: NewProduct[] = [
     reviews: "(4.1k) Customer Reviews",
     soldOutText: "Almost Sold Out",
     brand: "Al Karam",
-    images: [
-      "/footwear/Picture8.png",
-      "/footwear/Picture7.png",
-      "/footwear/Picture3.png",
-    ],
-    sales: 10402,
-    reviewsCount: 1243,
-    rating: 4.1,
-    description:
-      "Embrace your love for cats and sweet treats with the Cat Taiyaki Tee! This fun and quirky T-shirt features an adorable design of a playful cat enjoying a taiyaki, the iconic fish-shaped Japanese dessert. Made from premium-quality cotton, it offers a soft, breathable, and comfortable fit perfect for everyday wear.",
-    features: [
-      "Material: 100% high-quality cotton",
-      "Fit: Relaxed and unisex sizing",
-      "Design: Durable, fade-resistant cat and taiyaki graphic",
-      "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
-    ],
   },
   {
     id: 7,
@@ -717,18 +637,6 @@ export const productArrival: NewProduct[] = [
     reviews: "(4.1k) Customer Reviews",
     soldOutText: "Almost Sold Out",
     brand: "Al Karam",
-    images: ["/bag/Picture65.png", "/bag/Picture66.png", "/bag/Picture67.png"],
-    sales: 10402,
-    reviewsCount: 1243,
-    rating: 4.1,
-    description:
-      "Embrace your love for cats and sweet treats with the Cat Taiyaki Tee! This fun and quirky T-shirt features an adorable design of a playful cat enjoying a taiyaki, the iconic fish-shaped Japanese dessert. Made from premium-quality cotton, it offers a soft, breathable, and comfortable fit perfect for everyday wear.",
-    features: [
-      "Material: 100% high-quality cotton",
-      "Fit: Relaxed and unisex sizing",
-      "Design: Durable, fade-resistant cat and taiyaki graphic",
-      "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
-    ],
   },
   {
     id: 8,
@@ -739,19 +647,6 @@ export const productArrival: NewProduct[] = [
     price: "$95.50",
     reviews: "(4.1k) Customer Reviews",
     soldOutText: "Almost Sold Out",
-    brand: "Al Karam",
-    images: ["/bag/Picture65.png", "/bag/Picture66.png", "/bag/Picture67.png"],
-    sales: 10402,
-    reviewsCount: 1243,
-    rating: 4.1,
-    description:
-      "Embrace your love for cats and sweet treats with the Cat Taiyaki Tee! This fun and quirky T-shirt features an adorable design of a playful cat enjoying a taiyaki, the iconic fish-shaped Japanese dessert. Made from premium-quality cotton, it offers a soft, breathable, and comfortable fit perfect for everyday wear.",
-    features: [
-      "Material: 100% high-quality cotton",
-      "Fit: Relaxed and unisex sizing",
-      "Design: Durable, fade-resistant cat and taiyaki graphic",
-      "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
-    ],
   },
   {
     id: 9,
@@ -763,22 +658,6 @@ export const productArrival: NewProduct[] = [
     reviews: "(4.1k) Customer Reviews",
     soldOutText: "Almost Sold Out",
     brand: "Al Karam",
-    images: [
-      "/jacket/Picture62.png",
-      "/jacket/Picture63.png",
-      "/jacket/Picture64.png",
-    ],
-    sales: 10402,
-    reviewsCount: 1243,
-    rating: 4.1,
-    description:
-      "Embrace your love for cats and sweet treats with the Cat Taiyaki Tee! This fun and quirky T-shirt features an adorable design of a playful cat enjoying a taiyaki, the iconic fish-shaped Japanese dessert. Made from premium-quality cotton, it offers a soft, breathable, and comfortable fit perfect for everyday wear.",
-    features: [
-      "Material: 100% high-quality cotton",
-      "Fit: Relaxed and unisex sizing",
-      "Design: Durable, fade-resistant cat and taiyaki graphic",
-      "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
-    ],
   },
   {
     id: 10,
@@ -790,22 +669,6 @@ export const productArrival: NewProduct[] = [
     reviews: "(4.1k) Customer Reviews",
     soldOutText: "Almost Sold Out",
     brand: "Al Karam",
-    images: [
-      "/jacket/Picture62.png",
-      "/jacket/Picture63.png",
-      "/jacket/Picture64.png",
-    ],
-    sales: 10402,
-    reviewsCount: 1243,
-    rating: 4.1,
-    description:
-      "Embrace your love for cats and sweet treats with the Cat Taiyaki Tee! This fun and quirky T-shirt features an adorable design of a playful cat enjoying a taiyaki, the iconic fish-shaped Japanese dessert. Made from premium-quality cotton, it offers a soft, breathable, and comfortable fit perfect for everyday wear.",
-    features: [
-      "Material: 100% high-quality cotton",
-      "Fit: Relaxed and unisex sizing",
-      "Design: Durable, fade-resistant cat and taiyaki graphic",
-      "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
-    ],
   },
 ];
 
