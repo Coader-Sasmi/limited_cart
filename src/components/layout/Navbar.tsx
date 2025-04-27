@@ -48,22 +48,37 @@ export const NavArr: NavItem[] = [
     subcategories: [
       {
         title: "For Men",
-        path: "/website/bag/male",
+        path: "/website/bag/men",
         innerSubcategories: [
-          { title: "100% Leather Laptop Bag", path: "/website/bag/male" },
-          { title: "100% Leather Trolley Bag", path: "/website/bag/male" },
-          { title: "100% Leather Backpack", path: "/website/bag/male" },
-          { title: "100% Leather Bag", path: "/website/bag/male" },
+          {
+            title: "100% Leather Laptop Bag",
+            path: "/website/bag/men/leather-laptop-bag",
+          },
+          {
+            title: "100% Leather Trolley Bag",
+            path: "/website/bag/men/leather-trolley-bag",
+          },
+          {
+            title: "100% Leather Backpack",
+            path: "/website/bag/men/leather-backpack",
+          },
+          { title: "100% Leather Bag", path: "/website/bag/men/leather-bag" },
         ],
       },
       {
         title: "For Women",
-        path: "/website/bag/female",
+        path: "/website/bag/women",
         innerSubcategories: [
-          { title: "100% Leather Bag", path: "/website/bag/female" },
-          { title: "100% Leather Backpack", path: "/website/bag/female" },
-          { title: "100% Leather Hand Bag", path: "/website/bag/female" },
-          { title: "100% Leather ", path: "/website/bag/female" },
+          { title: "100% Leather Bag", path: "/website/bag/women/leather-bag" },
+          {
+            title: "100% Leather Backpack",
+            path: "/website/bag/women/leather-backpack",
+          },
+          {
+            title: "100% Leather Hand Bag",
+            path: "/website/bag/women/leather-hand-bag",
+          },
+          { title: "100% Leather ", path: "/website/bag/women/leather" },
         ],
       },
     ],
