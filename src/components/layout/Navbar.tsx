@@ -30,10 +30,16 @@ export const NavArr: NavItem[] = [
     title: "Furniture",
     path: "/website/furniture",
     subcategories: [
-      { title: "100% Leather Sofa", path: "/website/furniture" },
-      { title: "Leatherette Sofa", path: "/website/furniture" },
-      { title: "Touch Leather Sofa", path: "/website/furniture" },
-      { title: "Fabric Sofa", path: "/website/furniture" },
+      { title: "100% Leather Sofa", path: "/website/furniture/leather-sofa" },
+      {
+        title: "Leatherette Sofa",
+        path: "/website/furniture/leatherette-sofa",
+      },
+      {
+        title: "Touch Leather Sofa",
+        path: "/website/furniture/touch-leather-sofa",
+      },
+      { title: "Fabric Sofa", path: "/website/furniture/fabric-sofa" },
     ],
   },
   {
