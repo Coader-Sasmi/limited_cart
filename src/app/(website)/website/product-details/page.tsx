@@ -1,29 +1,49 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // pages/website/product-details.tsx
 "use client";
-import { jacketProducts } from "@/components/utils/productCollections";
+import { allCollections, Product } from "@/components/utils/productCollections";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading…</div>}>
+      <ProductDetailsPage />
+    </Suspense>
+  );
+}
+
 function ProductDetailsPage() {
   const searchParams = useSearchParams();
-  const idParam = searchParams.get("id");
-  const [product, setProduct] = useState<any | null>(null);
+  const category = searchParams.get("category") ?? ""; // e.g. "jackets"
+  const idParam = searchParams.get("id") ?? ""; // e.g. "3"
+
+  const [product, setProduct] = useState<Product | null>(null);
   const [selectedImage, setSelectedImage] = useState(0);
 
   useEffect(() => {
-    // if there's no id in the URL yet, bail out
-    if (!idParam) return;
+    if (!category || !idParam) return;
 
-    // look up the product
-    const found = jacketProducts.find((p: any) => p.id === idParam) ?? null;
+    // grab the right array (or empty if invalid)
+    const collection = allCollections[category] ?? [];
+
+    // find by ID
+    const found = collection.find((p) => p.id === idParam) ?? null;
     setProduct(found);
-  }, [idParam]);
+  }, [category, idParam]);
+
+  if (!category || !idParam) {
+    return (
+      <div className="main-container py-8">
+        <p>Waiting for product selection…</p>
+      </div>
+    );
+  }
 
   if (!product) {
     return (
       <div className="main-container py-8">
-        <p className="text-center">Loading… or product not found.</p>
+        <p>Product not found in “{category}.”</p>
       </div>
     );
   }
@@ -104,16 +124,5 @@ function ProductDetailsPage() {
         </div>
       </div>
     </div>
-  );
-}
-
-// Wrap in Suspense if you really need it, otherwise you can export ProductDetailsPage directly
-export default function Page() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <section className="main-container py-10">
-        <ProductDetailsPage />
-      </section>
-    </Suspense>
   );
 }
