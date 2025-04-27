@@ -15,6 +15,7 @@ export interface Product {
 }
 type NewProduct = {
   id: number;
+  path: string;
   categories: string[];
   img: string;
   name: string;
@@ -573,6 +574,7 @@ export const furnitureProducts: Product[] = [
 export const productArrival: NewProduct[] = [
   {
     id: 1,
+    path: "/website/footwear",
     categories: ["ALL", "FOOTWEAR"],
     img: "/product_1.png",
     name: "Brown Shoes",
@@ -599,6 +601,7 @@ export const productArrival: NewProduct[] = [
   },
   {
     id: 2,
+    path: "/website/footwear",
     categories: ["ALL", "FOOTWEAR"],
     img: "/product_2.png",
     name: "Black Shoes",
@@ -625,6 +628,7 @@ export const productArrival: NewProduct[] = [
   },
   {
     id: 3,
+    path: "/website/furniture",
     categories: ["ALL", "FURNITURE"],
     img: "/Picture2.png",
     name: "White Sofa",
@@ -651,6 +655,7 @@ export const productArrival: NewProduct[] = [
   },
   {
     id: 4,
+    path: "/website/furniture",
     categories: ["ALL", "FURNITURE"],
     img: "/Picture1.png",
     name: "Chair",
@@ -677,6 +682,7 @@ export const productArrival: NewProduct[] = [
   },
   {
     id: 5,
+    path: "/website/footwear",
     categories: ["FOOTWEAR"],
     img: "/Picture3.png",
     name: "Shoes",
@@ -701,34 +707,9 @@ export const productArrival: NewProduct[] = [
       "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
     ],
   },
-  // {
-  //   id: 6,
-  //   categories: ["ALL", "WALLET"],
-  //   img: "/pourse/Picture11.png",
-  //   name: "Purse",
-  //   price: "$95.50",
-  //   reviews: "(4.1k) Customer Reviews",
-  //   soldOutText: "Almost Sold Out",
-  //   brand: "Al Karam",
-  //   images: [
-  //     "/furniture/Picture10.png",
-  //     "/furniture/Picture11.png",
-  //     "/furniture/Picture12.png",
-  //   ],
-  //   sales: 10402,
-  //   reviewsCount: 1243,
-  //   rating: 4.1,
-  //   description:
-  //     "Embrace your love for cats and sweet treats with the Cat Taiyaki Tee! This fun and quirky T-shirt features an adorable design of a playful cat enjoying a taiyaki, the iconic fish-shaped Japanese dessert. Made from premium-quality cotton, it offers a soft, breathable, and comfortable fit perfect for everyday wear.",
-  //   features: [
-  //     "Material: 100% high-quality cotton",
-  //     "Fit: Relaxed and unisex sizing",
-  //     "Design: Durable, fade-resistant cat and taiyaki graphic",
-  //     "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
-  //   ],
-  // },
   {
     id: 7,
+    path: "/website/bag",
     categories: ["ALL", "BAG"],
     img: "/bag/Picture10.png",
     name: "Bag",
@@ -751,6 +732,7 @@ export const productArrival: NewProduct[] = [
   },
   {
     id: 8,
+    path: "/website/bag",
     categories: ["ALL", "BAG"],
     img: "/bag/Picture65.png",
     name: "Bag",
@@ -773,6 +755,7 @@ export const productArrival: NewProduct[] = [
   },
   {
     id: 9,
+    path: "/website/jacket",
     categories: ["ALL", "JACKET"],
     img: "/jacket/Picture62.png",
     name: "Jacket",
@@ -799,6 +782,7 @@ export const productArrival: NewProduct[] = [
   },
   {
     id: 10,
+    path: "/website/jacket",
     categories: ["ALL", "JACKET"],
     img: "/jacket/Picture63.png",
     name: "Jacket",
@@ -823,67 +807,7 @@ export const productArrival: NewProduct[] = [
       "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
     ],
   },
-  // {
-  //   id: 11,
-  //   categories: ["ALL", "BELT"],
-  //   img: "/belt/Picture7.png",
-  //   name: "Belt",
-  //   price: "$95.50",
-  //   reviews: "(4.1k) Customer Reviews",
-  //   soldOutText: "Almost Sold Out",
-  //   brand: "Al Karam",
-  //   images: [
-  //     "/furniture/Picture10.png",
-  //     "/furniture/Picture11.png",
-  //     "/furniture/Picture12.png",
-  //   ],
-  //   sales: 10402,
-  //   reviewsCount: 1243,
-  //   rating: 4.1,
-  //   description:
-  //     "Embrace your love for cats and sweet treats with the Cat Taiyaki Tee! This fun and quirky T-shirt features an adorable design of a playful cat enjoying a taiyaki, the iconic fish-shaped Japanese dessert. Made from premium-quality cotton, it offers a soft, breathable, and comfortable fit perfect for everyday wear.",
-  //   features: [
-  //     "Material: 100% high-quality cotton",
-  //     "Fit: Relaxed and unisex sizing",
-  //     "Design: Durable, fade-resistant cat and taiyaki graphic",
-  //     "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
-  //   ],
-  // },
-  // {
-  //   id: 12,
-  //   categories: ["ALL", "BELT"],
-  //   img: "/belt/Picture8.png",
-  //   name: "Belt",
-  //   price: "$95.50",
-  //   reviews: "(4.1k) Customer Reviews",
-  //   soldOutText: "Almost Sold Out",
-  //   brand: "Al Karam",
-  //   images: [
-  //     "/furniture/Picture10.png",
-  //     "/furniture/Picture11.png",
-  //     "/furniture/Picture12.png",
-  //   ],
-  //   sales: 10402,
-  //   reviewsCount: 1243,
-  //   rating: 4.1,
-  //   description:
-  //     "Embrace your love for cats and sweet treats with the Cat Taiyaki Tee! This fun and quirky T-shirt features an adorable design of a playful cat enjoying a taiyaki, the iconic fish-shaped Japanese dessert. Made from premium-quality cotton, it offers a soft, breathable, and comfortable fit perfect for everyday wear.",
-  //   features: [
-  //     "Material: 100% high-quality cotton",
-  //     "Fit: Relaxed and unisex sizing",
-  //     "Design: Durable, fade-resistant cat and taiyaki graphic",
-  //     "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
-  //   ],
-  // },
 ];
-
-// export const allProducts = [
-//   ...jacketProducts,
-//   ...bagProducts,
-//   ...furnitureProducts,
-//   ...footwearProducts,
-//   ...productArrival,
-// ];
 
 export const allCollections: Record<string, Product[]> = {
   jackets: jacketProducts,
