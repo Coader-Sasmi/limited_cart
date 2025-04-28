@@ -367,7 +367,7 @@ export const menFootwearProducts: Product[] = [
     name: "Upper: Cow Alpha Dior",
     brand: "Outsole: HANDMADE",
     price: 24.0,
-    images: [],
+    images: ["/footwear/Picture1.png"],
     sales: 10402,
     reviewsCount: 1243,
     rating: 4.1,
