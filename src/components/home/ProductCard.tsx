@@ -18,7 +18,7 @@ export default function ProductCard({ item }: any) {
         </div>
         <small>(4.1k) Customer Reviews</small>
         <div className="flex justify-between">
-          <h1>$95.50</h1>
+          <h1>${item?.price}</h1>
           <small className="text-primary">Almost Sold Out</small>
         </div>
       </div>

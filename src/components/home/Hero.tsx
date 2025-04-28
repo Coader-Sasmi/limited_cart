@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="flex flex-col gap-5 items-center w-full ">
           <div className=" bg-[#e0e0e0] flex items-center justify-center rounded-lg">
             <img
-              src="/footwear/Picture4.png"
+              src="/footwear/Picture44.png"
               alt="image"
               className="h-auto w-auto"
             />
@@ -28,7 +28,7 @@ export default function Hero() {
           </button>
           <div className=" bg-[#f6ada4] flex items-center justify-center rounded-lg">
             <img
-              src="/footwear/Picture5.png"
+              src="/footwear/Picture55.png"
               alt="image"
               className="h-auto w-auto"
             />

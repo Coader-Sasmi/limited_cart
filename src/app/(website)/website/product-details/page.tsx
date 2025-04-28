@@ -95,9 +95,9 @@ function ProductDetailsPage() {
               <span>{product.rating.toFixed(1)} ★</span>
             </div>
 
-            {/* <h2 className="uppercase text-sm font-semibold text-gray-700 mb-2">
-              Description
-            </h2> */}
+            <h2 className="uppercase text-sm font-semibold text-gray-700 mb-2">
+              Price:${product.price}
+            </h2>
             <p className="text-red-700 mb-6 font-semibold">
               {product.description}
             </p>
