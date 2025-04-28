@@ -1374,6 +1374,58 @@ export const womenFootwearProducts: Product[] = [
   },
 ];
 
+export const accessoriesProducts: Product[] = [
+  {
+    id: "1",
+    img: "/accessory/Picture1.png",
+    name: "Small Sling (ME-205)",
+    brand: "",
+    price: "",
+    images: [
+      "/accessory/Picture1.png",
+      "/accessory/Picture2.png",
+      "/accessory/Picture3.png",
+    ],
+    sales: 10402,
+    reviewsCount: 1243,
+    rating: 4.1,
+    description:
+      "Best for carrying, Valuables like cards, keys, earphones, power bank, coins, pen, Passport, card holders and such like. Perfect for Travel, Hiking, Trekking and other adventure activities.",
+    features: [],
+  },
+  {
+    id: "2",
+    img: "/accessory/Picture4.png",
+    name: "Zip Wallet",
+    brand: "",
+    price: "",
+    images: [
+      "/accessory/Picture4.png",
+      "/accessory/Picture5.png",
+      "/accessory/Picture6.png",
+    ],
+    sales: 10402,
+    reviewsCount: 1243,
+    rating: 4.1,
+    description:
+      "Multiple Compartments, Card Slots, Made On Soft Pebble Grain Leather.",
+    features: ["(ME-1005)", "(ME-1004)", "(ME-1006)"],
+  },
+  {
+    id: "3",
+    img: "/accessory/Picture7.png",
+    name: "Article: ME-102",
+    brand: "",
+    price: "4.10",
+    images: ["/accessory/Picture7.png", "/accessory/Picture8.png"],
+    sales: 10402,
+    reviewsCount: 1243,
+    rating: 4.1,
+    description: "",
+    features: ["Color: Black & Brown", "Leather Quality: Buff Grain Pull-up"],
+  },
+];
+
 export const furnitureProducts: Product[] = [
   {
     id: "1",
@@ -1956,4 +2008,5 @@ export const allCollections: Record<string, Product[]> = {
   bag: bagProducts,
   menFootwear: menFootwearProducts,
   womenFootwear: womenFootwearProducts,
+  accessories: accessoriesProducts,
 };
