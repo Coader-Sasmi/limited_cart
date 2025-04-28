@@ -223,7 +223,7 @@ export const bagProducts: Product[] = [
 export const footwearProducts: Product[] = [
   {
     id: "1",
-    img: "/product_1.png",
+    img: "/footwear/Picture8.png",
     name: "Brown Boots",
     brand: "Al Karam",
     price: 95.5,
@@ -246,7 +246,7 @@ export const footwearProducts: Product[] = [
   },
   {
     id: "2",
-    img: "/product_2.png",
+    img: "/footwear/Picture7.png",
     name: "Black Shoes",
     brand: "Al Karam",
     price: 95.5,
@@ -269,7 +269,7 @@ export const footwearProducts: Product[] = [
   },
   {
     id: "3",
-    img: "/Picture3.png",
+    img: "/footwear/Picture3.png",
     name: "Black Shoes",
     brand: "Al Karam",
     price: 95.5,
@@ -382,7 +382,7 @@ export const menFootwearProducts: Product[] = [
   },
   {
     id: "2",
-    img: "/product_2.png",
+    img: "/footwear/Picture3.png",
     name: "Black Shoes",
     brand: "Al Karam",
     price: 95.5,
@@ -405,7 +405,7 @@ export const menFootwearProducts: Product[] = [
   },
   {
     id: "3",
-    img: "/Picture3.png",
+    img: "/footwear/Picture8.png",
     name: "Black Shoes",
     brand: "Al Karam",
     price: 95.5,
@@ -500,7 +500,7 @@ export const menFootwearProducts: Product[] = [
 export const furnitureProducts: Product[] = [
   {
     id: "1",
-    img: "/Picture2.png",
+    img: "/furniture/Picture10.png",
     name: "White Sofa",
     brand: "Al Karam",
     price: 95.5,
@@ -523,7 +523,7 @@ export const furnitureProducts: Product[] = [
   },
   {
     id: "2",
-    img: "/Picture1.png",
+    img: "/furniture/Picture11.png",
     name: "Chair",
     brand: "Al Karam",
     price: 95.5,
@@ -546,7 +546,7 @@ export const furnitureProducts: Product[] = [
   },
   {
     id: "3",
-    img: "/furniture/Picture10.png",
+    img: "/furniture/Picture12.png",
     name: "Chair",
     brand: "Al Karam",
     price: 95.5,
