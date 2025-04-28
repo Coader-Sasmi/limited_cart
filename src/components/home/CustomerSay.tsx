@@ -19,7 +19,7 @@ export default function CustomerSay() {
           className="h-auto w-auto absolute -left-20 hidden lg:block -z-10"
         />
         <img
-          src="/footwear/Picture1.png"
+          src="/footwear/Picture7.png"
           alt="image"
           className="h-24 w-auto absolute left-0 top-28 hidden lg:block"
         />
