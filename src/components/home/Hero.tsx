@@ -5,11 +5,19 @@ export default function Hero() {
     <section className="main-container py-10 ">
       <div className="flex lg:flex-row flex-col gap-10 w-full">
         <div className="w-full bg-[#e0e0e0] flex items-center justify-center rounded-lg">
-          <img src="/Picture1.png" alt="image" className="h-auto w-auto" />
+          <img
+            src="/furniture/Picture1.png"
+            alt="image"
+            className="h-auto w-auto"
+          />
         </div>
         <div className="flex flex-col gap-5 items-center w-full ">
           <div className=" bg-[#e0e0e0] flex items-center justify-center rounded-lg">
-            <img src="/Picture4.png" alt="image" className="h-auto w-auto" />
+            <img
+              src="/footwear/Picture4.png"
+              alt="image"
+              className="h-auto w-auto"
+            />
           </div>
           <div>
             <img src="/hero_text.png" alt="image" className="h-auto w-auto" />
@@ -19,7 +27,11 @@ export default function Hero() {
             SHOP NOW
           </button>
           <div className=" bg-[#f6ada4] flex items-center justify-center rounded-lg">
-            <img src="/Picture5.png" alt="image" className="h-auto w-auto" />
+            <img
+              src="/footwear/Picture5.png"
+              alt="image"
+              className="h-auto w-auto"
+            />
           </div>
         </div>
         <div className="w-full">

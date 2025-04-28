@@ -24,14 +24,14 @@ export default function DealsSec() {
             <div className="md:flex-row flex-col flex gap-8 justify-end md:items-end w-full">
               <div className=" bg-[#f6ada4] flex items-center justify-center rounded-lg">
                 <img
-                  src="/Picture2.png"
+                  src="/furniture/Picture2.png"
                   alt="image"
                   className="md:h-80 w-auto"
                 />
               </div>
               <div className=" bg-[#c1b3b2] flex items-center justify-center rounded-lg">
                 <img
-                  src="/Picture6.png"
+                  src="/furniture/Picture6.png"
                   alt="image"
                   className="md:h-80 w-auto"
                 />
