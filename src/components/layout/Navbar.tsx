@@ -159,60 +159,60 @@ export const NavArr: NavItem[] = [
   {
     title: "Accessories",
     path: "/website/accessories",
-    subcategories: [
-      {
-        title: "For Men",
-        path: "/website/accessories/men",
-        // innerSubcategories: [
-        //   {
-        //     title: "Leather Belt ",
-        //     path: "/website/accessories/men/leather-belt",
-        //   },
-        //   {
-        //     title: "Leather Wallet",
-        //     path: "/website/accessories/men/leather-wallet",
-        //   },
-        //   {
-        //     title: "Leather Key Chain",
-        //     path: "/website/accessories/men/leather-key-chain",
-        //   },
-        //   {
-        //     title: "Leather Passport Cover",
-        //     path: "/website/accessories/men/leather-passport-cover",
-        //   },
-        //   {
-        //     title: "Leather Chest Bag",
-        //     path: "/website/accessories/men/leather-chest-bag",
-        //   },
-        // ],
-      },
-      {
-        title: "For Women",
-        path: "/website/accessories/women",
-        // innerSubcategories: [
-        //   {
-        //     title: "Leather Belt ",
-        //     path: "/website/accessories/women/leather-belt",
-        //   },
-        //   {
-        //     title: "Leather Wallet",
-        //     path: "/website/accessories/women/leather-wallet",
-        //   },
-        //   {
-        //     title: "Leather Hand Bag",
-        //     path: "/website/accessories/women/leather-hand-bag",
-        //   },
-        //   {
-        //     title: "Leather Passport Cover",
-        //     path: "/website/accessories/women/leather-passport-cover",
-        //   },
-        //   {
-        //     title: "Leather Chest Bag",
-        //     path: "/website/accessories/women/leather-chest-bag",
-        //   },
-        // ],
-      },
-    ],
+    // subcategories: [
+    //   {
+    //     title: "For Men",
+    //     path: "/website/accessories/men",
+    //     innerSubcategories: [
+    //       {
+    //         title: "Leather Belt ",
+    //         path: "/website/accessories/men/leather-belt",
+    //       },
+    //       {
+    //         title: "Leather Wallet",
+    //         path: "/website/accessories/men/leather-wallet",
+    //       },
+    //       {
+    //         title: "Leather Key Chain",
+    //         path: "/website/accessories/men/leather-key-chain",
+    //       },
+    //       {
+    //         title: "Leather Passport Cover",
+    //         path: "/website/accessories/men/leather-passport-cover",
+    //       },
+    //       {
+    //         title: "Leather Chest Bag",
+    //         path: "/website/accessories/men/leather-chest-bag",
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     title: "For Women",
+    //     path: "/website/accessories/women",
+    //     innerSubcategories: [
+    //       {
+    //         title: "Leather Belt ",
+    //         path: "/website/accessories/women/leather-belt",
+    //       },
+    //       {
+    //         title: "Leather Wallet",
+    //         path: "/website/accessories/women/leather-wallet",
+    //       },
+    //       {
+    //         title: "Leather Hand Bag",
+    //         path: "/website/accessories/women/leather-hand-bag",
+    //       },
+    //       {
+    //         title: "Leather Passport Cover",
+    //         path: "/website/accessories/women/leather-passport-cover",
+    //       },
+    //       {
+    //         title: "Leather Chest Bag",
+    //         path: "/website/accessories/women/leather-chest-bag",
+    //       },
+    //     ],
+    //   },
+    // ],
   },
   {
     title: "Trade Assurance",
