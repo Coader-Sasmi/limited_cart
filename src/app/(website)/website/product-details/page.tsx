@@ -113,14 +113,14 @@ function ProductDetailsPage() {
           </div>
 
           {/* Action buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* <div className="flex flex-col sm:flex-row gap-4">
             <button className="flex-1 py-3 border border-black text-black bg-white rounded hover:bg-gray-100 transition">
               Add to Cart
             </button>
             <button className="flex-1 py-3 bg-black text-white rounded hover:bg-gray-800 transition">
               Checkout
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
