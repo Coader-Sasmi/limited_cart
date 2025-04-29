@@ -29,18 +29,18 @@ export const NavArr: NavItem[] = [
   {
     title: "Furniture",
     path: "/website/furniture",
-    subcategories: [
-      { title: "100% Leather Sofa", path: "/website/furniture/leather-sofa" },
-      {
-        title: "Leatherette Sofa",
-        path: "/website/furniture/leatherette-sofa",
-      },
-      {
-        title: "Touch Leather Sofa",
-        path: "/website/furniture/touch-leather-sofa",
-      },
-      { title: "Fabric Sofa", path: "/website/furniture/fabric-sofa" },
-    ],
+    // subcategories: [
+    //   { title: "100% Leather Sofa", path: "/website/furniture/leather-sofa" },
+    //   {
+    //     title: "Leatherette Sofa",
+    //     path: "/website/furniture/leatherette-sofa",
+    //   },
+    //   {
+    //     title: "Touch Leather Sofa",
+    //     path: "/website/furniture/touch-leather-sofa",
+    //   },
+    //   { title: "Fabric Sofa", path: "/website/furniture/fabric-sofa" },
+    // ],
   },
   {
     title: "Bags",
@@ -49,37 +49,37 @@ export const NavArr: NavItem[] = [
       {
         title: "For Men",
         path: "/website/bag/men",
-        innerSubcategories: [
-          {
-            title: "100% Leather Laptop Bag",
-            path: "/website/bag/men/leather-laptop-bag",
-          },
-          {
-            title: "100% Leather Trolley Bag",
-            path: "/website/bag/men/leather-trolley-bag",
-          },
-          {
-            title: "100% Leather Backpack",
-            path: "/website/bag/men/leather-backpack",
-          },
-          { title: "100% Leather Bag", path: "/website/bag/men/leather-bag" },
-        ],
+        // innerSubcategories: [
+        //   {
+        //     title: "100% Leather Laptop Bag",
+        //     path: "/website/bag/men/leather-laptop-bag",
+        //   },
+        //   {
+        //     title: "100% Leather Trolley Bag",
+        //     path: "/website/bag/men/leather-trolley-bag",
+        //   },
+        //   {
+        //     title: "100% Leather Backpack",
+        //     path: "/website/bag/men/leather-backpack",
+        //   },
+        //   { title: "100% Leather Bag", path: "/website/bag/men/leather-bag" },
+        // ],
       },
       {
         title: "For Women",
         path: "/website/bag/women",
-        innerSubcategories: [
-          { title: "100% Leather Bag", path: "/website/bag/women/leather-bag" },
-          {
-            title: "100% Leather Backpack",
-            path: "/website/bag/women/leather-backpack",
-          },
-          {
-            title: "100% Leather Hand Bag",
-            path: "/website/bag/women/leather-hand-bag",
-          },
-          { title: "100% Leather ", path: "/website/bag/women/leather" },
-        ],
+        // innerSubcategories: [
+        //   { title: "100% Leather Bag", path: "/website/bag/women/leather-bag" },
+        //   {
+        //     title: "100% Leather Backpack",
+        //     path: "/website/bag/women/leather-backpack",
+        //   },
+        //   {
+        //     title: "100% Leather Hand Bag",
+        //     path: "/website/bag/women/leather-hand-bag",
+        //   },
+        //   { title: "100% Leather ", path: "/website/bag/women/leather" },
+        // ],
       },
     ],
   },
@@ -90,30 +90,30 @@ export const NavArr: NavItem[] = [
       {
         title: "For Men",
         path: "/website/jacket/men",
-        innerSubcategories: [
-          {
-            title: "Over Coat Jacket",
-            path: "/website/jacket/men/over-coat-jacket",
-          },
-          {
-            title: "Regular Jacket",
-            path: "/website/jacket/men/regular-jacket",
-          },
-        ],
+        // innerSubcategories: [
+        //   {
+        //     title: "Over Coat Jacket",
+        //     path: "/website/jacket/men/over-coat-jacket",
+        //   },
+        //   {
+        //     title: "Regular Jacket",
+        //     path: "/website/jacket/men/regular-jacket",
+        //   },
+        // ],
       },
       {
         title: "For Women",
         path: "/website/jacket/women",
-        innerSubcategories: [
-          {
-            title: "Over Coat Jacket",
-            path: "/website/jacket/women/over-coat-jacket",
-          },
-          {
-            title: "Regular Jacket",
-            path: "/website/jacket/women/regular-jacket",
-          },
-        ],
+        // innerSubcategories: [
+        //   {
+        //     title: "Over Coat Jacket",
+        //     path: "/website/jacket/women/over-coat-jacket",
+        //   },
+        //   {
+        //     title: "Regular Jacket",
+        //     path: "/website/jacket/women/regular-jacket",
+        //   },
+        // ],
       },
     ],
   },
@@ -124,35 +124,35 @@ export const NavArr: NavItem[] = [
       {
         title: "For Men",
         path: "/website/footwear/men",
-        innerSubcategories: [
-          {
-            title: "Leather Shoes",
-            path: "/website/footwear/men/leather-shoes",
-          },
-          {
-            title: "Leather Sandal",
-            path: "/website/footwear/men/leather-sandal",
-          },
-          { title: "Casual Shoes", path: "/website/footwear/men/casual-shoes" },
-        ],
+        // innerSubcategories: [
+        //   {
+        //     title: "Leather Shoes",
+        //     path: "/website/footwear/men/leather-shoes",
+        //   },
+        //   {
+        //     title: "Leather Sandal",
+        //     path: "/website/footwear/men/leather-sandal",
+        //   },
+        //   { title: "Casual Shoes", path: "/website/footwear/men/casual-shoes" },
+        // ],
       },
       {
         title: "For Women",
         path: "/website/footwear/women",
-        innerSubcategories: [
-          {
-            title: "Leather Shoes",
-            path: "/website/footwear/women/leather-shoes",
-          },
-          {
-            title: "Leather Sandal",
-            path: "/website/footwear/women/leather-sandal",
-          },
-          {
-            title: "Casual Shoes",
-            path: "/website/footwear/women/casual-shoes",
-          },
-        ],
+        // innerSubcategories: [
+        //   {
+        //     title: "Leather Shoes",
+        //     path: "/website/footwear/women/leather-shoes",
+        //   },
+        //   {
+        //     title: "Leather Sandal",
+        //     path: "/website/footwear/women/leather-sandal",
+        //   },
+        //   {
+        //     title: "Casual Shoes",
+        //     path: "/website/footwear/women/casual-shoes",
+        //   },
+        // ],
       },
     ],
   },
@@ -163,54 +163,54 @@ export const NavArr: NavItem[] = [
       {
         title: "For Men",
         path: "/website/accessories/men",
-        innerSubcategories: [
-          {
-            title: "Leather Belt ",
-            path: "/website/accessories/men/leather-belt",
-          },
-          {
-            title: "Leather Wallet",
-            path: "/website/accessories/men/leather-wallet",
-          },
-          {
-            title: "Leather Key Chain",
-            path: "/website/accessories/men/leather-key-chain",
-          },
-          {
-            title: "Leather Passport Cover",
-            path: "/website/accessories/men/leather-passport-cover",
-          },
-          {
-            title: "Leather Chest Bag",
-            path: "/website/accessories/men/leather-chest-bag",
-          },
-        ],
+        // innerSubcategories: [
+        //   {
+        //     title: "Leather Belt ",
+        //     path: "/website/accessories/men/leather-belt",
+        //   },
+        //   {
+        //     title: "Leather Wallet",
+        //     path: "/website/accessories/men/leather-wallet",
+        //   },
+        //   {
+        //     title: "Leather Key Chain",
+        //     path: "/website/accessories/men/leather-key-chain",
+        //   },
+        //   {
+        //     title: "Leather Passport Cover",
+        //     path: "/website/accessories/men/leather-passport-cover",
+        //   },
+        //   {
+        //     title: "Leather Chest Bag",
+        //     path: "/website/accessories/men/leather-chest-bag",
+        //   },
+        // ],
       },
       {
         title: "For Women",
         path: "/website/accessories/women",
-        innerSubcategories: [
-          {
-            title: "Leather Belt ",
-            path: "/website/accessories/women/leather-belt",
-          },
-          {
-            title: "Leather Wallet",
-            path: "/website/accessories/women/leather-wallet",
-          },
-          {
-            title: "Leather Hand Bag",
-            path: "/website/accessories/women/leather-hand-bag",
-          },
-          {
-            title: "Leather Passport Cover",
-            path: "/website/accessories/women/leather-passport-cover",
-          },
-          {
-            title: "Leather Chest Bag",
-            path: "/website/accessories/women/leather-chest-bag",
-          },
-        ],
+        // innerSubcategories: [
+        //   {
+        //     title: "Leather Belt ",
+        //     path: "/website/accessories/women/leather-belt",
+        //   },
+        //   {
+        //     title: "Leather Wallet",
+        //     path: "/website/accessories/women/leather-wallet",
+        //   },
+        //   {
+        //     title: "Leather Hand Bag",
+        //     path: "/website/accessories/women/leather-hand-bag",
+        //   },
+        //   {
+        //     title: "Leather Passport Cover",
+        //     path: "/website/accessories/women/leather-passport-cover",
+        //   },
+        //   {
+        //     title: "Leather Chest Bag",
+        //     path: "/website/accessories/women/leather-chest-bag",
+        //   },
+        // ],
       },
     ],
   },
