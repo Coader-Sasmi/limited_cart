@@ -282,6 +282,90 @@ export const bagProducts: Product[] = [
     ],
   },
 ];
+export const menBagProducts: Product[] = [
+  {
+    id: "1",
+    img: "/bag/Picture1.png",
+    name: "Organiser BRIEFCASE (ME-412)",
+    brand: "BRIEFCASE",
+    price: "",
+    images: ["/bag/Picture1.png", "/bag/Picture4.png", "/bag/Picture5.png"],
+    sales: 10402,
+    reviewsCount: 1243,
+    rating: 4.1,
+    description:
+      "Double Compartment, Perfect for having all your tech and documents in one place.",
+    features: [],
+  },
+  {
+    id: "2",
+    img: "/bag/Picture6.png",
+    name: "CLASSIC OFFICE BRIEFCASE (ME-404)",
+    brand: "BRIEFCASE",
+    price: "",
+    images: ["/bag/Picture6.png"],
+    sales: 10402,
+    reviewsCount: 1243,
+    rating: 4.1,
+    description:
+      "Laptop Compartment, Multi Utility Pockets, adjustable Shoulder Strap, Crafted on Full Grain Shrunken Grain Leather.",
+    features: [],
+  },
+  {
+    id: "3",
+    img: "/bag/Picture7.png",
+    name: "Metropolitan Briefcase (ME-405)",
+    brand: "BRIEFCASE",
+    price: "",
+    images: ["/bag/Picture7.png"],
+    sales: 10402,
+    reviewsCount: 1243,
+    rating: 4.1,
+    description:
+      "Laptop Compartment, Adjustable Shoulder Strap, Made on soft Pebble Leather with Full Grain Leather Detailing.",
+    features: [],
+  },
+];
+export const womenBagProducts: Product[] = [
+  {
+    id: "1",
+    img: "/jacket/Picture6.png",
+    name: "Casual Jacket",
+    brand: "",
+    price: "",
+    images: [
+      "/jacket/Picture6.png",
+      "/jacket/Picture7.png",
+      "/jacket/Picture8.png",
+      "/jacket/Picture9.png",
+      "/jacket/Picture10.png",
+    ],
+    sales: 10402,
+    reviewsCount: 1243,
+    rating: 4.1,
+    description: "",
+    features: [],
+  },
+  {
+    id: "2",
+    img: "/jacket/Picture11.png",
+    name: "Shearling Jacket",
+    brand: "",
+    price: "",
+    images: [
+      "/jacket/Picture11.png",
+      "/jacket/Picture12.png",
+      "/jacket/Picture13.png",
+      "/jacket/Picture14.png",
+      "/jacket/Picture15.png",
+    ],
+    sales: 10402,
+    reviewsCount: 1243,
+    rating: 4.1,
+    description: "",
+    features: [],
+  },
+];
 
 export const footwearProducts: Product[] = [
   {
@@ -2069,6 +2153,8 @@ export const allCollections: Record<string, Product[]> = {
   footwear: footwearProducts,
   furniture: furnitureProducts,
   bag: bagProducts,
+  menBag: menBagProducts,
+  womenBag: womenBagProducts,
   menFootwear: menFootwearProducts,
   womenFootwear: womenFootwearProducts,
   accessories: accessoriesProducts,
