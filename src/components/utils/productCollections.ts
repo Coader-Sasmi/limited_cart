@@ -254,7 +254,36 @@ export const menBagProducts: Product[] = [
     features: [],
   },
 ];
-export const womenBagProducts: Product[] = [];
+export const womenBagProducts: Product[] = [
+  {
+    id: "1",
+    img: "/bag/Picture11.png",
+    name: "Large Tote (ME-628 L)",
+    brand: "Totes",
+    price: "",
+    images: ["/bag/Picture11.png", "/bag/Picture12.png", "/bag/Picture13.png"],
+    sales: 10402,
+    reviewsCount: 1243,
+    rating: 4.1,
+    description:
+      "Perfect as a carryall, Large, spacious and simple, it also has a zipper pouch inside.",
+    features: [],
+  },
+  {
+    id: "2",
+    img: "/bag/Picture14.png",
+    name: "Full Size Shoulder Bag (ME-6615)",
+    brand: "Totes",
+    price: "",
+    images: ["/bag/Picture14.png", "/bag/Picture15.png"],
+    sales: 10402,
+    reviewsCount: 1243,
+    rating: 4.1,
+    description:
+      "Full Size Shoulder Bag: Specious, Fashionable and Simple, Built on Soft Pebble Leather, 24 Karat Gold Plated Fittings.",
+    features: [],
+  },
+];
 
 export const footwearProducts: Product[] = [
   {
