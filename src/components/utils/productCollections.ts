@@ -326,7 +326,7 @@ export const footwearProducts: Product[] = [
     rating: 4.1,
     description: "Available Immediately",
     features: [
-      "Material: 100% high-quality cotton",
+      "Material: 100% high-quality Leather",
       "Fit: Relaxed and unisex sizing",
       "Design: Durable, fade-resistant cat and taiyaki graphic",
       "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
@@ -488,7 +488,7 @@ export const menFootwearProducts: Product[] = [
     rating: 4.1,
     description: "Available Immediately",
     features: [
-      "Material: 100% high-quality cotton",
+      "Material: 100% high-quality Leather",
       "Fit: Relaxed and unisex sizing",
       "Design: Durable, fade-resistant cat and taiyaki graphic",
       "Perfect for casual outings, cozy days, or gifting to fellow cat enthusiasts",
