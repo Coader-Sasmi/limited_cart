@@ -57,10 +57,15 @@ export default function Footer() {
                 className="w-40 bg-white p-2 rounded-md h-auto cursor-pointer"
               />
             </Link>
-            <p>
-              Limitedcart LCC 16833 Grand Circle, Omaha, NE 68116 Mob:
-              +1-408-800-6217, email - customer.success@limitedcart.com
-            </p>
+            <div>
+              <p>
+                Limitedcart LCC 16833 Grand Circle, Omaha, <br />
+                NE 68116
+              </p>
+              <p>Mob: +1-408-800-6217</p>
+              <p>email - customer.success@limitedcart.com</p>
+            </div>
+
             <div className="flex gap-2 items-center">
               {socialMediaArr?.map((curElm, i) => (
                 <div
